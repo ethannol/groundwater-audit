@@ -1,0 +1,27 @@
+{
+  "source": "Water Quality Portal (WQP), legacy WQX 2.x web services",
+  "base_url": "https://www.waterqualitydata.us",
+  "endpoints": {
+    "result": "/data/Result/search",
+    "station": "/data/Station/search"
+  },
+  "params": {
+    "statecode": "US:06",
+    "countycode": "US:06:071",
+    "siteType": "Well",
+    "characteristicName": [
+      "Arsenic",
+      "Nitrate",
+      "Inorganic nitrogen (nitrate and nitrite)"
+    ],
+    "startDateLo": "01-01-2000",
+    "mimeType": "csv",
+    "zip": "no"
+  },
+  "result_profile": "resultPhysChem",
+  "notes": [
+    "San Bernardino County, California (FIPS 06071) chosen after a statewide site-summary scan: it has roughly ten times more repeatedly sampled wells for arsenic and nitrate than any Central Valley county.",
+    "The WQX3 'fullPhysChem' profile was tried for the same query on 2026-10-07 and returned 99 rows plus an 'ERROR: INCOMPLETE DATA' sentinel row versus 13,301 rows from the legacy profile. The legacy profile is used.",
+    "Both nitrate characteristic names are requested on purpose: they are different chemical definitions and the comparability question is part of the analysis."
+  ]
+}

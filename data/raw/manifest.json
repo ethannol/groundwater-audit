@@ -1,0 +1,55 @@
+{
+  "download_date_utc": "2026-10-07T23:21:36+00:00",
+  "query": {
+    "source": "Water Quality Portal (WQP), legacy WQX 2.x web services",
+    "base_url": "https://www.waterqualitydata.us",
+    "endpoints": {
+      "result": "/data/Result/search",
+      "station": "/data/Station/search"
+    },
+    "params": {
+      "statecode": "US:06",
+      "countycode": "US:06:071",
+      "siteType": "Well",
+      "characteristicName": [
+        "Arsenic",
+        "Nitrate",
+        "Inorganic nitrogen (nitrate and nitrite)"
+      ],
+      "startDateLo": "01-01-2000",
+      "mimeType": "csv",
+      "zip": "no"
+    },
+    "result_profile": "resultPhysChem",
+    "notes": [
+      "San Bernardino County, California (FIPS 06071) chosen after a statewide site-summary scan: it has roughly ten times more repeatedly sampled wells for arsenic and nitrate than any Central Valley county.",
+      "The WQX3 'fullPhysChem' profile was tried for the same query on 2026-10-07 and returned 99 rows plus an 'ERROR: INCOMPLETE DATA' sentinel row versus 13,301 rows from the legacy profile. The legacy profile is used.",
+      "Both nitrate characteristic names are requested on purpose: they are different chemical definitions and the comparability question is part of the analysis."
+    ]
+  },
+  "attribution": "Data retrieved from the Water Quality Portal (https://www.waterqualitydata.us), a cooperative service of the USGS, EPA and NWQMC. All records in this snapshot are USGS National Water Information System (NWIS) data (OrganizationIdentifier USGS-CA), which are public domain U.S. Government works. Suggested citation: National Water Quality Monitoring Council, Water Quality Portal, accessed 2026-10-07, https://www.waterqualitydata.us.",
+  "files": {
+    "wqp_result.csv": {
+      "url": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A06&countycode=US%3A06%3A071&siteType=Well&characteristicName=Arsenic&characteristicName=Nitrate&characteristicName=Inorganic+nitrogen+%28nitrate+and+nitrite%29&startDateLo=01-01-2000&mimeType=csv&zip=no&dataProfile=resultPhysChem",
+      "http_status": 200,
+      "bytes": 7211673,
+      "sha256": "900ffda8e07c5820dfaa254e5d82fcf549f459ea86ac0a3984109ffdf43039d4",
+      "portal_count_headers": {
+        "Total-Site-Count": "1098",
+        "Total-Activity-Count": "4897",
+        "Total-Result-Count": "13301"
+      },
+      "rows_excluding_header": 13301
+    },
+    "wqp_station.csv": {
+      "url": "https://www.waterqualitydata.us/data/Station/search?statecode=US%3A06&countycode=US%3A06%3A071&siteType=Well&characteristicName=Arsenic&characteristicName=Nitrate&characteristicName=Inorganic+nitrogen+%28nitrate+and+nitrite%29&startDateLo=01-01-2000&mimeType=csv&zip=no",
+      "http_status": 200,
+      "bytes": 379424,
+      "sha256": "d7b2602a2ad44e2ccde0728c827436827b83d32d16a3392ede53e6cf99058f7d",
+      "portal_count_headers": {
+        "Total-Site-Count": "1098"
+      },
+      "rows_excluding_header": 1098
+    }
+  }
+}

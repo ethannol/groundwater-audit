@@ -1,0 +1,119 @@
+table,field,definition
+result,OrganizationIdentifier,A designator used to uniquely identify a unique business establishment within a context.
+result,OrganizationFormalName,The legal designator (i.e. formal name) of an organization.
+result,ActivityIdentifier,Designator that uniquely identifies an activity within an organization.
+result,ActivityTypeCode,The text describing the type of activity.
+result,ActivityMediaName,Name or code indicating the environmental medium where the sample was taken.
+result,ActivityMediaSubdivisionName,Name or code indicating the environmental matrix as a subdivision of the sample media.
+result,ActivityStartDate,The calendar date on which the field activity is started.
+result,ActivityStartTime/Time,"The time of day that is reported when the field activity began, based on a 24-hour timescale."
+result,ActivityStartTime/TimeZoneCode,The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+result,ActivityEndDate,The calendar date when the field activity is completed.
+result,ActivityEndTime/Time,"The time of day that is reported when the field activity ended, based on a 24-hour timescale."
+result,ActivityEndTime/TimeZoneCode,The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+result,ActivityRelativeDepthName,The name that indicates the approximate location within the water column at which the activity occurred.
+result,ActivityDepthHeightMeasure/MeasureValue,A measurement of the vertical location (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityDepthHeightMeasure/MeasureUnitCode.
+result,ActivityDepthHeightMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+result,ActivityDepthAltitudeReferencePointText,The reference used to indicate the datum or reference used to establish the depth/altitude of an activity.
+result,ActivityTopDepthHeightMeasure/MeasureValue,A measurement of the upper vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityTopDepthHeightMeasure/MeasureUnitCode.
+result,ActivityTopDepthHeightMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+result,ActivityBottomDepthHeightMeasure/MeasureValue,A measurement of the lower vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityBottomDepthHeightMeasure/MeasureUnitCode.
+result,ActivityBottomDepthHeightMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+result,ProjectIdentifier,A designator used to uniquely identify a data collection project within a context of an organization.
+result,ProjectName,The name assigned by the Organization (project leader or principal investigator) to the project.
+result,ActivityConductingOrganizationText,A name of the Organization conducting an activity.
+result,MonitoringLocationIdentifier,"A designator used to describe the unique name, number, or code assigned to identify the monitoring location."
+result,MonitoringLocationName,The designator specified by the sampling organization for the site at which sampling or other activities are conducted.
+result,ActivityCommentText,General comments concerning the activity.
+result,SampleAquifer,A code that designates the aquifer associated with groundwater samples.
+result,HydrologicCondition,"Hydrologic condition is the hydrologic condition that is represented by the sample collected (i.e. ? normal, falling, rising, peak stage)."
+result,HydrologicEvent,"A hydrologic event that is represented by the sample collected (i.e. - storm, drought, snowmelt)."
+result,ActivityLocation/LatitudeMeasure,"The measure of the angular distance on a meridian north or south of the equator of the  actual monitoring site, if it is different from that described for in the formal station description."
+result,ActivityLocation/LongitudeMeasure,"The measure of the angular distance on a meridian east or west of the prime meridian of the  actual monitoring site, if it is different from that described for in the formal station description."
+result,SampleCollectionMethod/MethodIdentifier,The identification number or code assigned by the method publisher.
+result,SampleCollectionMethod/MethodIdentifierContext,Identifies the source or data system that created or defined the identifier.
+result,SampleCollectionMethod/MethodName,The title that appears on the method from the method publisher.
+result,SampleCollectionMethod/MethodDescriptionText,A brief summary that provides general information about the method.
+result,SampleCollectionEquipmentName,The name for the equipment used in collecting the sample.
+result,ResultIdentifier,The Identifier that links a result record to a Result Detection Quantitation Limit record.
+result,ResultDetectionConditionText,The textual descriptor of a result.
+result,MethodSpeciationName,
+result,CharacteristicName,"The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field."
+result,ResultSampleFractionText,The text name of the portion of the sample associated with results obtained from a physically-partitioned sample.
+result,ResultMeasureValue,"The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed. Measure value is given in the units stored in ResultMeasure/MeasureUnitCode."
+result,ResultMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+result,MeasureQualifierCode,A code used to identify any qualifying issues that affect the results.
+result,ResultStatusIdentifier,Indicates the acceptability of the result with respect to QA/QC criteria.
+result,StatisticalBaseCode,The code for the method used to calculate derived results.
+result,ResultValueTypeName,"A name that qualifies the process which was used in the determination of the result value (e.g., actual, estimated, calculated)."
+result,ResultWeightBasisText,"The name that represents the form of the sample or portion of the sample which is associated with the result value (e.g., wet weight, dry weight, ash-free dry weight)."
+result,ResultTimeBasisText,"The period of time (in days) over which a measurement was made. For example, BOD can be measured as 5 day or 20 day BOD."
+result,ResultTemperatureBasisText,"The name that represents the controlled temperature at which the sample was maintained during analysis, e.g. 25 deg BOD analysis."
+result,ResultParticleSizeBasisText,User defined free text describing the particle size class for which the associated result is defined.
+result,DataQuality/PrecisionValue,
+result,DataQuality/BiasValue,The systematic or persistent distortion of a measurement process which causes error in one direction.
+result,DataQuality/ConfidenceIntervalValue,
+result,DataQuality/UpperConfidenceLimitValue,
+result,DataQuality/LowerConfidenceLimitValue,
+result,ResultCommentText,Free text with general comments concerning the result.
+result,USGSPCode,"5-digit number used in the US Geological Survey computerized data system, National Water Information System (NWIS), to uniquely identify a specific constituent."
+result,ResultDepthHeightMeasure/MeasureValue,A measurement of the vertical location (measured from a reference point) at which a result occurred.
+result,ResultDepthHeightMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+result,ResultDepthAltitudeReferencePointText,The reference used to indicate the datum or reference used to establish the depth/altitude of a result.
+result,SubjectTaxonomicName,The name of the organism from which a tissue sample was taken.
+result,SampleTissueAnatomyName,The name of the anatomy from which a tissue sample was taken.
+result,BinaryObjectFileName,
+result,BinaryObjectFileTypeCode,
+result,ResultFileUrl,
+result,ResultAnalyticalMethod/MethodIdentifier,The identification number or code assigned by the method publisher.
+result,ResultAnalyticalMethod/MethodIdentifierContext,Identifies the source or data system that created or defined the identifier.
+result,ResultAnalyticalMethod/MethodName,The title that appears on the method from the method publisher.
+result,ResultAnalyticalMethod/MethodUrl,A link to an outside repository with additional data about the method.  This is primarily
+result,ResultAnalyticalMethod/MethodDescriptionText,
+result,LaboratoryName,The name of Lab responsible for the result.
+result,AnalysisStartDate,The calendar date on which the analysis began.
+result,ResultLaboratoryCommentText,Remarks which further describe the laboratory procedures which produced the result.
+result,ResultDetectionQuantitationLimitUrl,"A URL to access data that describes one or more detection or quantitation limits determined in a laboratory, linked to the result dataset by Result ID."
+result,DetectionQuantitationLimitTypeName,Text describing the type of detection or quantitation level used in the analysis of a characteristic.
+result,DetectionQuantitationLimitMeasure/MeasureValue,"Constituent concentration that, when processed through the complete method, produces a signal that is statistically different from a blank. Measure value is given in the units stored in DetectionQuantitationLimitMeasure/MeasureUnitCode."
+result,DetectionQuantitationLimitMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+result,LabSamplePreparationUrl,(this column is not yet populated) A WQP url to access one or more Lab Sample Preparation data.  Describes Lab Sample Preparation procedures which may alter the original state of the Sample and produce Lab subsamples.  These Lab Subsamples are analyzed and reported by the Lab as Sample results.
+result,LastUpdated,
+result,ProviderName,"The name of the database that provided the data to the Water Quality portal (E.G. WQX, NWIS)."
+station,OrganizationIdentifier,A designator used to uniquely identify a unique business establishment within a context.
+station,OrganizationFormalName,The legal designator (i.e. formal name) of an organization.
+station,MonitoringLocationIdentifier,"A designator used to describe the unique name, number, or code assigned to identify the monitoring location."
+station,MonitoringLocationName,The designator specified by the sampling organization for the site at which sampling or other activities are conducted.
+station,MonitoringLocationTypeName,The descriptive name for a type of monitoring location.
+station,MonitoringLocationDescriptionText,Text description of the monitoring location.
+station,HUCEightDigitCode,The 8 digit federal code used to identify the hydrologic unit of the monitoring location to the cataloging unit level of precision.
+station,DrainageAreaMeasure/MeasureValue,"The drainage basin of a lake, stream, wetland, or estuary site. Measure value is given in the units stored in DrainageAreaMeasure/MeasureUnitCode."
+station,DrainageAreaMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+station,ContributingDrainageAreaMeasure/MeasureValue,"The contributing drainage area of a lake, stream, wetland, or estuary site. Measure value is given in the units stored in ContributingDrainageAreaMeasure/MeasureUnitCode."
+station,ContributingDrainageAreaMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+station,LatitudeMeasure,The measure of the angular distance on a meridian north or south of the equator.
+station,LongitudeMeasure,The measure of the angular distance on a meridian east or west of the prime meridian.
+station,SourceMapScaleNumeric,The number that represents the proportional distance on the ground for one unit of measure on the map or photo.
+station,HorizontalAccuracyMeasure/MeasureValue,"The horizontal measure of the relative accuracy of the latitude and longitude coordinates."" Measure value is given in the units stored in HorizontalAccuracyMeasure/MeasureUnitCode."
+station,HorizontalAccuracyMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+station,HorizontalCollectionMethodName,
+station,HorizontalCoordinateReferenceSystemDatumName,The name that describes the reference datum used in determining latitude and longitude coordinates.
+station,VerticalMeasure/MeasureValue,"The measure of elevation (i.e., the altitude), above or below a reference datum. Measure value is given in the units stored in VerticalMeasure/MeasureUnitCode."
+station,VerticalMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+station,VerticalAccuracyMeasure/MeasureValue,The vertical measure of the relative accuracy of the latitude and longitude coordinates. Measure value is given in the units stored in VerticalAccuracyMeasure/MeasureUnitCode.
+station,VerticalAccuracyMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+station,VerticalCollectionMethodName,The name that identifies the method used to collect the vertical measure (i.e. the altitude) of a reference point.
+station,VerticalCoordinateReferenceSystemDatumName,"The name of the reference datum used to determine the vertical measure (i.e., the altitude)."
+station,CountryCode,A code designator used to identify a primary geopolitical unit of the world.
+station,StateCode,"A code designator used to identify a principal administrative subdivision of the United States, Canada, or Mexico."
+station,CountyCode,A code designator used to identify a U.S. county or county equivalent.
+station,AquiferName,Name of the aquifer in which the well is completed.
+station,LocalAqfrName,
+station,FormationTypeText,"Name of the primary formation or soils unit, in which the well is completed."
+station,AquiferTypeName,"The type of aquifer, such as confined or unconfined."
+station,ConstructionDateText,Date of construction when well was completed. May be year only.
+station,WellDepthMeasure/MeasureValue,Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling. Measure value is given in the units stored in WellDepthMeasure/MeasureUnitCode.
+station,WellDepthMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+station,WellHoleDepthMeasure/MeasureValue,Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling. Measure value is given in the units stored in WellHoleDepthMeasure/MeasureUnitCode.
+station,WellHoleDepthMeasure/MeasureUnitCode,The code that represents the unit for measuring the item.
+station,ProviderName,"The name of the database that provided the data to the Water Quality portal (E.G. WQX, NWIS)."

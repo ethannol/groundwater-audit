@@ -1,0 +1,96 @@
+GROUNDWATER AUDIT
+Evaluating LLM-assisted groundwater analysis
+Project brief for an autonomous implementation agent
+
+Build Groundwater Audit in this project directory. This brief is self-contained; you do not need the original conversation or any other repositories. Make routine implementation decisions and carry the project through data acquisition, analysis, evaluation, testing, and a finished report. Keep it small enough to explain in a five-minute interview.
+
+PURPOSE
+
+Ethan is pursuing a data science role at Mariana Minerals. His background includes geology/physics/mathematics, a master's in hydrology and water quality, environmental data work, production fraud-detection ML, and work since January 2025 as the founding engineer at a three-person AI startup. He wants data science to be his next role. This project should demonstrate scientific and statistical judgment, with practical fluency in LLM-assisted analysis.
+
+The central question is: Where does an LLM help produce a defensible analysis, and where can it introduce plausible errors that survive casual review?
+
+Do not decide the answer in advance. A model correctly identifying every problem is a valid result. So are negligible benefits or an inconclusive groundwater trend. The portfolio's value is in the quality of the investigation.
+
+THE ANALYTICAL TASK
+
+Use public groundwater chemistry data to ask: “Did measured concentrations of one constituent decline at repeatedly sampled wells over the available observation period?”
+
+Start by investigating arsenic in a small California region or a single monitoring study. Choose the actual constituent, geography, and dates after checking data availability. Prefer repeated observations, usable detection-limit information, and understandable sampling metadata. If that choice is unsuitable, select a better-supported groundwater constituent or region and briefly explain why. Do not spend the project building a national data pipeline.
+
+Describe change in observed concentrations. Do not infer a remediation effect, general improvement across an aquifer, or a health conclusion from an observational before/after comparison.
+
+Data entry points:
+
+- California GAMA data tools: https://www.waterboards.ca.gov/gama/online_tools.html
+- Water Quality Portal user guide and field definitions: https://www.waterqualitydata.us/portal_userguide/
+- Water Quality Portal web services: https://www.waterqualitydata.us/webservices_documentation/
+- Statistical reference for time dependence: https://itl.nist.gov/div898/handbook/eda/section3/eda35c.htm
+
+Verify the current download endpoints and data coverage. Portal profiles can differ in coverage of recent USGS records. Prefer a reproducible API query or published downloadable file over browser automation. Check redistribution terms before committing a data snapshot; otherwise provide a downloader and an allowed compact fixture.
+
+Save the retrieval query, download date, source attribution, checksum, and data dictionary. Keep the source snapshot unchanged. Record every cleaning and exclusion decision. Preserve site and sample identifiers, dates, units, chemical definition/speciation, sample fraction, analytical method, detection qualifiers, detection/reporting limits, and quality-control sample types when available. Missing metadata is a limitation to expose.
+
+MINIMUM ANALYSIS
+
+Build a small, checked Python analysis before evaluating model outputs. Choose the simplest appropriate methods; advanced methods are useful only when the data justify them.
+
+1. Describe coverage: wells, samples, dates, sampling frequency, missing fields, non-detects, and reporting limits.
+2. Establish which results are actually comparable. Convert compatible units explicitly; do not combine different chemical definitions, dissolved and total fractions, or incompatible methods without justification.
+3. Distinguish field samples from blanks, duplicates, and other quality-control records. Make joins and duplicate handling explicit; never silently multiply rows.
+4. Define the target quantity and the independent observational unit. Show how changing which wells are sampled affects pooled summaries. Compare a consistent well cohort where feasible, and state what population it represents.
+5. Handle non-detects as censored observations. Do not automatically replace them with zero, the limit, or half the limit. Use a justified method, transparent bounds/sensitivity analysis, or an explicit statement that the requested comparison is not identifiable.
+6. Report uncertainty appropriate to the sampling structure. Repeated samples from a well and measurements close together in time are not automatically independent. Explain assumptions and avoid precision unsupported by the data.
+
+Produce a few legible figures and a short scientific interpretation. Trace every numerical conclusion back to the calculation and selected observations.
+
+EVALUATION DESIGN
+
+Use one identified model/version initially, six frozen analytical tasks, and two repetitions of each task in each of two conditions: 24 bounded evaluation runs. Scale down if the authorized budget requires it. Record that change. Avoid a sprawling model leaderboard.
+
+Both conditions receive the same source data, documentation, analytical question, computational tools, and execution budget. Use fresh contexts with no access to reference answers, scoring code, previous answers, or hidden fixture-generation parameters.
+
+Condition A: ordinary LLM-assisted analysis. Give a competent neutral task prompt and access to Python, the data, and its documentation. Do not intentionally handicap the model or ask it to ignore metadata.
+
+Condition B: the same model and resources, plus a structured analytical workflow: inspect metadata and comparability, state assumptions, perform explicit checks, compute results in code, and support conclusions with evidence. This may include reusable validators. Document exactly what was added. Do not encode answers to held-out tasks in the workflow.
+
+Suggested tasks are data profiling, comparable-unit preparation, a descriptive summary with censoring, a pooled-versus-consistent-cohort comparison, an uncertainty assessment, and a short decision memo. Adapt these to the dataset's actual contents before freezing the task set.
+
+Develop a small separate set of controlled fixtures with known properties: equivalent unit conversions, a duplicated join key, changed detection limits, altered well composition, or unavailable information that should prevent a conclusion. Include clean cases too. Label all modified or synthetic data clearly. Keep evaluation variants out of prompt/workflow development. Real observations support a domain case study; fixtures support checks with known expected behavior. Neither should be passed off as the other.
+
+Use the reference calculations, invariance checks, and a written scientific rubric to evaluate outputs. Score numerical correctness separately from interpretation. Record consequential errors, unsupported claims, omitted material caveats, justified abstention, reproducibility, runtime, and model cost when available. A critical error changes a conclusion or recommendation; a stylistic disagreement is not one. Preserve correct outputs as well as failures. Do not rely on an LLM judge alone. Identify interpretive judgments that still need Ethan's review.
+
+The normal Python reference is a correctness reference, not a measured human productivity baseline. An autonomous agent cannot impersonate an unaided human analyst. Never label model runtime, coding-agent runtime, or the runtime of a finished script as human time saved.
+
+Provide a lightweight optional protocol for Ethan to measure active analyst time, including checking and corrections, on matched unseen tasks with and without assistance. Vary task order to reduce practice effects. If no human session has happened, report runtime and error evidence and leave the human-speedup question explicitly unmeasured. Do not invent review durations or retrospective time estimates.
+
+Keep prompts, model settings, budgets, outputs, code, execution logs, and scoring decisions. Capture results reproducibly and avoid treating two repeats as evidence of broad statistical superiority. A reference implementation can also contain errors: validate important computations with hand-calculable fixtures or independent checks.
+
+IMPLEMENTATION AND DELIVERABLES
+
+Use a compact Python project with pinned dependencies and straightforward commands. Pandas, a conventional statistical library, and Matplotlib are sufficient; choose additional dependencies only for a concrete need. A notebook plus scripts is enough. A web application, account system, database service, and elaborate agent framework are outside the initial scope.
+
+Deliver:
+
+- A README explaining the question, setup, commands, data provenance, and main findings.
+- A reproducible data acquisition/preparation path and checked reference analysis.
+- A readable notebook or report with figures and conclusions.
+- Frozen tasks, prompts, controlled fixtures, and a small evaluation runner with saved run artifacts.
+- Focused tests for consequential transformations and reference calculations: units, censoring, duplicate joins, grouping, and relevant uncertainty logic.
+- A results table showing both conditions and their actual errors, costs, and runtimes; no invented or selectively omitted runs.
+- A concise findings memo suitable for a hiring manager: what worked, what failed, what caught the failures, and which tasks appear worth assisting with an LLM. Include one or two concrete before/after examples if observed.
+- A five-minute walkthrough and a proposed resume bullet using only measured results. If results do not support a speedup claim, the bullet should describe the evaluation and findings instead.
+
+Separate recorded-run reports from commands that make new model calls. A fresh checkout should be able to reproduce deterministic checks and inspect recorded results without buying another evaluation run. Expose bounded run counts and token limits; record costs where the provider makes them available. Use only model access authorized for the implementation session and honor its spending limits. If access is unavailable, complete the offline work and runnable harness, and say exactly which evaluation remains unrun.
+
+WORKING RULES
+
+Work only in the fresh project directory. Do not read or modify any employer production systems, reuse their secrets, or depend on their private data. Do not publish a repository, deploy a site, submit an application, or contact Mariana as part of this brief. Produce a locally reviewable project.
+
+If running on Ethan's MacBook, his standing machine restrictions apply: do not launch Chrome, Chromium, Playwright, browser rendering, screenshots, or dev-world servers. Heavy tests go to the Mac mini via an authorized SSH setup or to CI. Small Python analyses and verified non-browser tests can run locally. Do not detach heavy jobs, and stop session-started processes when their work ends. A notebook rendered to a report and figures written directly by a plotting library do not require launching a browser. On another machine, follow that environment's instructions.
+
+COMPLETION STANDARD
+
+Finish a bounded, honest case study, rather than expanding the feature list. The data choice and analytical assumptions must be defensible, numerical results reproducible, model conditions comparable, and limitations attached to the claims they affect. A reader should be able to follow a conclusion from source observations through code to the final statement, inspect a model's original answer, and understand the analyst's judgment.
+
+Proceed autonomously on routine choices. Ask only for genuinely missing access or a decision that materially changes scope; continue independent work while waiting. End with the runnable commands, artifact locations, actual findings, and any narrowly stated unfinished evaluation.

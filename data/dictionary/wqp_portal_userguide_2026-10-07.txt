@@ -1,0 +1,1522 @@
+
+        WQP User Guide
+Skip to main content
+An official website of the United States government
+Here’s how you know
+Here’s how you know
+Official websites use .gov
+                            A 
+.gov
+ website belongs to an official government organization in the United
+                            States.
+Secure .gov websites use HTTPS
+                            A 
+lock
+ (
+Lock
+A locked padlock
+                            or 
+https://
+ means you’ve safely connected to the .gov website. Share
+                            sensitive information only on official, secure websites.
+                    NATIONAL WATER QUALITY MONITORING COUNCIL
+Menu
+                        Home
+Explore WQP Sites
+ NWIS 
+WQX 
+ Help & About 
+ What is the WQP? 
+ Contributing Organizations 
+ User Guide 
+ Web Services Guide 
+ FAQs 
+ Upload Data
+ Applications using the WQP 
+ Other Water Quality Portals 
+ Publications 
+ Contact Us
+New WQX 3.0 profiles are available at
+https://waterqualitydata.us/beta/
+.
+      These profiles will contain recent USGS data added since March 11, 2024,
+      which marks the beginning of limited accessibility for USGS data.
+      Read more about the 3.0 profiles and associated changes
+here
+.
+      This user interface only serves WQX2.2 profiles, which do NOT contain
+      USGS data added after March 11, 2024.
+The Water Quality Portal will transition to a new cloud
+      environment and database during the first week of September 2026. The system will
+      remain available throughout this period, and no user visible changes are expected.
+      If you notice anything unusual, please contact the WQX Helpdesk at
+WQX@epa.gov
+.
+WATER QUALITY PORTAL USER GUIDE
+Introduction
+Available Databases:
+Explanation of portal search parameters
+Location Parameters
+Basic location parameters
+FILTER RESULTS
+Basic filtering parameters
+DOWNLOAD THE DATA
+Explanation of data retrievals
+Table 4. "Site Data Only" Result Retrieval Metadata
+Table 5. "Project Data" Result Retrieval Metadata
+Table 6. "Project Monitoring Location Weighting" Result Retrieval Metadata
+Table 7. "Sample Results (Physical/Chemical)" Result Retrieval Metadata
+Table 8. "Sample Results (Biological)" Result Retrieval Metadata
+Table 9. "Sample Results (Narrow)" Result Retrieval Metadata
+Table 10. "Sampling Activity" Result Retrieval Metadata
+Table 11. "Sampling Activity Metrics" Result Retrieval Metadata
+Table 12. "Result Detection Quantitation Limit Data" Result Retrieval Metadata
+Download Water Quality Exchange allowable value lists and definitions
+Interpreting USGS data retrieved from the Water Quality Portal
+Cite the Water Quality Portal
+WQP User Guide
+Download Water Quality Exchange (WQX) domain value lists
+WATER QUALITY PORTAL USER GUIDE
+Introduction
+The 
+Water Quality Data Portal (WQP)
+ provides an easy way to access data stored in two large water quality databases. Input parameters on the 
+form
+ include 
+location
+, 
+site
+, 
+sampling
+, and 
+date
+ parameters. The WQP can return 
+site information
+ (locations where samples were collected), or it can return 
+sample results
+ (analytical data of collected samples). Any field in the form left blank will cause a search for 
+all
+ parameters in that field. 
+Example:
+ If a user selects US and California for the 
+country
+ and 
+state
+ respectively, but leaves the 
+county
+ field blank, data will be returned for 
+all
+ counties in California. All data will also be returned for the fields under 
+SITE PARAMETERS
+ and 
+SAMPLING PARAMETERS
+.
+The same input parameters can be used to make data retrievals using web services. For more information and examples on accessing the web services, see the 
+Web Services Guide
+. 
+The Portal website includes both a 
+Basic
+ and 
+Advanced
+ query form, both of which are designed for users who prefer a web interface rather than our web services. The 
+Basic
+ form provides a simplified user interface with minimal query options, while the 
+Advanced
+ form provides a more comprehensive suite of search capabilities. The Advanced form also will automatically generate query URL's that reflect the current selections. The URL's can be copied and pasted for sharing or for use in various programming environments.
+Available Databases:
+NWIS (USGS)
+ - Water-resources data collected from approximately 1.5 million sites in all 50 states, the District of Columbia, Puerto Rico, the Virgin Islands, Guam, American Samoa, and the Commonwealth of the Northern Mariana Islands. NWIS (USGS) is updated every 24 hours. Data recently added to NWIS (USGS) may not be immediately accessible through the WQP. Data are available for each location dating back to the earliest record available in the database.
+WQX (EPA)
+ - Formerly the STORET database, this is a data warehouse for water quality, biological, and physical data used by state environmental agencies, the EPA, other federal agencies, universities, private citizens, and others. WQX (EPA) is updated weekly on Thursday evening. Data recently added to WQX (EPA) may not be immediately accessible through the WQP. Data are available for each location dating back to the earliest record available in the database. Throughout the website, STORET and WQX are used interchangeably to refer to the WQX data warehouse.
+Explanation of portal search parameters
+The WQP can be searched through three different search options:
+Location parameters
+Site parameters
+Sampling parameters
+Location Parameters
+Basic location parameters
+Country
+ - Use the 
+country window
+ to select one or multiple 
+countries
+ represented in the database. Parentheses after each country represent which database(s) it is represented in. 
+Web Services Request:
+ Countries can be directly entered into the URL through their 
+FIPS country code
+. For the United States: 
+#countrycode=US
+State
+ - Use the 
+state window
+ to select one or multiple 
+states
+. Parentheses after each state represent which database(s) it is represented in.
+Web Services Request:
+ States can be directly entered into the URL through their 
+FIPS state code
+. For Iowa and Arizona: 
+#statecode=US%3A04&statecode=US%3A19
+County
+ - Use the 
+county window
+ to select one or multiple 
+counties
+ from the selected state(s). Parentheses after each county represent which database(s) it is represented in.
+Web Services Request:
+ Counties can be directly entered into the URL through their 
+FIPS county code
+. For Adams and Clay counties in Iowa: 
+#countycode=US%3A19%3A003&countycode=US%3A19%3A041
+Point Location
+ - Enter 
+latitude
+ and 
+longitude
+ (
+decimal degrees
+ referenced to NAD83), and 
+radial distance
+ (
+miles
+) to create a 
+search area
+. Longitudes in the western hemisphere begin with a negative sign. Many stations outside the continental US do not have latitude and longitude referenced to NAD83 and cannot be found using these parameters.
+Example:
+ 20 miles from latitude 46.12 degrees N, longitude 89.15 degrees W would be entered as:
+* Distance: 20
+* Latitude: 46.12
+* Longitude: -89.15
+Site Type
+  - 
+Site type
+ indicates a 
+natural
+ or 
+human-made
+ feature affecting the hydrologic conditions measured at a site. Use the 
+site type window
+ to select one or multiple site types. Parentheses after each site type represent which database(s) it is represented in. 
+Table 1
+ includes a definition for each available site type.
+Table 1. Available site types and definitions
+View Table
+Site Type
+Definition
+Aggregate groundwater use 
+(NWIS, STORET)
+An aggregate groundwater site type is used when it is not possible or practical to describe the specific sites as springs or as any type of well including 'multiple wells', or when water-use information is only available for the aggregate. Aggregate sites that span multiple counties should be coded with 000 as the county code, or an aggregate site can be created for each county.
+Aggregate surface-water-use 
+(NWIS, STORET)
+An aggregate surface-water site type is used when it is not possible or practical to describe the specific sites as diversions, outfalls, or land application sites, or when water-use information is only available for the aggregate. Aggregate sites that span multiple counties should be coded with 000 as the county code, or an aggregate site can be created for each county.
+Aggregate water use establishment 
+(NWIS)
+An aggregate class of water-using establishments or individuals that are associated with a specific geographic location and water-use category, such as all the industrial users located within a county. Identified using the national water-use category code and optionally classified using the Standard Industrial Classification (SIC) Code or North American Classification System (NAICS) Code. Used when specific information needed to create sites for the individual facilities or users is not available, or when it is not desirable to store the site-specific information in the database.
+Atmosphere
+A site established primarily to measure meteorological properties or atmospheric deposition.
+Estuary
+A coastal inlet of the sea or ocean; esp. the mouth of a river, where tide water normally mixes with stream water (modified, Webster). Salinity in estuaries typically ranges from 1 to 25 Practical Salinity Units (psu), as compared oceanic values around 35 psu.
+Facility
+A non-ambient location where environmental measurements are expected to be strongly influenced by current or previous activities of humans.
+Glacier
+Body of land ice that consists of recrystallized snow accumulated on the surface of the ground and moves slowly downslope over a period of years or centuries. Since glacial sites move, the lat-long precision for these sites is usually coarse.
+Lake, Reservoir, Impoundment
+An inland body of standing fresh or saline water that is generally too deep to permit submerged aquatic vegetation to take root across the entire body (cf: wetland). This site type includes an expanded part of a river, a reservoir behind a dam, and a natural or excavated depression containing a water body without surface-water inlet and/or outlet.
+Land
+A location on the surface of the earth that is not normally saturated with water. Land sites are appropriate for sampling vegetation, overland flow of water, or measuring land-surface properties such as temperature. (See also: Wetland).
+Ocean
+Site in the open ocean, gulf, or sea. (See also: Estuary).
+Spring
+A location at which the water table intersects the land surface, resulting in a natural flow of groundwater to the surface. Springs may be perennial, intermittent, or ephemeral.
+Stream
+A body of running water moving under gravity flow in a defined channel. The channel may be entirely natural, or altered by engineering practices through straightening, dredging, and (or) lining.
+Subsurface
+A location below the land surface, but not a well, soil hole, or excavation.
+Well
+A hole or shaft constructed in the earth intended to be used to locate, sample, or develop groundwater, oil, gas, or some other subsurface material.
+Wetland
+Land where saturation with water is the dominant factor determining the nature of soil development and the types of plant and animal communities living in the soil and on its surface (Cowardin, December 1979). Wetlands are found from the tundra to the tropics and on every continent except Antarctica. Wetlands are areas that are inundated or saturated by surface or groundwater at a frequency and duration sufficient to support, and that under normal circumstances do support, a prevalence of vegetation typically adapted for life in saturated soil conditions. Wetlands generally include swamps, marshes, bogs and similar areas. Wetlands may be forested or unforested, and naturally or artificially created.
+Advanced Location Parameters
+Additional search options are available in the 'Advanced' query form, including:
+Bounding Box
+ - Enter the North and South 
+latitudes
+ and the East and West 
+longitudes
+ (
+decimal degrees
+ referenced to NAD83) to create a bounding box. Longitudes in the western hemisphere should begin with a negative sign.
+Example:
+* North: 46.12
+* East: -89.15
+* South: 45.93
+* West: -89.68
+Organization ID
+ - Identifies a unique 
+business
+ or 
+company
+. Use the 
+organization ID window
+ to select one or multiple organization IDs. Type at least two characters for a list to appear. For more information on Water Quality Exchange (WQX) Organization IDs, see 
+About WQX (EPA)
+.
+Site ID
+ - Identifies a 
+monitoring location
+ by a unique name, number, or code. Use the 
+site ID window
+ to select one or multiple site IDs. Type at least two characters for a list to appear. 
+When making a web services request:
+ IDs are displayed as: AGENCY-STATION NUMBER. If STATION NUMBER is specified but not AGENCY, "USGS" will be assigned as the default.
+* For NWIS (USGS) site: 
+#siteid=USGS-301650089215300
+* For WQX (EPA) site: 
+#siteid=R10BUNKER-CUA005-5
+* For multiple sites: 
+#siteid=IN002-385000086310010&siteid=USSCS-311039092211614&siteid=USEPA-414120087304701
+HUC
+ - Identifies the 
+hydrological unit
+ (
+lists and maps of hydrologic units
+) up to the cataloging unit level of precision. Use the 
+HUC ID window
+ to select one or multiple HUC IDs. Separate multiple HUC IDs with a 
+semicolon
+ (";"). Select partial HUCs using 
+trailing wildcards
+ ("*"). 
+When making a web services request:
+* One site: 
+#huc=01010005
+* Multiple sites: 
+#huc=01010003%3B01010004
+* Partial HUCs: 
+010801*
+FILTER RESULTS
+Basic filtering parameters
+Data Source
+ - Select one or multiple 
+databases
+ from which the data will be retrieved. 
+All
+ databases are searched by default.
+Date Range
+ - 
+Start
+ and 
+end dates
+ to be used individually or together. Dates must be entered in 
+MM-DD-YYYY
+ format.
+Sample Media
+ - Identifies the 
+environmental medium
+ where a sample was taken. Use the 
+sample media window
+ to select one or multiple sample media types. Parentheses after each sample medium represent which database(s) it is represented in. 
+Table 2
+ includes a definition for each sample medium that is available.
+Table 2. Available sample media and definitions
+View Table
+Sample Medium
+Definition
+Air
+Atmospheric gases.
+Biological 
+(STORET)
+A biological source, including tissue, whole organisms, and whole or partial parts from animals or plants; from the WQX database.
+Biological Tissue 
+(NWIS only)
+Any type of tissue that comprises either whole or parts of insects, fish, or other organisms living in an aquatic environment, animals that may or may not have been collected from a water body, or whole or parts of plants, aquatic or non-aquatic.
+Habitat 
+(STORET)
+The habitat conditions at the monitoring site; physical features of the area surrounding the monitoring location site; from the WQX database.
+Other
+None of the other sample media.
+Sediment
+Includes bottom material and suspended sediment sample media. Bottom material is a mixture of mineral and organic matter that compose the top bed deposits (usually the first few inches) underlying a body of water. Suspended sediment is sediment carried in suspension by the turbulent components of the fluid or by the Brownian movement (a law of physics).
+Soil
+A wet or dry substance composed of unconsolidated fine grain rock fragments (minerals) and organic material that has been modified sufficiently by physical, chemical, or biological processes to support terrestrial plant growth.
+Tissue 
+(STORET)
+Any type of tissue that comprises either whole or parts of insects, fish, or other organisms living in an aquatic environment, animals that may or may not have been collected from a water body, or whole or parts of plants, aquatic or non-aquatic; from the WQX database.
+Water
+The physical or chemical composition of the water at the monitoring site.
+Characteristic Group
+ - Groups types of 
+environmental measurements
+. Use the 
+characteristic group window
+ to select one or multiple characteristic groups. Parentheses after each characteristic group represent which database(s) it is represented in. A complete listing of which characteristic matches to which characteristic group 
+is available for download
+.
+View Advanced Filtering Parameters
+Minimum sampling activities per site
+ - Returns only sites where at least a 
+minimum number
+ of sampling activities have been reported. Use the 
+minimum number window
+ to select a value; the default is 
+1
+.
+Minimum result per site
+ - Returns only sites where at least a 
+minimum number
+ of results have been reported. Use the 
+minimum results window
+ to select a value; the default is 
+1
+.
+Characteristic
+ - Identifies types of 
+environmental measurements
+. Use the 
+characteristics window
+ to select one or multiple characteristics. Parentheses after each characteristic represent which database(s) it is represented in. The names are derived from the WQX (EPA) 
+Substance Registry System (SRS)
+. USGS uses parameter codes for the same purpose and has 
+associated most parameters to SRS names
+.
+The nomenclature for WQX (EPA) and USGS characteristics are 
+not
+ identical. 
+Example:
+ The WQX (EPA) lists each dissolved oxygen characteristic, while the USGS classifies dissolved oxygen under "oxygen". Consequently, users interested in retrieving dissolved oxygen data from both databases must select 
+"dissolved oxygen"
+ from WQX (EPA) and 
+"oxygen"
+ from the WQP list of characteristics. Selecting 
+"oxygen"
+ will return dissolved oxygen results from the USGS 
+and
+ all WQX (EPA) results relating to free gaseous oxygen. 
+Small differences in naming may cause chemically identical characteristics to be listed under different names or names that are formatted differently. 
+Example:
+1,4-dichlorobenzene
+ may be listed as 
+"1,4-dichlorobenzene"
+, 
+"p-dichlorobenzene"
+, or 
+both
+. A user desiring all 
+1,4-dichlorobenzene
+ data would need to select 
+both
+ names (and variants thereof) to retrieve the results.
+Project ID
+ - Uniquely identifies a 
+data collection project
+. Use the 
+project ID window
+ to select one or multiple project IDs. Parentheses after each project ID represent which database it is represented in. 
+Parameter Code
+ - Identifies a characteristic using 
+NWIS (USGS) codes
+. Use the 
+parameter code window
+ to select one or multiple parameter codes. Specifying a parameter code will limit the query to 
+NWIS (USGS) only
+.
+Biological Parameters Assemblage
+ - Filter by parameters specific to biological organisms. 
+Assemblage
+ - An association of 
+interacting populations
+ of organisms in a given water body. 
+Example:
+ macroinvertabrates and fish/nekton.
+Taxonomic Name
+ - Filter by parameters specific to taxonomic name.
+Taxonomic Name
+ - 
+Genus name, species name
+ in binomial nomenclature. 
+Example:
+ for shovelnose sturgeon, 
+Scaphirhyncus platorynchus
+.
+DOWNLOAD THE DATA
+A note on 
+Data Type
+ - The data are delivered in a format and nomenclature defined by the 
+WQX-Outbound Schema
+. 
+Metadata
+ on these formats is displayed in 
+Tables 4-12
+.
+Data Profiles
+ - Select which profile (details on them in Section 'Explanation of dataretrievals' below) to download.
+File Format
+ - Choose a file format to download the result set. The available formats are listed and described in 
+Table 3
+.
+Table 3.
+ Available file formats
+View Table
+File Format
+Description
+Comma-separated
+Output format is comma-separated columns.
+Tab-separated
+Output format is tab-separated columns.
+MS Excel
+Output format is a .xlsx file compatible with MS Excel 2007 and greater(Excel 2003 and earlier may be able to use a helper program to open the file) . Excel 2007 and later have a limit of 1,048,576 rows. If your download file exceeds this limit, only the first 1,048,576 rows will open.
+Explanation of data retrievals
+Data Profiles
+There are hundreds of different 
+data elements
+ in the WQX 3.0 schema, which would make downloading all of them in a single file challenging to use and time-consuming to download. To make it easier for users to obtain only the subset of data elements in which they are interested, the data are grouped according to the type of data they describe, such as physical/chemical results data and metadata. These data elements grouped together for download are called Profiles. Some Profiles contain only metadata (e.g. site data or project data), while some contain results-level data, such as the ‘Sample Results’ Profiles. The results-level Profiles were designed to include the core data and metadata required for many common use cases such that additional Profiles are not required; however, each Profile contains a core set of data elements that enable joining individual tables together if needed. 
+Note
+: For users who are interested in obtaining every bit of data for a particular site or group of sites, it may be necessary to download multiple Profiles.
+Water monitoring data is delivered in a format and nomenclature defined by the 
+WQX-Outbound Schema
+. 
+Under 
+"DOWNLOAD DATA"
+, the data can be retrieved for the following profiles:
+Organization Data
+Site Data Only
+Project Data
+Project Monitoring Location Weighting
+*
+Sample Results (Physical/Chemical)
+Sample Results (Biological)
+Sample Results (Narrow)
+Sampling Activity
+Sampling Activity Metrics
+*
+Biological Habitat Metrics*
+Result Detection Quantitation Limit Data
+*
+*Available only in the Advanced form
+The tables below list the metadata for each retrieval type.
+Table 4.
+ "Site Data Only" Result Retrieval Metadata
+View Table
+Site Retrieval Element
+Definition
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+MonitoringLocationIdentifier
+A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
+MonitoringLocationName
+The designator specified by the sampling organization for the site at which sampling or other activities are conducted.
+MonitoringLocationTypeName
+The descriptive name for a type of monitoring location.
+MonitoringLocationDescriptionText
+Text description of the monitoring location.
+HUCEightDigitCode
+The 8 digit federal code used to identify the hydrologic unit of the monitoring location to the cataloging unit level of precision.
+DrainageAreaMeasure/MeasureValue*
+The drainage basin of a lake, stream, wetland, or estuary site. Measure value is given in the units stored in DrainageAreaMeasure/MeasureUnitCode.
+DrainageAreaMeasure/MeasureUnitCode*
+The code that represents the unit for measuring the item.
+ContributingDrainageAreaMeasure/MeasureValue*
+The contributing drainage area of a lake, stream, wetland, or estuary site. Measure value is given in the units stored in ContributingDrainageAreaMeasure/MeasureUnitCode.
+ContributingDrainageAreaMeasure/MeasureUnitCode*
+The code that represents the unit for measuring the item.
+LatitudeMeasure
+The measure of the angular distance on a meridian north or south of the equator.
+LongitudeMeasure
+The measure of the angular distance on a meridian east or west of the prime meridian.
+SourceMapScaleNumeric
+The number that represents the proportional distance on the ground for one unit of measure on the map or photo.
+HorizontalAccuracyMeasure/MeasureValue*
+The horizontal measure of the relative accuracy of the latitude and longitude coordinates." Measure value is given in the units stored in HorizontalAccuracyMeasure/MeasureUnitCode.
+HorizontalAccuracyMeasure/MeasureUnitCode*
+The code that represents the unit for measuring the item.
+HorizontalCollecitonMethodName
+The name that identifies the method used to determine the latitude and longitude coordinates for a point on the earth.
+HorizontalCoordinateReferenceSystemDatumName
+The name that describes the reference datum used in determining latitude and longitude coordinates.
+VerticalMeasure/MeasureValue
+The measure of elevation (i.e., the altitude), above or below a reference datum. Measure value is given in the units stored in VerticalMeasure/MeasureUnitCode.
+VerticalMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+VerticalAccuracyMeasure/MeasureValue*
+The vertical measure of the relative accuracy of the latitude and longitude coordinates. Measure value is given in the units stored in VerticalAccuracyMeasure/MeasureUnitCode.
+VerticalAccuracyMeasure/MeasureUnitCode*
+The code that represents the unit for measuring the item.
+VerticalCollectionMethodName
+The name that identifies the method used to collect the vertical measure (i.e. the altitude) of a reference point.
+VerticalCoordinateReferenceSystemDatumName
+The name of the reference datum used to determine the vertical measure (i.e., the altitude).
+CountryCode
+A code designator used to identify a primary geopolitical unit of the world.
+StateCode
+A code designator used to identify a principal administrative subdivision of the United States, Canada, or Mexico.
+CountyCode
+A code designator used to identify a U.S. county or county equivalent.
+AquiferName*
+Name of the aquifer in which the well is completed.
+FormationTypeText*
+Name of the primary formation or soils unit, in which the well is completed.
+AquiferTypeName*
+The type of aquifer, such as confined or unconfined.
+ConstructionDateText*
+Date of construction when well was completed. May be year only.
+WellDepthMeasure/MeasureValue*
+Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling. Measure value is given in the units stored in WellDepthMeasure/MeasureUnitCode.
+WellDepthMeasure/MeasureUnitCode*
+The code that represents the unit for measuring the item.
+WellHoleDepthMeasure/MeasureValue*
+Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling. Measure value is given in the units stored in WellHoleDepthMeasure/MeasureUnitCode.
+WellHoleDepthMeasure/MeasureUnitCode*
+The code that represents the unit for measuring the item.
+ProviderName
+The name of the database that provided the data to the Water Quality portal (E.G. WQX, NWIS).
+*Element is only in NWIS (USGS).
+Table 5.
+ "Project Data" Result Retrieval Metadata
+Contains information about projects to monitor water quality. Contains project IDs, to allow joins with other tables.
+View Table
+Project Retrieval Element
+Definition
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+ProjectIdentifier
+A designator used to uniquely identify a data collection project within a context of an organization.
+ProjectName
+The name assigned by the Organization (project leader or principal investigator) to the project.
+ProjectDescriptionText
+Project description, which may include a description of the project purpose, summary of the objectives, or brief summary of the results of the project.
+SamplingDesignTypeCode
+A code used to identify the type of sampling design employed for this project to ensure that sampling activities can support project objectives.
+QAPPApprovedIndicator
+Indicates whether a Quality Assurance Project Plan (QAPP) has been approved for the submitted project.
+QAPPApprovalAgencyName
+An outside approval authority identifier for the QAPP (e.g. EPA or State Organization).
+ProjectFileUrl
+A link to follow to access the files associated with the project.
+ProjectMonitorLocationWeightingURL
+A URL to get associated ProjectMonitoringLocationWeighting data. Only populated if there is Project Monitoring Location Weighting data.
+Table 6.
+ "Project Monitoring Location Weighting" Result Retrieval Metadata
+Contains information about locations where water quality monitoring was conducted. Includes information needed to display the locations in GIS software (latitude, longitude). Contains monitoring location IDs to allow joins with other tables.
+View Table
+Project Monitoring Location Element
+Definition
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+ProjectIdentifier
+A designator used to uniquely identify a data collection project within a context of an organization.
+MonitoringLocationIdentifier
+A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
+MeasureValue
+The recorded dimension, capacity, quality, or amount of something ascertained by measuring or observing.
+MeasureUnitCode
+The code that represents the unit for measuring the item.
+StatisticalStratumText
+Identifies the statistical stratum applied to this site.
+LocationCategoryName
+Free text describing a category of naturally similar site types, such as high-gradient.
+LocationStatusName
+Indicates whether this site is active and available for sampling.
+ReferenceLocationTypeCode
+Identifies whether this site is a reference or control site by specifying the reference location type.
+ReferenceLocationStartDate
+The calendar date on which the monitoring location started being used as a reference site.
+ReferenceLocationEndDate
+The calendar date on which the monitoring location stopped being used as a reference site.
+ResourceSubjectText
+A name given to the resource that created or defined the reference location.
+ResourceCreatorName
+An entity primarily responible for making the content of the resource that created or defined the reference location.
+ResourceSubjectText
+A topic of the content of the resource that created or defined the reference location.
+ResourcePublisherName
+An entity responsible for making the resource available that created or defined the reference location.
+ResourceDate
+A date of an event in the lifecycle of the resource that created or defined the reference location.
+ResourceIdentifier
+An unambiguous reference to the resource within a given context.
+CommentText
+General comments about the project monitoring location weighting.
+Table 7.
+ "Sample Results (Physical/Chemical)" Result Retrieval Metadata
+Contains a comprehensive set of WQX 3.0 data elements to determine the physical and/or chemical condition of water. Contains some biological data elements necessary to determine toxicity. Contains monitoring location IDs, activity IDs, and project IDs to allow joins with other tables.
+View Table
+Result Retrieval Element
+Definition
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+ActivityIdentifier
+Designator that uniquely identifies an activity within an organization.
+ActivityTypeCode
+The text describing the type of activity.
+ActivityMediaName
+Name or code indicating the environmental medium where the sample was taken.
+ActivityMediaSubdivisionName
+Name or code indicating the environmental matrix as a subdivision of the sample media.
+ActivityStartDate
+The calendar date on which the field activity is started.
+ActivityStartTime/Time
+The time of day that is reported when the field activity began, based on a 24-hour timescale.
+ActivityStartTime/TimeZoneCode
+The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+ActivityEndDate
+The calendar date when the field activity is completed.
+ActivityEndTime/Time
+The time of day that is reported when the field activity ended, based on a 24-hour timescale.
+ActivityEndTime/TimeZoneCode
+The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+ActivityDepthHeightMeasure/MeasureValue
+A measurement of the vertical location (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityDepthHeightMeasure/MeasureUnitCode.
+ActivityDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityDepthAltitudeReferencePointText
+The reference used to indicate the datum or reference used to establish the depth/altitude of an activity.
+ActivityTopDepthHeightMeasure/MeasureValue
+A measurement of the upper vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityTopDepthHeightMeasure/MeasureUnitCode.
+ActivityTopDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityBottomDepthHeightMeasure/MeasureValue
+A measurement of the lower vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityBottomDepthHeightMeasure/MeasureUnitCode.
+ActivityBottomDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ProjectIdentifier
+A designator used to uniquely identify a data collection project within a context of an organization.
+ActivityConductingOrganizationText
+A name of the Organization conducting an activity.
+MonitoringLocationIdentifier
+A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
+ActivityCommentText
+General comments concerning the activity.
+SampleAquifer*
+A code that designates the aquifer associated with groundwater samples.
+HydrologicCondition*
+Hydrologic condition is the hydrologic condition that is represented by the sample collected (i.e. ? normal, falling, rising, peak stage).
+HydrologicEvent*
+A hydrologic event that is represented by the sample collected (i.e. - storm, drought, snowmelt).
+SampleCollectionMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+SampleCollectionMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+SampleCollectionMethod/MethodName
+The title that appears on the method from the method publisher.
+SampleCollectionEquipmentName
+The name for the equipment used in collecting the sample.
+ResultDetectionConditionText
+The textual descriptor of a result.
+CharacteristicName
+The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field.
+ResultSampleFractionText
+The text name of the portion of the sample associated with results obtained from a physically-partitioned sample.
+ResultMeasureValue
+The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed. Measure value is given in the units stored in ResultMeasure/MeasureUnitCode.
+MeasureQualifierCode
+A code used to identify any qualifying issues that affect the results.
+ResultMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ResultStatusIdentifier
+Indicates the acceptability of the result with respect to QA/QC criteria.
+StatisticalBaseCode
+The code for the method used to calculate derived results.
+ResultValueTypeName
+A name that qualifies the process which was used in the determination of the result value (e.g., actual, estimated, calculated).
+ResultWeightBasisText
+The name that represents the form of the sample or portion of the sample which is associated with the result value (e.g., wet weight, dry weight, ash-free dry weight).
+ResultTimeBasisText
+The period of time (in days) over which a measurement was made. For example, BOD can be measured as 5 day or 20 day BOD.
+ResultTemperatureBasisText
+The name that represents the controlled temperature at which the sample was maintained during analysis, e.g. 25 deg BOD analysis.
+ResultParticleSizeBasisText
+User defined free text describing the particle size class for which the associated result is defined.
+PrecisionValue
+A measure of mutual agreement among individual measurements of the same property usually under prescribed similar conditions.
+ResultCommentText
+Free text with general comments concerning the result.
+USGSPCode*
+5-digit number used in the US Geological Survey computerized data system, National Water Information System (NWIS), to uniquely identify a specific constituent.
+ResultDepthHeightMeasure/MeasureValue†
+A measurement of the vertical location (measured from a reference point) at which a result occurred.
+ResultDepthHeightMeasure/MeasureUnitCode†
+The code that represents the unit for measuring the item.
+ResultDepthAltitudeReferencePointText†
+The reference used to indicate the datum or reference used to establish the depth/altitude of a result.
+SubjectTaxonomicName
+The name of the organism from which a tissue sample was taken.
+SampleTissueAnatomyName*
+The name of the anatomy from which a tissue sample was taken.
+ResultAnalyticalMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+ResultAnalyticalMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+ResultAnalyticalMethod/MethodName
+The title that appears on the method from the method publisher.
+MethodDescriptionText*
+A brief summary that provides general information about the method.
+LaboratoryName
+The name of Lab responsible for the result.
+AnalysisStartDate
+The calendar date on which the analysis began.
+ResultLaboratoryCommentText
+Remarks which further describe the laboratory procedures which produced the result.
+DetectionQuantitationLimitTypeName
+Text describing the type of detection or quantitation level used in the analysis of a characteristic.
+DetectionQuantitationLimitMeasure/MeasureValue
+Constituent concentration that, when processed through the complete method, produces a signal that is statistically different from a blank. Measure value is given in the units stored in DetectionQuantitationLimitMeasure/MeasureUnitCode.
+DetectionQuantitationLimitMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+PreparationStartDate
+The calendar date when the preparation/extraction of the sample for analysis began.
+DataProvider
+The source system that provided data to the Water Quality Portal (NWIS, WQX, etc).
+*Element is only in NWIS (USGS).
+†Element is only in WQX (EPA).
+Table 8.
+ "Sample Results (Biological)" Result Retrieval Metadata
+Contains a comprehensive set of WQX 3.0 data elements to determine the biological condition of water. Contains monitoring location IDs, activity IDs, and project IDs to allow joins with other tables. Does not contain data elements necessary to determine toxicity; see instead “Full Physical/Chemical Profile”.
+View Table
+Biological Result Retrieval Element
+Definition
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+ProjectIdentifier
+A designator used to uniquely identify a data collection project within a context of an organization.
+ActivityIdentifier
+Designator that uniquely identifies an activity within an organization.
+ActivityTypeCode
+The text describing the type of activity.
+ActivityMediaName
+Name or code indicating the environmental medium where the sample was taken.
+ActivityMediaSubdivisionName
+Name or code indicating the environmental matrix as a subdivision of the sample media.
+ActivityStartDate
+The calendar date on which the field activity is started.
+ActivityStartTime/Time
+The time of day that is reported when the field activity began, based on a 24-hour timescale.
+ActivityStartTime/TimeZoneCode
+The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+ActivityEndDate
+The calendar date when the field activity is completed.
+ActivityEndTime/Time
+The time of day that is reported when the field activity ended, based on a 24-hour timescale.
+ActivityEndTime/TimeZoneCode
+The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+ActivityRelativeDepthName
+The name that indicates the approximate location within the water column at which the activity occurred.
+ActivityDepthHeightMeasure/MeasureValue
+A measurement of the vertical location (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityDepthHeightMeasure/MeasureUnitCode.
+ActivityDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityTopDepthHeightMeasure/MeasureValue
+A measurement of the upper vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityTopDepthHeightMeasure/MeasureUnitCode.
+ActivityTopDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityBottomDepthHeightMeasure/MeasureValue
+A measurement of the lower vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityBottomDepthHeightMeasure/MeasureUnitCode.
+ActivityBottomDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityDepthAltitudeReferencePointText
+The reference used to indicate the datum or reference used to establish the depth/altitude of an activity.
+ActivityConductingOrganizationText
+A name of the Organization conducting an activity.
+ActivityLocation/LatitudeMeasure
+The measure of the angular distance on a meridian north or south of the equator of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/LongitudeMeasure
+The measure of the angular distance on a meridian east or west of the prime meridian of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/SourceMapScaleNumeric
+The number that represents the proportional distance on the ground for one unit of measure on the map or photo of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalAccuracyMeasure/MeasureValue
+The horizontal measure of the relative accuracy of the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalAccuracyMeasure/MeasureUnitCode
+The units of the  horizontal measure of the relative accuracy of the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalCollectionMethodName
+The name that identifies the method used to determine the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalCoordinateReferenceSystemDatumName
+The name that describes the reference datum used in determining of the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+AssemblageSampledName
+An association of interacting populations of organisms in a given waterbody.
+CollectionDuration/MeasureValue
+The length of time a collection procedure or protocol was performed (e.g. total energized time for electrofishing, or total time kick net used).
+CollectionDuration/MeasureUnitCode
+The units for the length of time a collection procedure or protocol was performed.
+SamplingComponentName
+Single entity within a sampling frame at which a collection procedure or protocol was performed.
+SamplingComponentPlaceInSeriesNumeric
+The order in which a component within the sampling frame was visited in relation to other components.
+ReachLengthMeasure/MeasureValue
+A measure of the water body length distance in which the procedure or protocol was performed.
+ReachLengthMeasure/MeasureUnitCode
+The code that represents the unit for measuring the Reach Length.
+ReachWidthMeasure/MeasureValue
+A measurement of the reach width during collection procedures.
+ReachWidthMeasure/MeasureUnitCode
+The code that represents the unit for measuring the Reach Width.
+PassCount
+The number of passes through the water from which the sample was collected.
+NetTypeName
+The text describing the type of net.
+NetSurfaceAreaMeasure/MeasureValue
+A measurement of the effective surface area of the net used during biological monitoring sample collection.
+NetSurfaceAreaMeasure/MeasureUnitCode
+The code that represents the unit for net surface area.
+NetMeshSizeMeasure/MeasureValue
+A measurement of the mesh size of the net used during biological monitoring sample collection.
+NetMeshSizeMeasure/MeasureUnitCode
+The code that represents the unit for net mesh size.
+BoatSpeedMeasure/MeasureValue
+A measurement of the boat speed during biological monitoring sample collection.
+BoatSpeedMeasure/MeasureUnitCode
+The code that represents the unit for boat speed.
+CurrentSpeedMeasure/MeasureValue
+A measurement of the current during biological monitoring sample collection.
+CurrentSpeedMeasure/MeasureUnitCode
+The code that represents the unit for current speed.
+ToxicityTestType
+Identifies the type of toxicity as either Acute or Chronic.
+SampleCollectionMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+SampleCollectionMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+SampleCollectionMethod/MethodName
+The title that appears on the method from the method publisher.
+SampleCollectionMethod/MethodQualifierTypeName
+Identifier of type of method that identifies it as reference, equivalent, or other.
+SampleCollectionMethod/MethodDescriptionText
+A brief summary that provides general information about the method.
+SampleCollectionEquipmentName
+The name for the equipment used in collecting the sample.
+SampleCollectionMethod/SampleCollectionEquipmentCommentText
+Free text with general comments further describing the sample collection equipment.
+SamplePreparationMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+SamplePreparationMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+SamplePreparationMethod/MethodName
+The title that appears on the method from the method publisher.
+SamplePreparationMethod/MethodQualifierTypeName
+Identifier of type of method that identifies it as reference, equivalent, or other.
+SamplePreparationMethod/MethodDescriptionText
+A brief summary that provides general information about the method.
+SampleContainerTypeName
+The text describing the sample container type.
+SampleContainerColorName
+The text describing the sample container color.
+ChemicalPreservativeUsedName
+Information describing the chemical means to preserve the sample.
+ThermalPreservativeUsedName
+Information describing the temperature means used to preserve the sample.
+SampleTransportStorageDescription
+The text describing sample handling and transport procedures used.
+DataLoggerLine
+The unique line identifier from a data logger result text file, normally a date/time format but could be any user defined name, e.g. "surface", "midwinter", and or "bottom".)
+ResultDetectionConditionText
+The textual descriptor of a result.
+CharacteristicName
+The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field.
+MethodSpecificationName
+Identifies the chemical speciation in which the measured result is expressed.
+ResultSampleFractionText
+The text name of the portion of the sample associated with results obtained from a physically-partitioned sample.
+ResultMeasureValue
+The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed. Measure value is given in the units stored in ResultMeasure/MeasureUnitCode.
+ResultMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+MeasureQualifierCode
+A code used to identify any qualifying issues that affect the results.
+ResultStatusIdentifier
+Indicates the acceptability of the result with respect to QA/QC criteria.
+StatisticalBaseCode
+The code for the method used to calculate derived results.
+ResultValueTypeName
+A name that qualifies the process which was used in the determination of the result value (e.g., actual, estimated, calculated).
+ResultWeightBasisText
+The name that represents the form of the sample or portion of the sample which is associated with the result value (e.g., wet weight, dry weight, ash-free dry weight).
+ResultTimeBasisText
+The period of time (in days) over which a measurement was made. For example, BOD can be measured as 5 day or 20 day BOD.
+ResultTemperatureBasisText
+The name that represents the controlled temperature at which the sample was maintained during analysis, e.g. 25 deg BOD analysis.
+ResultParticleSizeBasisText
+User defined free text describing the particle size class for which the associated result is defined.
+PrecisionValue
+A measure of mutual agreement among individual measurements of the same property usually under prescribed similar conditions.
+DataQuality/BiasValue
+The systematic or persistent distortion of a measurement process which causes error in one direction.
+ConfidenceIntervalValue
+A range of values constructed so that this range has a specified probability of including the true population mean.
+UpperConfidenceLimitValue
+Value of the upper end of the confidence interval.
+LowerConfidenceLimitValue
+Value of the lower end of the confidence interval.
+ResultCommentText
+Free text with general comments concerning the result.
+ResultDepthHeightMeasure/MeasureValue
+A measurement of the vertical location (measured from a reference point) at which a result occurred.
+ResultDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ResultDepthAltitudeReferencePointText
+The reference used to indicate the datum or reference used to establish the depth/altitude of a result.
+ResultSamplingPointName
+Single point name within a sampling frame or protocol that is associated with the reported result.
+BiologicalIntentName
+The primary reason the biological monitoring has occurred.
+BiologicalIndividualIdentifier
+A number uniquely identifying the individual in accordance with the total number of individuals reported by the user.
+SubjectTaxonomicName
+The name of the organism from which a tissue sample was taken.
+UnidentifiedSpeciesIdentifier
+A number or name assigned as a part of a taxonomic identification. Used with a valid genus name to indicate a unique species has been observed but not taxonomically identified.
+SampleTissueAnatomyName*
+The name of the anatomy from which a tissue sample was taken.
+GroupSummaryCountWeight/MeasureValue
+Captures the total count or total sample weight for a Group Summary, if BiologicalIntentName = "Group Summary".
+GroupSummaryCountWeight/MeasureUnitCode
+Units for Group Summary CountWeight, if BiologicalIntentName = "Group Summary".
+CellFormName
+The name of the cell form for phytoplankton organisms expressed as a result. A single phytoplankton species may have a result value for any or all of these cell forms.
+CellShapeName
+The cell shape of the phytoplankton organism.
+HabitName
+The position that the characteristic occupies in a food chain- May be semicolon delimited.
+VoltismName
+The number of broods or generations of the characteristic in a year.
+TaxonomicPollutionTolerance
+For entries representing taxa, a code representing the ability of the reported taxon to tolerate pollution.
+TaxonomicPollutionToleranceScaleText
+Provides a description of the scale used for the taxonomic pollution tolerance value.
+TrophicLevelName
+For entries representing taxa, a code representing the trophic level with which the reported taxon is typically assigned.
+FunctionalFeedingGroupName
+FunctionalFeedingGroupName.
+TaxonomicDetailsCitation/ResourceTitleName
+The name of the source that created or defined the Taxonomic Details.
+TaxonomicDetailsCitation/ResourceCreatorName
+An entity primarily responible for making the content of the resource.
+TaxonomicDetailsCitation/ResourceSubjectText
+A topic of the content of the resource.
+TaxonomicDetailsCitation/ResourcePublisherName
+An entity responsible for making the resource available.
+TaxonomicDetailsCitation/ResourceDate
+A date of an event in the lifecycle of the resource.
+TaxonomicDetailsCitation/ResourceIdentifier
+An unambiguous reference to the resource within a given context.
+ResultAnalyticalMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+ResultAnalyticalMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+ResultAnalyticalMethod/MethodName
+The title that appears on the method from the method publisher.
+ResultAnalyticalMethod/MethodQualifierTypeName
+Identifier of type of method that identifies it as reference, equivalent, or other.
+MethodDescriptionText*
+A brief summary that provides general information about the method.
+LaboratoryName
+The name of Lab responsible for the result.
+AnalysisStartDate
+The calendar date on which the analysis began.
+ResultLaboratoryCommentCode
+Code which maps to remarks which further describe the laboratory procedures which produced the result.
+ResultLaboratoryCommentText
+Remarks which further describe the laboratory procedures which produced the result.
+DetectionQuantitationLimitTypeName
+Text describing the type of detection or quantitation level used in the analysis of a characteristic.
+DetectionQuantitationLimitMeasure/MeasureValue
+Constituent concentration that, when processed through the complete method, produces a signal that is statistically different from a blank. Measure value is given in the units stored in DetectionQuantitationLimitMeasure/MeasureUnitCode.
+DetectionQuantitationLimitMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+LaboratoryAccreditationIndicator
+Indicates whether the laboratory is accredited.
+LaboratoryAccreditationAuthorityName
+An outside accreditation authority identifier.
+TaxonomistAccreditationIndicator
+Indicates whether the taxonomist is accredited.
+TaxonomistAccreditationAuthorityName
+An outside accreditation authority identifier for the taxonomist.
+PreparationStartDate
+The calendar date when the preparation/extraction of the sample for analysis began.
+ProviderName
+The source system that provided data to the Water Quality Portal (NWIS, WQX, etc).
+Table 9.
+ "Sample Results (Narrow)" Result Retrieval Metadata
+View Table
+This data profile contains minimal data from parts of the WQX data model that are not in the "Result" section of WQX. Activity data can be linked to the activityID through ActivityID, and ResultIdentifier can be used to link to ResultDetectionQuantitationLimit data. 
+Narrow data profile Result Retrieval Element
+Description
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+ActivityIdentifier
+Designator that uniquely identifies an activity within an organization.
+ActivityStartDate
+The calendar date on which the field activity is started.
+ActivityStartTime/Time
+The time of day that is reported when the field activity began, based on a 24-hour timescale.
+ActivityStartTime/TimeZoneCode
+The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+MonitoringLocationIdentifier
+A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
+ResultIdentifier
+The Identifier that links a result record to a Result Detection Quantitation Limit record.
+DataLoggerLine
+The unique line identifier from a data logger result text file, normally a date/time format but could be any user defined name, e.g. "surface", "midwinter", and or "bottom").
+ResultDetectionConditionText
+The textual descriptor of a result.
+MethodSpecificationName
+Identifies the chemical speciation in which the measured result is expressed.
+CharacteristicName
+The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field.
+ResultSampleFractionText
+The text name of the portion of the sample associated with results obtained from a physically-partitioned sample.
+ResultMeasureValue
+The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed. Measure value is given in the units stored in ResultMeasure/MeasureUnitCode.
+ResultMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+MeasureQualifierCode
+A code used to identify any qualifying issues that affect the results.
+ResultStatusIdentifier
+Indicates the acceptability of the result with respect to QA/QC criteria.
+StatisticalBaseCode
+The code for the method used to calculate derived results.
+ResultValueTypeName
+A name that qualifies the process which was used in the determination of the result value (e.g., actual, estimated, calculated).
+ResultWeightBasisText
+The name that represents the form of the sample or portion of the sample which is associated with the result value (e.g., wet weight, dry weight, ash-free dry weight).
+ResultTimeBasisText
+The period of time (in days) over which a measurement was made. For example, BOD can be measured as 5 day or 20 day BOD.
+ResultTemperatureBasisText
+The name that represents the controlled temperature at which the sample was maintained during analysis, e.g. 25 deg BOD analysis.
+ResultParticleSizeBasisText
+User defined free text describing the particle size class for which the associated result is defined.
+PrecisionValue
+A measure of mutual agreement among individual measurements of the same property usually under prescribed similar conditions.
+DataQuality/BiasValue
+The systematic or persistent distortion of a measurement process which causes error in one direction.
+ConfidenceIntervalValue
+A range of values constructed so that this range has a specified probability of including the true population mean.
+UpperConfidenceLimitValue
+Value of the upper end of the confidence interval.
+LowerConfidenceLimitValue
+Value of the lower end of the confidence interval.
+ResultCommentText
+Free text with general comments concerning the result.
+USGSPCode
+USGS-Specific, single point name within a sampling frame or protocol that is associated with the reported result.
+ResultDepthHeightMeasure/MeasureValue
+A measurement of the vertical location (measured from a reference point) at which a result occurred.
+ResultDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ResultDepthAltitudeReferencePointText
+The reference used to indicate the datum or reference used to establish the depth/altitude of a result.
+ResultSamplingPointName
+Single point name within a sampling frame or protocol that is associated with the reported result.
+BiologicalIntentName
+The primary reason the biological monitoring has occurred.
+BiologicalIndividualIdentifier
+A number uniquely identifying the individual in accordance with the total number of individuals reported by the user.
+SubjectTaxonomicName
+The name of the organism from which a tissue sample was taken.
+UnidentifiedSpeciesIdentifier
+A number or name assigned as a part of a taxonomic identification. Used with a valid genus name to indicate a unique species has been observed but not taxonomically identified.
+SampleTissueAnatomyName
+The name of the anatomy from which a tissue sample was taken.
+GroupSummaryCountWeight/MeasureValue
+Captures the total count or total sample weight for a Group Summary, if BiologicalIntentName = "Group Summary".
+GroupSummaryCountWeight/MeasureUnitCode
+Units for Group Summary CountWeight, if BiologicalIntentName = "Group Summary".
+CellFormName
+The name of the cell form for phytoplankton organisms expressed as a result. A single phytoplankton species may have a result value for any or all of these cell forms.
+CellShapeName
+The cell shape of the phytoplankton organism.
+HabitName
+The position that the characteristic occupies in a food chain- May be semicolon delimited.
+VoltismName
+The number of broods or generations of the characteristic in a year.
+TaxonomicPollutionTolerance
+For entries representing taxa, a code representing the ability of the reported taxon to tolerate pollution.
+TaxonomicPollutionToleranceScaleText
+Provides a description of the scale used for the taxonomic pollution tolerance value.
+TrophicLevelName
+For entries representing taxa, a code representing the trophic level with which the reported taxon is typically assigned.
+FunctionalFeedingGroupName
+FunctionalFeedingGroupName.
+TaxonomicDetailsCitation/ResourceTitleName
+The name of the source that created or defined the Taxonomic Details.
+TaxonomicDetailsCitation/ResourceCreatorName
+An entity primarily responible for making the content of the resource.
+TaxonomicDetailsCitation/ResourceSubjectText
+A topic of the content of the resource.
+TaxonomicDetailsCitation/ResourcePublisherName
+An entity responsible for making the resource available.
+TaxonomicDetailsCitation/ResourceDate
+A date of an event in the lifecycle of the resource.
+TaxonomicDetailsCitation/ResourceIdentifier
+An unambiguous reference to the resource within a given context.
+FrequencyClassInformationUrl
+(this column is not yet populated) A WQP url to access one or more sets of frequency class Information for a single result, linked by ResultIdentifier.  Frequency class information is a definition of a subgroup of biological communities by life stage, physical attribute, or abnormality to support frequency class studies.
+ResultAnalyticalMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+ResultAnalyticalMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+ResultAnalyticalMethod/MethodName
+The title that appears on the method from the method publisher.
+ResultAnalyticalMethod/MethodUrl
+A link to an outside repository with additional data about the method.  This is primarily 
+NEMI
+ at this time.
+ResultAnalyticalMethod/MethodQualifierTypeName
+Identifier of type of method that identifies it as reference, equivalent, or other.
+MethodDescriptionText
+A brief summary that provides general information about the method.
+LaboratoryName
+The name of Lab responsible for the result.
+AnalysisStartDate
+The calendar date on which the analysis began.
+AnalysisStartTime/Time
+The local time when the analysis began.
+AnalysisStartTime/TimeZoneCode
+The relative time zone when the analysis began.
+AnalysisEndDate
+The calendar date on which the analysis was finished.
+AnalysisEndTime/Time
+The local time when the analysis was finished.
+AnalysisEndTime/TimeZoneCode
+The relative time zone when the analysis was finished.
+ResultLaboratoryCommentCode
+Code which maps to remarks which further describe the laboratory procedures which produced the result.
+ResultLaboratoryCommentText
+Remarks which further describe the laboratory procedures which produced the result.
+ResultDetectionQuantitationLimitUrl
+A URL to access data that describes one or more detection or quantitation limits determined in a laboratory, linked to the result dataset by Result ID.
+LaboratoryAccreditationIndicator
+Indicates whether the laboratory is accredited.
+LaboratoryAccreditationAuthorityName
+An outside accreditation authority identifier.
+TaxonomistAccreditationIndicator
+Indicates whether the taxonomist is accredited.
+TaxonomistAccreditationAuthorityName
+An outside accreditation authority identifier for the taxonomist.
+LabSamplePreparationUrl
+(this column is not yet populated) A WQP url to access one or more Lab Sample Preparation data.  Describes Lab Sample Preparation procedures which may alter the original state of the Sample and produce Lab subsamples.  These Lab Subsamples are analyzed and reported by the Lab as Sample results.
+ProviderName
+The source system that provided data to the Water Quality Portal (NWIS, WQX, etc).
+Table 10.
+ "Sampling Activity" Result Retrieval Metadata
+Contains information about water quality monitoring activities. Contains activity IDs, to allow joins with other tables.
+View Table
+Activity Retrieval Element
+Description
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+MonitoringLocationIdentifier
+A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
+ProjectIdentifier
+A designator used to uniquely identify a data collection project within a context of an organization.
+ActivityIdentifier
+Designator that uniquely identifies an activity within an organization.
+ActivityTypeCode
+The text describing the type of activity.
+ActivityMediaName
+Name or code indicating the environmental medium where the sample was taken.
+ActivityMediaSubdivisionName
+Name or code indicating the environmental matrix as a subdivision of the sample media.
+ActivityStartDate
+The calendar date on which the field activity is started.
+ActivityStartTime/Time
+The time of day that is reported when the field activity began, based on a 24-hour timescale.
+ActivityStartTime/TimeZoneCode
+The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+ActivityEndDate
+The calendar date when the field activity is completed.
+ActivityEndTime/Time
+The time of day that is reported when the field activity ended, based on a 24-hour timescale.
+ActivityEndTime/TimeZoneCode
+The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept.
+ActivityRelativeDepthName
+The name that indicates the approximate location within the water column at which the activity occurred.
+ActivityDepthHeightMeasure/MeasureValue
+A measurement of the vertical location (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityDepthHeightMeasure/MeasureUnitCode.
+ActivityDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityTopDepthHeightMeasure/MeasureValue
+A measurement of the upper vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityTopDepthHeightMeasure/MeasureUnitCode.
+ActivityTopDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityBottomDepthHeightMeasure/MeasureValue
+A measurement of the lower vertical location of a vertical location range (measured from a reference point) at which an activity occurred. Measure value is given in the units stored in ActivityBottomDepthHeightMeasure/MeasureUnitCode.
+ActivityBottomDepthHeightMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ActivityDepthAltitudeReferencePointText
+The reference used to indicate the datum or reference used to establish the depth/altitude of an activity.
+ActivityConductingOrganizationText
+A name of the Organization conducting an activity.
+ActivityLocation/LatitudeMeasure
+The measure of the angular distance on a meridian north or south of the equator of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/LongitudeMeasure
+The measure of the angular distance on a meridian east or west of the prime meridian of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/SourceMapScaleNumeric
+The number that represents the proportional distance on the ground for one unit of measure on the map or photo of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalAccuracyMeasure/MeasureValue
+The horizontal measure of the relative accuracy of the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalAccuracyMeasure/MeasureUnitCode
+The units of the  horizontal measure of the relative accuracy of the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalCollectionMethodName
+The name that identifies the method used to determine the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+ActivityLocation/HorizontalCoordinateReferenceSystemDatumName
+The name that describes the reference datum used in determining of the latitude and longitude coordinates of the of the  actual monitoring site, if it is different from that described for in the formal station description.
+AssemblageSampledName
+An association of interacting populations of organisms in a given waterbody.
+CollectionDuration/MeasureValue
+The length of time a collection procedure or protocol was performed (e.g. total energized time for electrofishing, or total time kick net used).
+CollectionDuration/MeasureUnitCode
+The units for the length of time a collection procedure or protocol was performed.
+SamplingComponentName
+Single entity within a sampling frame at which a collection procedure or protocol was performed.
+SamplingComponentPlaceInSeriesNumeric
+The order in which a component within the sampling frame was visited in relation to other components.
+ReachLengthMeasure/MeasureValue
+A measure of the water body length distance in which the procedure or protocol was performed.
+ReachLengthMeasure/MeasureUnitCode
+The code that represents the unit for measuring the Reach Length.
+ReachWidthMeasure/MeasureValue
+A measurement of the reach width during collection procedures.
+ReachWidthMeasure/MeasureUnitCode
+The code that represents the unit for measuring the Reach Width.
+PassCount
+The number of passes through the water from which the sample was collected.
+NetTypeName
+The text describing the type of net.
+NetSurfaceAreaMeasure/MeasureValue
+A measurement of the effective surface area of the net used during biological monitoring sample collection.
+NetSurfaceAreaMeasure/MeasureUnitCode
+The code that represents the unit for net surface area.
+NetMeshSizeMeasure/MeasureValue
+A measurement of the mesh size of the net used during biological monitoring sample collection.
+NetMeshSizeMeasure/MeasureUnitCode
+The code that represents the unit for net mesh size.
+BoatSpeedMeasure/MeasureValue
+A measurement of the boat speed during biological monitoring sample collection.
+BoatSpeedMeasure/MeasureUnitCode
+The code that represents the unit for boat speed.
+CurrentSpeedMeasure/MeasureValue
+A measurement of the current during biological monitoring sample collection.
+CurrentSpeedMeasure/MeasureUnitCode
+The code that represents the unit for current speed.
+ToxicityTestType
+Identifies the type of toxicity as either Acute or Chronic.
+SampleCollectionMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+SampleCollectionMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+SampleCollectionMethod/MethodName
+The title that appears on the method from the method publisher.
+SampleCollectionMethod/MethodQualifierTypeName
+Identifier of type of method that identifies it as reference, equivalent, or other.
+SampleCollectionMethod/MethodDescriptionText
+A brief summary that provides general information about the method.
+SampleCollectionEquipmentName
+The name for the equipment used in collecting the sample.
+SampleCollectionMethod/SampleCollectionEquipmentCommentText
+Free text with general comments further describing the sample collection equipment.
+SamplePreparationMethod/MethodIdentifier
+The identification number or code assigned by the method publisher.
+SamplePreparationMethod/MethodIdentifierContext
+Identifies the source or data system that created or defined the identifier.
+SamplePreparationMethod/MethodName
+The title that appears on the method from the method publisher.
+SamplePreparationMethod/MethodQualifierTypeName
+Identifier of type of method that identifies it as reference, equivalent, or other.
+SamplePreparationMethod/MethodDescriptionText
+A brief summary that provides general information about the method.
+SampleContainerTypeName
+The text describing the sample container type.
+SampleContainerColorName
+The text describing the sample container color.
+ChemicalPreservativeUsedName
+Information describing the chemical means to preserve the sample.
+ThermalPreservativeUsedName
+Information describing the temperature means used to preserve the sample.
+SampleTransportStorageDescription
+The text describing sample handling and transport procedures used.
+DataLoggerLine
+The unique line identifier from a data logger result text file, normally a date/time format but could be any user defined name, e.g. "surface", "midwinter", and or "bottom").
+ResultDetectionConditionText
+The textual descriptor of a result.
+CharacteristicName
+The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field.
+MethodSpecificationName
+Identifies the chemical speciation in which the measured result is expressed.
+Table 11.
+ "Sampling Activity Metrics" Result Retrieval Metadata
+View Table
+Activity Metric Retrieval Element
+Description
+OrganizationIdentifier
+A designator used to uniquely identify a unique business establishment within a context.
+OrganizationFormalName
+The legal designator (i.e. formal name) of an organization.
+MonitoringLocationIdentifier
+A designator used to describe the unique name, number, or code assigned to identify the monitoring location.
+ProjectIdentifier
+A designator used to uniquely identify a data collection project within a context of an organization. Multiple projects may be concatenated together.
+ActivityIdentifier
+Designator that uniquely identifies an activity within an organization.
+ActivityMetricType/MetricTypeIdentifier
+A designator used to describe the unique name, number, or code assigned to identify the metric (Organization specific).
+ActivityMetricType/MetricTypeIdentifierContext
+Identifies the source or data system that created or defined the metric.
+ActivityMetricType/MetricTypeName
+Name of the activity metric type.
+MetricTypeCitation/ResourceTitleName
+Citation- A name given to the resource.
+MetricTypeCitation/ResourceCreatorName
+Citation- An entity primarily responible for making the content of the resource.
+MetricTypeCitation/ResourceSubjectText
+Citation- A topic of the content of the resource.
+MetricTypeCitation/ResourcePublisherName
+Citation- An entity responsible for making the resource available.
+MetricTypeCitation/ResourceDate
+Citation- A date of an event in the lifecycle of the resource.
+MetricTypeCitation/ResourceIdentifier
+Citation- An unambiguous reference to the resource within a given context.
+MetricTypeCitation/MetricTypeScaleText
+Citation- Provides a description of the scale used for the activity metric.
+MetricTypeCitation/FormulaDescriptionText
+Citation- Provides a description of the formula used to calculate the activity metric score.
+MetricValueMeasure/MeasureValue
+The recorded dimension, capacity, quality, or amount of something ascertained by measuring or observing.
+MetricValueMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+MetricValueMeasure/MetricScoreNumeric
+Provides the scaled or calculated score for the activity metric.
+MetricValueMeasure/MetricCommentText
+Free text with general comments concerning the metric.
+MetricValueMeasure/IndexIdentifier
+A unique designator used to identify a unique index record that the activity metric is associated with.
+Table 12.
+ "Result Detection Quantitation Limit Data" Result Retrieval Metadata
+View Table
+Constituent concentration that, when processed through the complete method, produces a signal that is statistically different from a blank.  There can be multiple Result Detection Quantitation limits per result, and they can be linked to results retrieved using the "narrow" result profile using ResultIdentifier. 
+Result Detection Quantitation Limit Element
+Description
+DetectionQuantitationLimitTypeName
+Text describing the type of detection or quantitation level used in the analysis of a characteristic.
+DetectionQuantitationLimitMeasure/MeasureValue
+Constituent concentration that, when processed through the complete method, produces a signal that is statistically different from a blank. Measure value is given in the units stored in DetectionQuantitationLimitMeasure/MeasureUnitCode.
+DetectionQuantitationLimitMeasure/MeasureUnitCode
+The code that represents the unit for measuring the item.
+ResultIdentifier
+The Identifier that links a result record to a Result Detection Quantitation Limit record.
+Download Water Quality Exchange allowable value lists and definitions
+Expand List
+Click the links below to download the domain lists as zipped files in Comma Separated Values (.csv) format
+All - The entire domain lists
+All Domains - All domain value lists as separate files in a single download
+Individual Domain Values Lists:
+ActivityGroupType
+ActivityMedia
+ActivityMediaSubdivision
+ActivityRelativeDepth
+ActivityType
+AddressType
+AnalyticalMethod
+AnalyticalMethodContext
+AquiferType
+Assemblage
+BiologicalIntent
+CellForm
+CellShape
+Characteristic
+CharacteristicAlias
+Country
+County
+DetectionQuantitationLimitType
+ElectronicAddressType
+FrequencyClassDescriptor
+FrequencyClassType
+GearProcedureUnit
+Habit
+HabitatSelectionMethod
+HorizontalCollectionMethod
+HorizontalCoordinateReferenceSystemDatum
+HydrologicCondition
+HydrologicEvent
+LocalAquiferCodeContext
+MeasureUnit
+MethodSpeciation
+MetricType
+MetricTypeContext
+MonitoringLocationType
+NationalAquifer
+NetType
+Organization
+QAQCCharacteristicValidation
+ReferenceLocationType
+RelativeDepth
+ResultDetectionCondition
+ResultLaboratoryComment
+ResultMeasureQualifier
+ResultMeasureValuePickList
+ResultSampleFraction
+ResultSamplingPointType
+ResultStatus
+ResultTemperatureBasis
+ResultTimeBasis
+ResultValueType
+ResultWeightBasis
+SampleCollectionEquipment
+SampleCollectionEquipmentType
+SampleContainerColor
+SampleContainerType
+SampleTissueAnatomy
+SamplingDesignType
+State
+StatisticalBase
+TargetCount
+Taxon
+TaxonAlias
+TaxonGroup
+TaxonRank
+TelephoneNumberType
+ThermalPreservativeUsed
+TimeZone
+ToxicityTestType
+Tribe
+VerticalCollectionMethod
+VerticalCoordinateReferenceSystemDatum
+Voltinism
+WellFormationType
+WellType
+Interpreting USGS data retrieved from the Water Quality Portal
+The USGS sourced data available on the Water Quality Portal may include data that have not received Director's approval and as such are provisional and subject to revision. The data are released on the condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use. USGS endeavors to ensure the accuracy of all water-quality data provided to the public. As part of our efforts to improve the timeliness and relevance of our data-collection efforts, provisional data are provided which may not have been reviewed. The majority of results are not changed during the review process, but errors do occur. The result status indicator is provided to guide data users. Results are initially coded with a result status of provisional. After review by a project hydrologist, the result status is usually changed to accepted. Laboratory results are initially reviewed at the laboratory and subsequently by the hydrologist. Sometimes, comprehensive reviews of quality-assurance data cause revisions to previously reviewed data, therefore an accepted status does not guarantee that results will never be updated.
+Cite the Water Quality Portal
+General Portal citations should use the following:
+Water Quality Portal. Washington (DC): National Water Quality Monitoring Council, United States Geological Survey (USGS), Environmental Protection Agency (EPA); 2021. https://doi.org/10.5066/P9QRKUVJ.
+Citations for specific datasets should use this format:
+National Water Quality Monitoring Council, YYYY, Water Quality Portal, accessed mm, dd, yyyy, hyperlink_for_query, https://doi.org/10.5066/P9QRKUVJ.
+What is
+                            the WQP?
+Contributing orgs
+Apps
+                            using the WQP
+Other
+                            Water Quality Portals
+Explore WQP
+                            sites
+ -->
+ -->
+NWIS (USGS)
+ Last Content Change: 
+WQX (EPA)
+ Last Content Change: 
+Agency Contact Center
+1-800-424-9067
+WQX@epa.gov
