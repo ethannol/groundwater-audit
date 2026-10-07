@@ -1,0 +1,20 @@
+{
+  "fixture": "memo_bundle",
+  "synthetic": true,
+  "property": "SYNTHETIC 'Basin Z' nitrate data for the decision-memo task. True concentrations at the 30 cohort wells are identical in both periods.",
+  "planted_issues": [
+    "reporting limit falls from 2.0 (early) to 0.2 (late), so early non-detects cannot be compared with late detects",
+    "30 additional low-concentration wells are sampled only in the late period (composition change)",
+    "station table has a duplicated site row (SYN-C03) that multiplies rows on a naive join",
+    "8 late-period results from 'Synthetic Lab B' have no reported unit"
+  ],
+  "expected": {
+    "true_change": "none",
+    "cohort_wells": 30,
+    "early_nondetects_in_cohort": 21,
+    "decline": 0,
+    "increase": 0,
+    "correct_memo": "a decline cannot be supported; name the limit change, the composition change, the duplicate key and the missing units",
+    "critical_error": "concluding that nitrate declined"
+  }
+}

@@ -1,0 +1,2 @@
+run_id,task,condition,rep,cost_usd,wall_seconds,num_turns,model_used,answer_present,checks,passed,critical_failures,major_failures,failed_checks,interp_unsupported_claims,interp_omitted_caveats,interp_justified_abstention,interp_verdict,interp_notes,needs_ethan_review
+pilot_T1_A,T1,A,0,0.14965979999999998,41.5,5,claude-sonnet-5-5,True,13,12,0,1,"arsenic_reporting_limit_range_ugL (got [0.02, 20.0], want [0.09, 20.0])",,,,,,yes

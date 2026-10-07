@@ -1,0 +1,20 @@
+Using CPython 3.12.0 interpreter at: /Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+Creating virtual environment at: /Users/ethannol/.cache/gwaudit/venv
+Activate with: source /Users/ethannol/.cache/gwaudit/venv/bin/activate
+Using Python 3.12.0 environment at: /Users/ethannol/.cache/gwaudit/venv
+Resolved 13 packages in 159ms
+Installed 13 packages in 134ms
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + fonttools==4.66.1
+ + kiwisolver==1.5.1
+ + matplotlib==3.11.2
+ + numpy==2.5.3
+ + packaging==26.3
+ + pandas==3.0.6
+ + pillow==12.3.0
+ + pyparsing==3.3.3
+ + python-dateutil==2.9.0.post0
+ + scipy==1.18.1
+ + six==1.17.0
+pilot_T1_A: cost $0.14965979999999998, 41.5s, turns 5, answer.json=True, error=False

@@ -1,0 +1,13 @@
+{
+  "fixture": "clean",
+  "synthetic": true,
+  "property": "clean; every well's late value is 0.7 x its early value",
+  "expected": {
+    "cohort_wells": 40,
+    "decline": 40,
+    "increase": 0,
+    "indeterminate": 0,
+    "median_ratio_late_over_early": 0.7,
+    "rows_after_preparation": 80
+  }
+}

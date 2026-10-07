@@ -1,0 +1,778 @@
+{
+  "periods": {
+    "early": [
+      2000,
+      2011
+    ],
+    "late": [
+      2012,
+      2023
+    ]
+  },
+  "thresholds_reference_only": {
+    "arsenic": 10.0,
+    "nitrate_as_n": 10.0
+  },
+  "arsenic": {
+    "label": "Arsenic, dissolved (ug/L)",
+    "coverage": {
+      "rows": 2997,
+      "wells": 993,
+      "first_date": "2000-03-28",
+      "last_date": "2023-05-05",
+      "samples_per_well": {
+        "1": 472,
+        "2": 169,
+        "3-5": 195,
+        "6+": 157
+      },
+      "median_days_between_samples_same_well": 368.0,
+      "censored": 245,
+      "censored_share": 0.0817,
+      "dnq": 3,
+      "estimated": 91,
+      "detected_without_limit": 369,
+      "time_missing": 64,
+      "status": {
+        "Accepted": 1721,
+        "Preliminary": 1190,
+        "Historical": 86
+      },
+      "labs": {
+        "USGS-National Water Quality Lab, Denver, CO": 1814,
+        "(blank)": 721,
+        "TestAmerica Labs - Irvine: Irvine, CA": 462
+      },
+      "methods": {
+        "PLM10": 1901,
+        "PLM42": 358,
+        "PLM40": 294,
+        "GF085": 210,
+        "(blank)": 125,
+        "PLM62": 104,
+        "PLA04": 5
+      },
+      "aquifers": {
+        "Basin and Range basin-fill aquifers": 2280,
+        "California Coastal Basin aquifers": 437,
+        "(blank)": 260,
+        "Other aquifers": 20
+      },
+      "same_day_multiple_activities_rows": 392
+    },
+    "limits_by_year": [
+      {
+        "year": 2000,
+        "count": 32,
+        "min": 0.2,
+        "median": 0.9,
+        "max": 2.0,
+        "n_all": 168,
+        "censored_share": 0.19
+      },
+      {
+        "year": 2001,
+        "count": 7,
+        "min": 2.0,
+        "median": 2.0,
+        "max": 2.0,
+        "n_all": 129,
+        "censored_share": 0.054
+      },
+      {
+        "year": 2002,
+        "count": 7,
+        "min": 0.2,
+        "median": 1.8,
+        "max": 2.0,
+        "n_all": 143,
+        "censored_share": 0.049
+      },
+      {
+        "year": 2003,
+        "count": 21,
+        "min": 0.2,
+        "median": 0.26,
+        "max": 1.9,
+        "n_all": 74,
+        "censored_share": 0.284
+      },
+      {
+        "year": 2004,
+        "count": 18,
+        "min": 0.2,
+        "median": 1.9,
+        "max": 1.9,
+        "n_all": 60,
+        "censored_share": 0.3
+      },
+      {
+        "year": 2005,
+        "count": 7,
+        "min": 1.9,
+        "median": 1.9,
+        "max": 1.9,
+        "n_all": 64,
+        "censored_share": 0.109
+      },
+      {
+        "year": 2006,
+        "count": 1,
+        "min": 1.0,
+        "median": 1.0,
+        "max": 1.0,
+        "n_all": 126,
+        "censored_share": 0.008
+      },
+      {
+        "year": 2007,
+        "count": 15,
+        "min": 0.12,
+        "median": 1.0,
+        "max": 1.0,
+        "n_all": 119,
+        "censored_share": 0.126
+      },
+      {
+        "year": 2008,
+        "count": 12,
+        "min": 1.0,
+        "median": 1.0,
+        "max": 1.0,
+        "n_all": 158,
+        "censored_share": 0.076
+      },
+      {
+        "year": 2009,
+        "count": 13,
+        "min": 1.0,
+        "median": 1.0,
+        "max": 1.0,
+        "n_all": 229,
+        "censored_share": 0.057
+      },
+      {
+        "year": 2010,
+        "count": 28,
+        "min": 0.13,
+        "median": 1.0,
+        "max": 5.0,
+        "n_all": 239,
+        "censored_share": 0.117
+      },
+      {
+        "year": 2011,
+        "count": 38,
+        "min": 1.0,
+        "median": 1.0,
+        "max": 1.0,
+        "n_all": 296,
+        "censored_share": 0.128
+      },
+      {
+        "year": 2012,
+        "count": 34,
+        "min": 0.09,
+        "median": 1.0,
+        "max": 20.0,
+        "n_all": 193,
+        "censored_share": 0.176
+      },
+      {
+        "year": 2013,
+        "count": 1,
+        "min": 0.1,
+        "median": 0.1,
+        "max": 0.1,
+        "n_all": 82,
+        "censored_share": 0.012
+      },
+      {
+        "year": 2015,
+        "count": 4,
+        "min": 0.1,
+        "median": 0.1,
+        "max": 0.3,
+        "n_all": 139,
+        "censored_share": 0.029
+      },
+      {
+        "year": 2018,
+        "count": 2,
+        "min": 0.3,
+        "median": 0.65,
+        "max": 1.0,
+        "n_all": 114,
+        "censored_share": 0.018
+      },
+      {
+        "year": 2019,
+        "count": 1,
+        "min": 0.1,
+        "median": 0.1,
+        "max": 0.1,
+        "n_all": 54,
+        "censored_share": 0.019
+      },
+      {
+        "year": 2020,
+        "count": 1,
+        "min": 0.1,
+        "median": 0.1,
+        "max": 0.1,
+        "n_all": 28,
+        "censored_share": 0.036
+      },
+      {
+        "year": 2022,
+        "count": 3,
+        "min": 0.1,
+        "median": 0.1,
+        "max": 0.1,
+        "n_all": 49,
+        "censored_share": 0.061
+      }
+    ],
+    "pooled_vs_cohort": {
+      "periods": {
+        "early": [
+          2000,
+          2011
+        ],
+        "late": [
+          2012,
+          2023
+        ]
+      },
+      "pooled_early": {
+        "wells": 659,
+        "n": 1805,
+        "censored": 199,
+        "km_median": 1.8999999999999773,
+        "km_p75": 5.399999999999977,
+        "above_threshold_share": 0.1562,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 1.9,
+        "sub_zero_median": 1.9,
+        "sub_limit_median": 2.0
+      },
+      "pooled_late": {
+        "wells": 629,
+        "n": 1192,
+        "censored": 46,
+        "km_median": 3.2999999999999545,
+        "km_p75": 14.600000000000023,
+        "above_threshold_share": null,
+        "above_threshold_undetermined": 5,
+        "sub_half_median": 3.3,
+        "sub_zero_median": 3.3,
+        "sub_limit_median": 3.3
+      },
+      "one_per_well_early": {
+        "wells": 659,
+        "n": 659,
+        "censored": 75,
+        "km_median": 1.8999999999999773,
+        "km_p75": 7.0,
+        "above_threshold_share": 0.1973,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 1.9,
+        "sub_zero_median": 1.9,
+        "sub_limit_median": 1.9
+      },
+      "one_per_well_late": {
+        "wells": 629,
+        "n": 629,
+        "censored": 34,
+        "km_median": 3.1000000000000227,
+        "km_p75": 13.100000000000023,
+        "above_threshold_share": null,
+        "above_threshold_undetermined": 1,
+        "sub_half_median": 3.2,
+        "sub_zero_median": 3.1,
+        "sub_limit_median": 3.2
+      },
+      "cohort_wells": 295,
+      "wells_only_early": 364,
+      "wells_only_late": 334,
+      "cohort_early": {
+        "wells": 295,
+        "n": 295,
+        "censored": 31,
+        "km_median": 2.6999999999999886,
+        "km_p75": 12.199999999999989,
+        "above_threshold_share": 0.2712,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 2.7,
+        "sub_zero_median": 2.7,
+        "sub_limit_median": 2.7
+      },
+      "cohort_late": {
+        "wells": 295,
+        "n": 295,
+        "censored": 31,
+        "km_median": 2.5999999999999943,
+        "km_p75": 12.199999999999989,
+        "above_threshold_share": 0.2712,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 2.6,
+        "sub_zero_median": 2.6,
+        "sub_limit_median": 2.6
+      }
+    },
+    "paired_change": {
+      "n_pairs": 295,
+      "decline": 145,
+      "increase": 106,
+      "indeterminate": 44,
+      "median_years_apart": 6.6,
+      "both_detected": 257,
+      "sign_test": {
+        "declines_among_determinate": 145,
+        "determinate": 251,
+        "share_declining": 0.5777,
+        "p_two_sided": 0.0163,
+        "ci95_share_declining": [
+          0.514,
+          0.6395
+        ]
+      },
+      "bootstrap_wells": {
+        "n_boot": 2000,
+        "seed": 20261007,
+        "share_declining_all_pairs": 0.4915,
+        "share_declining_ci95": [
+          0.4339,
+          0.5492
+        ],
+        "median_log_ratio_both_detected": -0.0335,
+        "median_log_ratio_ci95": [
+          -0.0703,
+          0.0
+        ]
+      },
+      "wilcoxon_both_detected": {
+        "n": 257,
+        "p_two_sided": 0.0015,
+        "median_ratio_late_over_early": 0.967
+      },
+      "substitution_sensitivity": {
+        "zero": {
+          "median_change": -0.01,
+          "share_declining": 0.5017
+        },
+        "half": {
+          "median_change": -0.02,
+          "share_declining": 0.5153
+        },
+        "limit": {
+          "median_change": -0.02,
+          "share_declining": 0.5119
+        }
+      }
+    },
+    "per_well_kendall": {
+      "wells_with_6plus_samples": 157,
+      "tau_le_-0.5": 20,
+      "tau_ge_0.5": 10,
+      "median_tau": -0.067
+    },
+    "replicate_precision": {
+      "pairs": 15,
+      "median_rpd_pct": 24.0,
+      "p90_rpd_pct": 69.12
+    }
+  },
+  "nitrate_as_n": {
+    "label": "Nitrate as N, dissolved (mg/L)",
+    "coverage": {
+      "rows": 2435,
+      "wells": 848,
+      "first_date": "2000-03-28",
+      "last_date": "2023-10-14",
+      "samples_per_well": {
+        "1": 456,
+        "2": 157,
+        "3-5": 119,
+        "6+": 116
+      },
+      "median_days_between_samples_same_well": 378.0,
+      "censored": 140,
+      "censored_share": 0.0575,
+      "dnq": 0,
+      "estimated": 85,
+      "detected_without_limit": 2180,
+      "time_missing": 0,
+      "status": {
+        "Preliminary": 1210,
+        "Accepted": 1138,
+        "Historical": 87
+      },
+      "labs": {
+        "(blank)": 2322,
+        "USGS-District Water-Quality Lab, San Diego, California": 113
+      },
+      "methods": {
+        "ALGOR": 2301,
+        "IC004": 112,
+        "(blank)": 22
+      },
+      "aquifers": {
+        "Basin and Range basin-fill aquifers": 1644,
+        "California Coastal Basin aquifers": 526,
+        "(blank)": 244,
+        "Other aquifers": 21
+      },
+      "same_day_multiple_activities_rows": 203
+    },
+    "limits_by_year": [
+      {
+        "year": 2000,
+        "count": 12,
+        "min": 0.05,
+        "median": 0.05,
+        "max": 0.05,
+        "n_all": 139,
+        "censored_share": 0.086
+      },
+      {
+        "year": 2001,
+        "count": 4,
+        "min": 0.047,
+        "median": 0.047,
+        "max": 0.047,
+        "n_all": 75,
+        "censored_share": 0.053
+      },
+      {
+        "year": 2002,
+        "count": 4,
+        "min": 0.05,
+        "median": 0.05,
+        "max": 0.05,
+        "n_all": 96,
+        "censored_share": 0.042
+      },
+      {
+        "year": 2003,
+        "count": 4,
+        "min": 0.06,
+        "median": 0.06,
+        "max": 0.06,
+        "n_all": 86,
+        "censored_share": 0.047
+      },
+      {
+        "year": 2004,
+        "count": 2,
+        "min": 0.05,
+        "median": 0.053,
+        "max": 0.056,
+        "n_all": 78,
+        "censored_share": 0.026
+      },
+      {
+        "year": 2005,
+        "count": 6,
+        "min": 0.06,
+        "median": 0.06,
+        "max": 0.06,
+        "n_all": 79,
+        "censored_share": 0.076
+      },
+      {
+        "year": 2007,
+        "count": 9,
+        "min": 0.039,
+        "median": 0.059,
+        "max": 0.06,
+        "n_all": 131,
+        "censored_share": 0.069
+      },
+      {
+        "year": 2008,
+        "count": 5,
+        "min": 0.037,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 113,
+        "censored_share": 0.044
+      },
+      {
+        "year": 2009,
+        "count": 14,
+        "min": 0.039,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 170,
+        "censored_share": 0.082
+      },
+      {
+        "year": 2010,
+        "count": 4,
+        "min": 0.02,
+        "median": 0.02,
+        "max": 0.02,
+        "n_all": 117,
+        "censored_share": 0.034
+      },
+      {
+        "year": 2011,
+        "count": 2,
+        "min": 0.04,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 163,
+        "censored_share": 0.012
+      },
+      {
+        "year": 2012,
+        "count": 4,
+        "min": 0.037,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 98,
+        "censored_share": 0.041
+      },
+      {
+        "year": 2013,
+        "count": 5,
+        "min": 0.039,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 80,
+        "censored_share": 0.062
+      },
+      {
+        "year": 2014,
+        "count": 13,
+        "min": 0.039,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 126,
+        "censored_share": 0.103
+      },
+      {
+        "year": 2015,
+        "count": 9,
+        "min": 0.039,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 137,
+        "censored_share": 0.066
+      },
+      {
+        "year": 2016,
+        "count": 19,
+        "min": 0.036,
+        "median": 0.04,
+        "max": 0.25,
+        "n_all": 262,
+        "censored_share": 0.073
+      },
+      {
+        "year": 2017,
+        "count": 4,
+        "min": 0.04,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 98,
+        "censored_share": 0.041
+      },
+      {
+        "year": 2018,
+        "count": 6,
+        "min": 0.038,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 109,
+        "censored_share": 0.055
+      },
+      {
+        "year": 2019,
+        "count": 5,
+        "min": 0.04,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 53,
+        "censored_share": 0.094
+      },
+      {
+        "year": 2020,
+        "count": 3,
+        "min": 0.04,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 27,
+        "censored_share": 0.111
+      },
+      {
+        "year": 2022,
+        "count": 2,
+        "min": 0.04,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 49,
+        "censored_share": 0.041
+      },
+      {
+        "year": 2023,
+        "count": 4,
+        "min": 0.038,
+        "median": 0.04,
+        "max": 0.04,
+        "n_all": 38,
+        "censored_share": 0.105
+      }
+    ],
+    "pooled_vs_cohort": {
+      "periods": {
+        "early": [
+          2000,
+          2011
+        ],
+        "late": [
+          2012,
+          2023
+        ]
+      },
+      "pooled_early": {
+        "wells": 490,
+        "n": 1337,
+        "censored": 66,
+        "km_median": 1.9899999999999949,
+        "km_p75": 4.650000000000006,
+        "above_threshold_share": 0.0598,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 1.99,
+        "sub_zero_median": 1.99,
+        "sub_limit_median": 1.99
+      },
+      "pooled_late": {
+        "wells": 548,
+        "n": 1098,
+        "censored": 74,
+        "km_median": 1.6000000000000014,
+        "km_p75": 4.539999999999999,
+        "above_threshold_share": 0.0902,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 1.6,
+        "sub_zero_median": 1.6,
+        "sub_limit_median": 1.6
+      },
+      "one_per_well_early": {
+        "wells": 490,
+        "n": 490,
+        "censored": 28,
+        "km_median": 1.8900000000000006,
+        "km_p75": 4.659999999999997,
+        "above_threshold_share": 0.0633,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 1.89,
+        "sub_zero_median": 1.89,
+        "sub_limit_median": 1.89
+      },
+      "one_per_well_late": {
+        "wells": 548,
+        "n": 548,
+        "censored": 43,
+        "km_median": 1.4200000000000017,
+        "km_p75": 4.32,
+        "above_threshold_share": 0.0894,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 1.4249999999999998,
+        "sub_zero_median": 1.4249999999999998,
+        "sub_limit_median": 1.4249999999999998
+      },
+      "cohort_wells": 190,
+      "wells_only_early": 300,
+      "wells_only_late": 358,
+      "cohort_early": {
+        "wells": 190,
+        "n": 190,
+        "censored": 8,
+        "km_median": 2.1499999999999986,
+        "km_p75": 4.330000000000002,
+        "above_threshold_share": 0.0579,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 2.1799999999999997,
+        "sub_zero_median": 2.1799999999999997,
+        "sub_limit_median": 2.1799999999999997
+      },
+      "cohort_late": {
+        "wells": 190,
+        "n": 190,
+        "censored": 7,
+        "km_median": 1.8299999999999983,
+        "km_p75": 4.57,
+        "above_threshold_share": 0.0421,
+        "above_threshold_undetermined": 0,
+        "sub_half_median": 1.8599999999999999,
+        "sub_zero_median": 1.8599999999999999,
+        "sub_limit_median": 1.8599999999999999
+      }
+    },
+    "paired_change": {
+      "n_pairs": 190,
+      "decline": 85,
+      "increase": 100,
+      "indeterminate": 5,
+      "median_years_apart": 8.12,
+      "both_detected": 180,
+      "sign_test": {
+        "declines_among_determinate": 85,
+        "determinate": 185,
+        "share_declining": 0.4595,
+        "p_two_sided": 0.3033,
+        "ci95_share_declining": [
+          0.3861,
+          0.5341
+        ]
+      },
+      "bootstrap_wells": {
+        "n_boot": 2000,
+        "seed": 20261007,
+        "share_declining_all_pairs": 0.4474,
+        "share_declining_ci95": [
+          0.3789,
+          0.5158
+        ],
+        "median_log_ratio_both_detected": 0.021,
+        "median_log_ratio_ci95": [
+          -0.0206,
+          0.0549
+        ]
+      },
+      "wilcoxon_both_detected": {
+        "n": 180,
+        "p_two_sided": 0.6121,
+        "median_ratio_late_over_early": 1.0212
+      },
+      "substitution_sensitivity": {
+        "zero": {
+          "median_change": 0.0135,
+          "share_declining": 0.4474
+        },
+        "half": {
+          "median_change": 0.0135,
+          "share_declining": 0.4684
+        },
+        "limit": {
+          "median_change": 0.01,
+          "share_declining": 0.4684
+        }
+      }
+    },
+    "per_well_kendall": {
+      "wells_with_6plus_samples": 116,
+      "tau_le_-0.5": 19,
+      "tau_ge_0.5": 24,
+      "median_tau": -0.019
+    },
+    "replicate_precision": {
+      "pairs": 11,
+      "median_rpd_pct": 8.31,
+      "p90_rpd_pct": 58.59
+    }
+  }
+}

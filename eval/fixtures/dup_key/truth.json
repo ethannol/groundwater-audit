@@ -1,0 +1,10 @@
+{
+  "fixture": "dup_key",
+  "synthetic": true,
+  "property": "station table has a duplicated MonitoringLocationIdentifier; a naive join multiplies that well's rows",
+  "expected": {
+    "rows_after_preparation": 80,
+    "rows_if_join_multiplies": 82,
+    "reference_pipeline_behaviour": "raises on non-unique station key"
+  }
+}

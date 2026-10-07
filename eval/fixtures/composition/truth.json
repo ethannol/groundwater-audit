@@ -1,0 +1,15 @@
+{
+  "fixture": "composition",
+  "synthetic": true,
+  "property": "20 high wells unchanged between periods; 40 low wells sampled only in the late period",
+  "expected": {
+    "pooled_median_early_about": 7.72,
+    "pooled_median_late_about": 1.11,
+    "median_convention": "lower median (the Kaplan-Meier quantile convention); values rounded to 3 significant figures in the CSV",
+    "cohort_wells": 20,
+    "decline": 0,
+    "increase": 0,
+    "indeterminate": 0,
+    "correct_conclusion": "pooled decline is a change in which wells were sampled, not a change at wells"
+  }
+}

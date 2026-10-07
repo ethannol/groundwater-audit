@@ -1,0 +1,13 @@
+{
+  "fixture": "unit_mix",
+  "synthetic": true,
+  "property": "clean data plus a derived 'mg/l asNO3' row (pcode 71851) for every late sample; the derived rows must be converted (x0.2259) and not counted as extra samples",
+  "expected": {
+    "rows_after_preparation": 80,
+    "cohort_wells": 40,
+    "decline": 40,
+    "increase": 0,
+    "median_ratio_late_over_early": 0.7,
+    "naive_row_count_if_not_deduplicated": 120
+  }
+}

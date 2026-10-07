@@ -1,0 +1,5 @@
+step,rule,rows_before,rows_after,rows_removed
+medium,ActivityMediaName == 'Water' and ActivityMediaSubdivisionName == 'Groundwater',13301,11748,1553
+activity_type,ActivityTypeCode == 'Sample-Routine' (replicates kept separately),11748,11093,655
+derived_duplicates,drop USGS pcodes 71851/71850: NWIS-computed re-expression of 00618/00620 in NO3 units,11093,8678,2415
+analysis_subset,"keep primary pcodes (01000 arsenic dissolved, 00618 nitrate as N dissolved, 00631 NO3+NO2 as N dissolved); other fractions kept in results_clean only",8678,7733,945

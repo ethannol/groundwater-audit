@@ -1,0 +1,66 @@
+{
+  "raw_rows": 13301,
+  "media_removed": {
+    "Leachate": 699,
+    "Elutriation": 385,
+    "Soil moisture": 368,
+    "Interstitial": 98,
+    "Bulk deposition": 3
+  },
+  "activity_type_removed": {
+    "Not determined": 73,
+    "Quality Control Sample-Reference Material": 4
+  },
+  "replicate_rows": 578,
+  "derived_duplicate_ratio_check": {
+    "71851/00618": {
+      "n_pairs": 2169,
+      "expected": 4.4266,
+      "ratio_min": 4.3636,
+      "ratio_max": 4.4722
+    },
+    "71850/00620": {
+      "n_pairs": 71,
+      "expected": 4.4266,
+      "ratio_min": 4.1818,
+      "ratio_max": 4.6364
+    }
+  },
+  "unmatched_station_rows": 0,
+  "results_clean_rows": 8678,
+  "analysis_rows": 7733,
+  "analysis_by_family": {
+    "arsenic": {
+      "rows": 2997,
+      "wells": 993,
+      "censored": 245,
+      "estimated": 91,
+      "dl_missing": 369,
+      "first": "2000-03-28",
+      "last": "2023-05-05"
+    },
+    "nitrate_as_n": {
+      "rows": 2435,
+      "wells": 848,
+      "censored": 140,
+      "estimated": 85,
+      "dl_missing": 2180,
+      "first": "2000-03-28",
+      "last": "2023-10-14"
+    },
+    "no3_no2_as_n": {
+      "rows": 2301,
+      "wells": 767,
+      "censored": 132,
+      "estimated": 20,
+      "dl_missing": 208,
+      "first": "2000-03-28",
+      "last": "2023-10-14"
+    }
+  },
+  "status_counts": {
+    "Accepted": 3900,
+    "Preliminary": 3573,
+    "Historical": 260
+  }
+}

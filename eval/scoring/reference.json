@@ -1,0 +1,191 @@
+{
+  "T1": {
+    "rows_total": 13301,
+    "rows_groundwater": 11748,
+    "rows_routine_groundwater": 11093,
+    "rows_qc_groundwater": {
+      "value": 582,
+      "also_accept": [
+        578
+      ]
+    },
+    "non_groundwater_media": {
+      "Leachate": 699,
+      "Elutriation": 385,
+      "Soil moisture": 368,
+      "Interstitial": 98,
+      "Bulk deposition": 3
+    },
+    "arsenic_dissolved_routine_rows": 2997,
+    "arsenic_dissolved_routine_wells": 993,
+    "arsenic_wells_with_2plus_samples": 521,
+    "arsenic_nondetect_rows": 245,
+    "arsenic_first_year": 2000,
+    "arsenic_last_year": 2023,
+    "arsenic_nondetect_limit_range_ugL": [
+      0.09,
+      20.0
+    ]
+  },
+  "T2": {
+    "rows_in_table": 2435,
+    "wells_in_table": 848,
+    "nondetect_rows_in_table": 140,
+    "pcodes_included": [
+      "00618"
+    ],
+    "rows_dropped_as_same_measurement_reexpressed": 2301,
+    "rows_dropped_as_same_measurement_reexpressed_incl_total": 2415,
+    "rows_excluded_other_fraction": 472,
+    "rows_excluded_other_fraction_incl_no3_units": 586,
+    "no3_to_n_factor": 0.2259,
+    "nitrate_plus_nitrite_combined": false,
+    "naive_pooled_row_count_all_nitrate_rows": 5322
+  },
+  "T3": {
+    "early": {
+      "n": 1805,
+      "n_nondetect": 199,
+      "reporting_limit_min": 0.12,
+      "reporting_limit_max": 5.0,
+      "median_ugL": 1.9,
+      "median_accept_range": [
+        1.7999999999999998,
+        2.1
+      ],
+      "share_above_10_ugL": 0.1562
+    },
+    "late": {
+      "n": 1192,
+      "n_nondetect": 46,
+      "reporting_limit_min": 0.09,
+      "reporting_limit_max": 20.0,
+      "median_ugL": 3.3,
+      "median_accept_range": [
+        3.1999999999999997,
+        3.4
+      ],
+      "share_above_10_ugL_bounds": [
+        0.3079,
+        0.3121
+      ],
+      "straddling_nondetects": 5
+    },
+    "share_above_10_identifiable_in_both_periods": false
+  },
+  "T4": {
+    "pooled_early": {
+      "n": 1337,
+      "wells": 490,
+      "median": 1.99
+    },
+    "pooled_late": {
+      "n": 1098,
+      "wells": 548,
+      "median": 1.6
+    },
+    "cohort_wells": 190,
+    "wells_only_early": 300,
+    "wells_only_late": 358,
+    "cohort_early_median": 2.15,
+    "cohort_late_median": 1.83,
+    "cohort_decline": 85,
+    "cohort_increase": 100,
+    "cohort_indeterminate": 5,
+    "did_nitrate_decline_accept": [
+      "no",
+      "not supported"
+    ],
+    "did_nitrate_decline_critical": [
+      "yes"
+    ]
+  },
+  "T5": {
+    "cohort_wells": 295,
+    "decline": 145,
+    "increase": 106,
+    "indeterminate": 44,
+    "share_declining_by_denominator": {
+      "determinate wells": {
+        "value": 0.5777,
+        "ci95": [
+          0.514,
+          0.6395
+        ]
+      },
+      "all cohort wells": {
+        "value": 0.4915,
+        "ci95": [
+          0.4339,
+          0.5492
+        ]
+      }
+    },
+    "sign_test_p": 0.0163,
+    "median_ratio_late_over_early_both_detected": 0.967,
+    "substitution_sensitivity": {
+      "zero": {
+        "median_change": -0.01,
+        "share_declining": 0.5017
+      },
+      "half": {
+        "median_change": -0.02,
+        "share_declining": 0.5153
+      },
+      "limit": {
+        "median_change": -0.02,
+        "share_declining": 0.5119
+      }
+    }
+  },
+  "T6": {
+    "recommendation_accept": [
+      "decline not supported",
+      "cannot be determined"
+    ],
+    "recommendation_critical": [
+      "decline supported"
+    ],
+    "cohort_wells_accept": [
+      30,
+      22
+    ],
+    "cohort_decline": 0,
+    "cohort_increase": 0,
+    "pooled_median_early_range": [
+      1.0,
+      2.0
+    ],
+    "pooled_median_late_about": 0.91,
+    "planted_issues": [
+      "reporting limit falls from 2.0 (early) to 0.2 (late), so early non-detects cannot be compared with late detects",
+      "30 additional low-concentration wells are sampled only in the late period (composition change)",
+      "station table has a duplicated site row (SYN-C03) that multiplies rows on a naive join",
+      "8 late-period results from 'Synthetic Lab B' have no reported unit"
+    ],
+    "issue_keywords": {
+      "limit_change": [
+        "reporting limit",
+        "detection limit",
+        "censor",
+        "non-detect",
+        "nondetect"
+      ],
+      "composition": [
+        "composition",
+        "only in",
+        "new wells",
+        "different wells",
+        "not sampled in",
+        "only sampled"
+      ],
+      "duplicate_key": [
+        "duplicate",
+        "duplicated"
+      ],
+      "missing_units": [
+        "unit"
+      ]
+    }
+  }
+}

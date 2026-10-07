@@ -1,0 +1,11 @@
+{
+  "fixture": "missing_units",
+  "synthetic": true,
+  "property": "12 late-period detected results from 'Synthetic Lab B' have no unit; their magnitude is not interpretable",
+  "expected": {
+    "rows_with_missing_unit": 12,
+    "reference_pipeline_behaviour": "raises UnitError; the analyst must exclude or abstain",
+    "cohort_wells_if_unit_missing_rows_excluded": 28,
+    "decline_among_remaining": 28
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "fixture": "dl_change",
+  "synthetic": true,
+  "property": "true concentrations identical in both periods; reporting limit falls from 5 to 0.5 so most early values are non-detects (<5) and most late values are detected around 1",
+  "expected": {
+    "true_change": "none",
+    "cohort_wells": 40,
+    "decline": 0,
+    "increase": 0,
+    "indeterminate_at_least": 38,
+    "substitution_half_limit_would_show": "spurious decline (2.5 -> ~1)",
+    "correct_conclusion": "change not identifiable for wells censored at 5 in the early period"
+  }
+}
