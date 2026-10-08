@@ -1,0 +1,11 @@
+# Arsenic (dissolved, 01000), San Bernardino County wells: 2000–2011 vs 2012–2023
+
+**Data.** Routine groundwater samples only (field replicates, QC and non-groundwater matrices dropped); each result counts once. Early n=1805, late n=1192.
+
+**Non-detects.** 196 early and 46 late results are "Not Detected" and carry their own reporting limit (early 0.12–5 µg/L, late 0.09–20 µg/L). I did not substitute a value such as DL/2. Each non-detect was treated as left-censored (below its limit). The median is the middle of the ordered sample, bracketed by setting censored values to 0 and to their limit. Non-detects are only 11% (early) and 4% (late) of results, and the medians sit above almost all limits, so the bounds are tight: early 1.9–2.0 (reported 1.95), late 3.3. Three early "Detected Not Quantified" records were treated as censored but not counted as non-detects.
+
+**Comparability.** The medians (about 1.95 vs 3.3 µg/L) are computed consistently and the censoring does not drive either of them, so they are comparable as statistics. The detection limits differ between periods, though. Late limits go as high as 20 µg/L, which reflects dilution or a different method, so the two periods are not measured with equal sensitivity.
+
+**Share above 10 µg/L (the US MCL).** Early is 15.6% and exactly identifiable, since every early limit is ≤5. Late is 30.8% from detected values, but 5 late non-detects have limits of 15–20 µg/L, which could hide values above 10. The late share is therefore only bounded, 30.8–31.2%. Strictly it is not identifiable in both periods, though the ambiguity is negligible here.
+
+**What this does and doesn't show.** Both the median and the share above 10 µg/L are higher in the late period, so the pooled results are higher. This does not show that arsenic increased in groundwater. The sampled wells, programs and sampling density differ between periods (results per year vary from about 20 to over 300). Wells were not tracked as a consistent panel, because each result was treated as one observation. A change in which wells were sampled could produce the same shift. Changes in lab methods and reporting limits matter too, but censoring is a minor factor for the medians. Establishing a real temporal change would need a same-wells (paired or repeated-measures) analysis.

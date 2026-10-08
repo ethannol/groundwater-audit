@@ -19,6 +19,7 @@
     "arsenic_dissolved_routine_rows": 2997,
     "arsenic_dissolved_routine_wells": 993,
     "arsenic_wells_with_2plus_samples": 521,
+    "arsenic_wells_with_2plus_dates": 490,
     "arsenic_nondetect_rows": 245,
     "arsenic_first_year": 2000,
     "arsenic_last_year": 2023,
@@ -180,8 +181,12 @@
         "only sampled"
       ],
       "duplicate_key": [
-        "duplicate",
-        "duplicated"
+        "duplicate station",
+        "duplicate row",
+        "duplicate record",
+        "station row",
+        "syn-c03",
+        "c03"
       ],
       "missing_units": [
         "unit"

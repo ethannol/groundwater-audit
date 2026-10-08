@@ -35,6 +35,7 @@ def main():
         "non_groundwater_media": raw.loc[~raw.index.isin(gw.index), "ActivityMediaSubdivisionName"].value_counts().to_dict(),
         "arsenic_dissolved_routine_rows": int(len(ars)), "arsenic_dissolved_routine_wells": int(ars["site_id"].nunique()),
         "arsenic_wells_with_2plus_samples": int((per_well >= 2).sum()),
+        "arsenic_wells_with_2plus_dates": int((ars.groupby("site_id")["date"].nunique() >= 2).sum()),
         "arsenic_nondetect_rows": int(ars["censored"].astype(str).eq("True").sum()),
         "arsenic_first_year": int(ars["year"].min()), "arsenic_last_year": int(ars["year"].max()),
         "arsenic_nondetect_limit_range_ugL": [float(ars.loc[ars["censored"].astype(str) == "True", "dl"].min()),
@@ -106,7 +107,7 @@ def main():
         "planted_issues": truth["planted_issues"],
         "issue_keywords": {"limit_change": ["reporting limit", "detection limit", "censor", "non-detect", "nondetect"],
                            "composition": ["composition", "only in", "new wells", "different wells", "not sampled in", "only sampled"],
-                           "duplicate_key": ["duplicate", "duplicated"],
+                           "duplicate_key": ["duplicate station", "duplicate row", "duplicate record", "station row", "syn-c03", "c03"],
                            "missing_units": ["unit"]},
     }
     out = ROOT / "eval" / "scoring" / "reference.json"

@@ -1,0 +1,1 @@
+{"early": {"n": 1805, "n_nondetect": 199, "reporting_limit_min": 0.12, "reporting_limit_max": 5.0, "median_ugL": 1.9, "share_above_10_ugL": 0.1562}, "late": {"n": 1192, "n_nondetect": 46, "reporting_limit_min": 0.09, "reporting_limit_max": 20.0, "median_ugL": 3.3, "share_above_10_ugL": 0.3079}}

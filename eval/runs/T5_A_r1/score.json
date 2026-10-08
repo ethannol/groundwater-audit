@@ -1,0 +1,96 @@
+{
+  "summary": {
+    "run_id": "T5_A_r1",
+    "task": "T5",
+    "condition": "A",
+    "rep": 1,
+    "cost_usd": 0.1897058,
+    "wall_seconds": 51.9,
+    "num_turns": 9,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 10,
+    "passed": 10,
+    "critical_failures": 0,
+    "major_failures": 0,
+    "failed_checks": ""
+  },
+  "checks": [
+    {
+      "check": "cohort_wells",
+      "pass": true,
+      "severity": "major",
+      "got": 295,
+      "want": 295
+    },
+    {
+      "check": "decline",
+      "pass": true,
+      "severity": "major",
+      "got": 146,
+      "want": 145
+    },
+    {
+      "check": "increase",
+      "pass": true,
+      "severity": "major",
+      "got": 105,
+      "want": 106
+    },
+    {
+      "check": "indeterminate",
+      "pass": true,
+      "severity": "major",
+      "got": 44,
+      "want": 44
+    },
+    {
+      "check": "share_declining_consistent_with_denominator",
+      "pass": true,
+      "severity": "major",
+      "got": "0.582 (determinate wells)",
+      "want": "0.5777 for determinate wells"
+    },
+    {
+      "check": "ci95_matches_denominator",
+      "pass": true,
+      "severity": "major",
+      "got": [
+        0.518,
+        0.643
+      ],
+      "want": [
+        0.514,
+        0.6395
+      ]
+    },
+    {
+      "check": "sign_test_p",
+      "pass": true,
+      "severity": "major",
+      "got": 0.0114,
+      "want": 0.0163
+    },
+    {
+      "check": "median_ratio_both_detected",
+      "pass": true,
+      "severity": "major",
+      "got": 0.962,
+      "want": 0.967
+    },
+    {
+      "check": "independent_unit_is_well",
+      "pass": true,
+      "severity": "critical",
+      "got": "The well (last routine groundwater result per well per period). Repeat samples within a well are col",
+      "want": "the well"
+    },
+    {
+      "check": "nondetect_sensitivity_reported",
+      "pass": true,
+      "severity": "minor",
+      "got": "Direction does not change. Declines vs increases (ties excluded): zero substitut",
+      "want": "a statement of sensitivity"
+    }
+  ]
+}

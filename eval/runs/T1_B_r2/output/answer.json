@@ -1,0 +1,59 @@
+{
+ "rows_total": 13301,
+ "rows_groundwater": 11748,
+ "rows_routine_groundwater": 11093,
+ "rows_qc_groundwater": 582,
+ "non_groundwater_media": {
+  "Leachate": 699,
+  "Elutriation": 385,
+  "Soil moisture": 368,
+  "Interstitial": 98,
+  "Bulk deposition": 3
+ },
+ "arsenic_dissolved_routine_rows": 2997,
+ "arsenic_dissolved_routine_wells": 993,
+ "arsenic_wells_with_2plus_samples": 490,
+ "arsenic_nondetect_rows": 245,
+ "arsenic_first_year": 2000,
+ "arsenic_last_year": 2023,
+ "arsenic_nondetect_limit_range_ugL": [
+  0.09,
+  20.0
+ ],
+ "fields_with_material_missingness": [
+  "LaboratoryName",
+  "AnalysisStartDate",
+  "ResultAnalyticalMethod/MethodIdentifier",
+  "ResultAnalyticalMethod/MethodName",
+  "DetectionQuantitationLimitTypeName",
+  "DetectionQuantitationLimitMeasure/MeasureValue",
+  "DetectionQuantitationLimitMeasure/MeasureUnitCode",
+  "ResultMeasureValue",
+  "ResultMeasure/MeasureUnitCode",
+  "ResultDetectionConditionText",
+  "ActivityDepthHeightMeasure/MeasureValue",
+  "ActivityTopDepthHeightMeasure/MeasureValue",
+  "ActivityBottomDepthHeightMeasure/MeasureValue",
+  "ProjectIdentifier",
+  "ActivityConductingOrganizationText",
+  "ActivityCommentText",
+  "ResultCommentText",
+  "MeasureQualifierCode",
+  "MethodSpeciationName",
+  "SampleAquifer",
+  "ActivityLocation/LatitudeMeasure",
+  "ActivityLocation/LongitudeMeasure"
+ ],
+ "notes": "Groundwater = Water + Groundwater subdivision (11,748 rows); 73 'Not determined' groundwater rows are neither routine nor QC and were excluded from routine counts (QC = 578 field replicates + 4 reference material). Dissolved arsenic (USGS 01000, ug/l) in routine groundwater: single parameter code, no re-expressed duplicates, (well, activity) key unique. Non-detect rows = non-empty ResultDetectionConditionText: 242 'Not Detected' + 3 'Detected Not Quantified'; none carries a numeric value, all have a limit in ug/l. Wells with 2+ samples counted by distinct sample date (490); by distinct ActivityIdentifier it is 521. 'Total' arsenic (01002, 3 rows) excluded.",
+ "checks": [
+  "unique key (MonitoringLocationIdentifier, ActivityIdentifier, ResultIdentifier): 0 duplicates in 2997 rows",
+  "single USGSPCode 01000 and single unit ug/l among detected rows; no re-expressed pairs possible",
+  "censoring_profile by year: censored share 0-30%, limits vary 0.02-20 ug/L",
+  "well-level sample counts: median 2, max 23, 993 wells"
+ ],
+ "caveats": [
+  "Reporting limits fall ~0.2-2 ug/L (2000-04) to 0.02-0.1 (2010s), with outliers up to 20; censored share changes with limits, so detection frequency trends are confounded",
+  "Laboratory missing on 24% of arsenic rows; 'Preliminary' status on 40%",
+  "Unbalanced well cohorts across years; wells are the independent unit"
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "early": {
+  "n": 1805,
+  "n_nondetect": 196,
+  "reporting_limit_min": 0.12,
+  "reporting_limit_max": 5.0,
+  "median_ugL": null,
+  "share_above_10_ugL": 0.1564927857935627,
+  "median_bounds": [
+   1.9,
+   2.0
+  ],
+  "share_above_10_bounds": [
+   0.1564927857935627,
+   0.1564927857935627
+  ],
+  "n_detected_not_quantified": 3
+ },
+ "late": {
+  "n": 1192,
+  "n_nondetect": 46,
+  "reporting_limit_min": 0.09,
+  "reporting_limit_max": 20.0,
+  "median_ugL": 3.3,
+  "share_above_10_ugL": null,
+  "median_bounds": [
+   3.3,
+   3.3
+  ],
+  "share_above_10_bounds": [
+   0.30788590604026844,
+   0.31208053691275167
+  ],
+  "n_detected_not_quantified": 0
+ }
+}

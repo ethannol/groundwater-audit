@@ -1,0 +1,22 @@
+{
+  "pooled_early": {
+    "n": 1337,
+    "wells": 490,
+    "median": 1.99
+  },
+  "pooled_late": {
+    "n": 1098,
+    "wells": 548,
+    "median": 1.6
+  },
+  "cohort_wells": 190,
+  "wells_only_early": 300,
+  "wells_only_late": 358,
+  "cohort_early_median": 2.1799999999999997,
+  "cohort_late_median": 1.8599999999999999,
+  "cohort_decline": 84,
+  "cohort_increase": 101,
+  "cohort_indeterminate": 5,
+  "did_nitrate_decline": "not supported",
+  "notes": "Filter: USGSPCode 00618 (Nitrate, dissolved, mg/L as N), ActivityType Sample-Routine, media subdivision Groundwater (excludes leachate, soil moisture, elutriation, QC replicates). Non-detects (Not Detected, no value) use the reporting limit as upper bound, 0 as lower bound; medians substitute the limit. Last result = latest date/time; 30 well-period groups had same-day multiple results (tie order arbitrary). Pooled medians fall (1.99 to 1.60) but the cohort changes are split 84 down / 101 up, with median paired change ~+0.01 mg/L; cohort medians (2.18 to 1.86) differ by a small amount without a consistent direction. Pooled drop mostly reflects different wells in each period (300 early-only, 358 late-only). Single last-sample comparisons ignore seasonality and sampling-depth/method changes."
+}

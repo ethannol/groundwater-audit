@@ -1,0 +1,30 @@
+{
+ "rows_in_table": 2435,
+ "wells_in_table": 848,
+ "nondetect_rows_in_table": 140,
+ "pcodes_included": [
+  "00618",
+  "71851"
+ ],
+ "pcodes_excluded": {
+  "00620": "Nitrate, Total fraction (unfiltered): different fraction from dissolved",
+  "71850": "Nitrate, Total fraction, reported as NO3: different fraction and unit-expressed",
+  "00630": "Nitrate+nitrite, Total: different chemical definition and fraction",
+  "00631": "Nitrate+nitrite, Dissolved: different chemical definition (includes nitrite)"
+ },
+ "unit_conversion_factors_used": {
+  "mg/l as N -> mg/l as N": 1.0,
+  "mg/l asNO3 -> mg/l as N": 0.2259
+ },
+ "rows_dropped_as_same_measurement_reexpressed": 2301,
+ "rows_excluded_other_fraction": 586,
+ "nitrate_plus_nitrite_combined": false,
+ "notes": "Filters: Sample-Routine, ActivityMediaSubdivisionName=Groundwater (excluded leachate, elutriation, soil moisture, interstitial, bulk deposition), CharacteristicName=Nitrate, Dissolved. 71851 (NO3) is the same measurement as 00618 re-expressed; 71851 rows dropped where the same activity has 00618; factor 14.0067/62.0049. QC replicates, reference material and 'Not determined' activity types excluded. Non-detects kept with censored flag and limit in mg/L as N; no substitution. Total-fraction nitrate rows counted in rows_excluded_other_fraction (nitrate char only, routine groundwater); 00630 rows (nitrate+nitrite total) not included in that count.",
+ "checks": [
+  "unique (site,activity) key after filtering",
+  "pair ratio 00618/71851 checked ~ conversion factor"
+ ],
+ "caveats": [
+  "Preliminary/historical status not filtered"
+ ]
+}

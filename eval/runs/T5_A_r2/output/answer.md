@@ -1,0 +1,12 @@
+# Arsenic change at cohort wells (San Bernardino Co., early 2000–2011 vs late 2012–2023)
+
+**What the data support.** 295 wells have routine dissolved-arsenic results in both periods. Comparing each well's last result per period: 146 declined, 105 increased and 44 are indeterminate (non-detect intervals overlap, or equal values). Of the 251 determinate wells, 58% declined (exact 95% CI 52–64%; two-sided sign test p≈0.011). The median late/early ratio among the 257 wells detected in both periods is 0.96. So the data support a modest tilt toward decline: slightly more wells fell than rose, with essentially no change in the typical concentration. They do not support a claim of widespread or large decline. If the 44 indeterminate wells are counted in the denominator, the declining share is 49% (146/295).
+
+**Precision justified.** Quote the declining share to about two significant figures ("roughly 58%, between about 52% and 64%"), and the ratio as "about 1, slightly below". The p-value shouldn't be read as sharper than "weak to moderate evidence".
+
+**Assumptions behind the uncertainty statement.**
+- *Independence of wells.* The binomial CI and sign test treat each well as an independent unit. The 295 wells sit in only 164 distinct 0.01° cells, and neighbouring wells share aquifers, pumping and sampling programmes. Spatial correlation would widen the true interval, and the lower bound is close enough to 50% that significance is fragile.
+- *Last-sample representativeness.* One sample per period per well ignores within-period variability and seasonality. The sampling dates within each period differ between wells. 62 well-periods had multiple results on the last date, and I used the latest by time.
+- *Non-detects.* Handled as intervals [0, reporting limit]. Zero, half-limit or full-limit substitution does not change the direction (declines 149–153 vs increases 107–108). Reporting limits vary from 0.1 to 100 µg/L over time, so a change in limits can masquerade as a change in concentration.
+- *No measurement-error allowance.* Any difference between two detected values counts as change, which inflates the determinate count. A tolerance, such as ±10–20%, would move more wells into "indeterminate".
+- *Selection.* The cohort is wells sampled repeatedly in both periods, which is not a random sample of the county's wells. Results apply to those wells only. Data are partly provisional (Preliminary status), and analytical methods changed over time.

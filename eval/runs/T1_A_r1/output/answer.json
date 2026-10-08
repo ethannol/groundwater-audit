@@ -1,0 +1,47 @@
+{
+ "rows_total": 13301,
+ "rows_groundwater": 11748,
+ "rows_routine_groundwater": 11093,
+ "rows_qc_groundwater": 582,
+ "non_groundwater_media": {
+  "Elutriation": 385,
+  "Leachate": 699,
+  "Soil moisture": 368,
+  "Interstitial": 98,
+  "Bulk deposition": 3
+ },
+ "arsenic_dissolved_routine_rows": 2997,
+ "arsenic_dissolved_routine_wells": 993,
+ "arsenic_wells_with_2plus_samples": 490,
+ "arsenic_nondetect_rows": 245,
+ "arsenic_first_year": 2000,
+ "arsenic_last_year": 2023,
+ "arsenic_nondetect_limit_range_ugL": [
+  0.09,
+  20.0
+ ],
+ "fields_with_material_missingness": [
+  "ResultMeasureValue",
+  "ResultMeasure/MeasureUnitCode",
+  "ResultDetectionConditionText",
+  "DetectionQuantitationLimitMeasure/MeasureValue",
+  "DetectionQuantitationLimitTypeName",
+  "DetectionQuantitationLimitMeasure/MeasureUnitCode",
+  "LaboratoryName",
+  "AnalysisStartDate",
+  "ActivityConductingOrganizationText",
+  "ActivityCommentText",
+  "ProjectIdentifier",
+  "ProjectName",
+  "SampleAquifer",
+  "MonitoringLocationName",
+  "ActivityDepthHeightMeasure/MeasureValue",
+  "ActivityTopDepthHeightMeasure/MeasureValue",
+  "ActivityBottomDepthHeightMeasure/MeasureValue",
+  "ResultAnalyticalMethod/MethodIdentifier",
+  "MeasureQualifierCode",
+  "ResultCommentText",
+  "LastUpdated"
+ ],
+ "notes": "Groundwater = Water + Groundwater subdivision. QC groundwater = 578 field replicates + 4 reference material; 73 groundwater rows have ActivityTypeCode 'Not determined' (neither routine nor QC, excluded from both). Dissolved arsenic routine rows are all USGS 01000 (total-fraction 01002 excluded). Wells with 2+ samples counts distinct sample dates per well (521 wells have 2+ rows, but 31 of those are same-day multiple rows). Non-detects counted per task definition (non-empty ResultDetectionConditionText): 242 'Not Detected' + 3 'Detected Not Quantified'; limit range 0.09-20 ug/L over mixed limit types (reporting, detection, elevated). Detects have a value; 245 non-detects have blank value and blank unit."
+}

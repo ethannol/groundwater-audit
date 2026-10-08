@@ -1,0 +1,33 @@
+{
+ "cohort_wells": 295,
+ "decline": 146,
+ "increase": 105,
+ "indeterminate": 44,
+ "share_declining": 0.582,
+ "share_declining_denominator": "determinate wells",
+ "share_declining_ci95": [
+  0.518,
+  0.643
+ ],
+ "ci_method": "Exact Clopper-Pearson binomial interval on well-level directions among determinate wells (wells independent, one last result per well per period)",
+ "sign_test_p": 0.011428309736164871,
+ "median_ratio_late_over_early_both_detected": 0.962,
+ "independent_unit": "The well (monitoring location): one last routine result per well per period, so repeated and temporally close samples within a well are collapsed. Wells are treated as independent although neighbouring wells share aquifers and USGS programs (spatial dependence not modelled).",
+ "nondetect_sensitivity": "Substitution used only as a labelled sensitivity check (decline/increase/tie): zero (149, 108, 38), half-limit (153, 107, 35), full-limit (152, 108, 35). Direction (more declines than increases or not) per substitution: zero: declines>increases, half: declines>increases, full: declines>increases. Primary classification uses intervals [0,DL] for non-detects.",
+ "notes": "Share declining among all cohort wells = 0.495 (146/295); 44 wells indeterminate and not counted as either direction. Median ratio over 257 both-detected wells, well-bootstrap 95% CI [0.93,1.00]. Reporting limits varied 0.09-20 ug/L over time; the 2012 limit of 20 ug/L is elevated. Last-result sample dates differ by well, so the interval between paired results varies. A 20%-change tolerance variant gives {'indeterminate': 212, 'decline': 57, 'increase': 26}.",
+ "checks": [
+  "rows 13301 -> 2997 after code 01000, Sample-Routine, Water/Groundwater",
+  "{'sites_per_period': {'early': 659, 'late': 629}, 'sites_in_all_periods': 295, 'sites_in_only_one_period': 698}",
+  "cohort composition: 295 wells in both periods",
+  "excluded QC replicates, 'Not determined' activity types, non-groundwater subdivisions (elutriation, soil moisture, interstitial, leachate) and total As (01002)",
+  "unit: all ug/l; no re-expressed pairs for As (single parameter code)",
+  "no duplicate (well,period) keys after last-result selection"
+ ],
+ "caveats": [
+  "Wells selected for repeat sampling are not a random sample of the county",
+  "Mixed methods/labs across periods",
+  "Preliminary results included",
+  "Spatial dependence between wells not modelled",
+  "Detected values treated as exact; analytical error ignored"
+ ]
+}

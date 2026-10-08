@@ -1,0 +1,24 @@
+{
+ "recommendation": "decline not supported",
+ "cohort_wells": 30,
+ "cohort_decline": 0,
+ "cohort_increase": 0,
+ "cohort_indeterminate": 30,
+ "pooled_median_early": 1.0,
+ "pooled_median_late": 1.435,
+ "data_problems_found": [
+  "Early non-detects with reporting limit 2 mg/L vs late limit 0.2 (21 early cohort rows censored; limits not comparable)",
+  "Late results from Synthetic Lab B with no unit reported (cohort wells C00-C07)",
+  "Unpaired wells: 30 N-wells sampled only in 2018, no 2005 baseline",
+  "Duplicate station row for SYN-C03",
+  "Late value identical to early value to 3 digits at 9 wells (possible carried-forward/copied data)"
+ ],
+ "rows_affected_by_each_problem": {
+  "Early non-detects with reporting limit 2 mg/L vs late limit 0.2 (21 early cohort rows censored; limits not comparable)": 21,
+  "Late results from Synthetic Lab B with no unit reported (cohort wells C00-C07)": 8,
+  "Unpaired wells: 30 N-wells sampled only in 2018, no 2005 baseline": 30,
+  "Duplicate station row for SYN-C03": 1,
+  "Late value identical to early value to 3 digits at 9 wells (possible carried-forward/copied data)": 9
+ },
+ "notes": "Cohort = 30 wells C00-C29 with both 2005 and 2018 results. No well shows a demonstrable decline: 21 early values are <2 and every late value at those wells is below 2 (cannot compare); 9 wells have identical early/late values. Early median is censored (<2); 1.0 uses DL/2 substitution and is not a measured value. Late cohort median 1.435. Including the 30 2018-only N wells would give an all-well 2018 median of 0.91, which would falsely suggest decline."
+}

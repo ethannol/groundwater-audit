@@ -1,0 +1,24 @@
+{
+  "recommendation": "cannot be determined",
+  "cohort_wells": 30,
+  "cohort_decline": 0, "cohort_increase": 0, "cohort_indeterminate": 30,
+  "pooled_median_early": 1.0,
+  "pooled_median_late": 1.435,
+  "data_problems_found": [
+    "2005 non-detects have a reporting limit (2 mg/L as N) ten times higher than 2018 (0.2), so 21 early values are only '<2' and cannot be compared with 2018 detects",
+    "Network change: 30 wells (N00-N29) were sampled only in 2018 and have low values; pooling all 2018 rows (median 0.91) would create an apparent decline",
+    "Late results from Synthetic Lab B have no unit reported (and a different lab than 2005)",
+    "Duplicate station row for SYN-C03",
+    "9 cohort wells have identical 2005 and 2018 values to the digit (possible copied/duplicated results)",
+    "Non-detect results have no numeric value, so pooled early median depends on a substitution convention"
+  ],
+  "rows_affected_by_each_problem": {
+    "2005 non-detects at higher reporting limit (2 vs 0.2)": 21,
+    "2018-only wells N00-N29 outside paired cohort": 30,
+    "Lab B results with missing units": 8,
+    "Duplicate station row SYN-C03": 1,
+    "Identical early/late values at 9 wells (rows)": 18,
+    "Non-detect rows lacking numeric value": 21
+  },
+  "notes": "Cohort = 30 wells (C00-C29) with both 2005 and 2018 results. No well can be shown to have declined: 21 were '<2' in 2005 and 2018 values (0.47-1.8) are all below that limit; 9 are unchanged. Pooled medians use the cohort only; early median uses non-detects at half the reporting limit (1.0; the true value is only known to be below 2), late cohort median 1.435. Using non-detects at the limit gives 2.0. The apparent decline in the pooled 2018 data (median 0.91 over all 60 wells) is driven by the added N wells."
+}

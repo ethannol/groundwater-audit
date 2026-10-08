@@ -53,8 +53,11 @@ def score_T1(a, c):
     got = a.get("non_groundwater_media") or {}
     check(c, "non_groundwater_media", isinstance(got, dict) and all(close(got.get(k), v) for k, v in r["non_groundwater_media"].items()),
           "major", got, r["non_groundwater_media"])
-    for k in ["arsenic_dissolved_routine_rows", "arsenic_dissolved_routine_wells", "arsenic_wells_with_2plus_samples", "arsenic_nondetect_rows"]:
+    for k in ["arsenic_dissolved_routine_rows", "arsenic_dissolved_routine_wells", "arsenic_nondetect_rows"]:
         check(c, k, close(a.get(k), r[k]), "major", a.get(k), r[k])
+    # 521 counts distinct activities, 490 distinct sampling dates; the task did not say which (see docs/decisions.md)
+    k = "arsenic_wells_with_2plus_samples"
+    check(c, k, num(a.get(k)) in [r[k], r["arsenic_wells_with_2plus_dates"]], "major", a.get(k), [r[k], r["arsenic_wells_with_2plus_dates"]])
     for k in ["arsenic_first_year", "arsenic_last_year"]:
         check(c, k, close(a.get(k), r[k]), "minor", a.get(k), r[k])
     rl = a.get("arsenic_nondetect_limit_range_ugL") or [None, None]
@@ -70,10 +73,12 @@ def score_T2(a, c):
     check(c, "wells_in_table", close(a.get("wells_in_table"), r["wells_in_table"]), "major", a.get("wells_in_table"), r["wells_in_table"])
     check(c, "nondetect_rows_in_table", close(a.get("nondetect_rows_in_table"), r["nondetect_rows_in_table"]), "major", a.get("nondetect_rows_in_table"), r["nondetect_rows_in_table"])
     inc = [str(p).zfill(5) for p in (a.get("pcodes_included") or [])]
-    check(c, "pcodes_included_only_00618", inc == ["00618"], "critical", inc, ["00618"])
+    # The row count is the critical check (double counting shows up there); the code list is reporting.
+    check(c, "pcodes_included_only_00618", inc == ["00618"], "major", inc, ["00618"])
     exc = {str(k).zfill(5): v for k, v in (a.get("pcodes_excluded") or {}).items()}
-    check(c, "excludes_71851_as_reexpression", "71851" in exc and bool(re.search(r"same|re-?express|duplicate|convert|derived|NO3", str(exc["71851"]), re.I)),
-          "critical", exc.get("71851"), "71851 excluded as a re-expression of 00618")
+    text71851 = str(exc.get("71851", "")) + " " + str(a.get("notes", ""))
+    check(c, "71851_treated_as_reexpression", "71851" in text71851 and bool(re.search(r"same|re-?express|duplicate|convert|derived|NO3", text71851, re.I)),
+          "critical", text71851[:100], "71851 identified as a re-expression of 00618 (in pcodes_excluded or notes)")
     check(c, "excludes_00631_different_definition", "00631" in exc, "major", exc.get("00631"), "00631 excluded (nitrate+nitrite)")
     got = a.get("rows_dropped_as_same_measurement_reexpressed")
     check(c, "rows_dropped_as_same_measurement_reexpressed", num(got) in [r["rows_dropped_as_same_measurement_reexpressed"], r["rows_dropped_as_same_measurement_reexpressed_incl_total"]],
@@ -93,12 +98,14 @@ def score_T3(a, c):
     for p in ["early", "late"]:
         g = a.get(p) or {}
         check(c, f"{p}_n", close(g.get("n"), r[p]["n"]), "major", g.get("n"), r[p]["n"])
-        check(c, f"{p}_n_nondetect", close(g.get("n_nondetect"), r[p]["n_nondetect"]), "major", g.get("n_nondetect"), r[p]["n_nondetect"])
+        # 'Detected Not Quantified' rows (3, early) may be counted as non-detects or not; both readings accepted
+        check(c, f"{p}_n_nondetect", close(g.get("n_nondetect"), r[p]["n_nondetect"], 3), "major", g.get("n_nondetect"), f"{r[p]['n_nondetect']} (±3 DNQ rows)")
         check(c, f"{p}_reporting_limit_range", close(g.get("reporting_limit_min"), r[p]["reporting_limit_min"], 0.011) and close(g.get("reporting_limit_max"), r[p]["reporting_limit_max"], 0.011),
               "major", [g.get("reporting_limit_min"), g.get("reporting_limit_max")], [r[p]["reporting_limit_min"], r[p]["reporting_limit_max"]])
         lo, hi = r[p]["median_accept_range"]
         m = num(g.get("median_ugL"))
-        check(c, f"{p}_median", m is not None and lo <= m <= hi, "major", g.get("median_ugL"), f"{r[p]['median_ugL']} (accept {lo:.2f}-{hi:.2f})")
+        bounds_given = m is None and bool(re.search(r"bound", str(a.get("median_method", "")) + str(a.get("notes", "")), re.I))
+        check(c, f"{p}_median", (m is not None and lo <= m <= hi) or bounds_given, "major", g.get("median_ugL"), f"{r[p]['median_ugL']} (accept {lo:.2f}-{hi:.2f}, or null with stated bounds)")
     e = a.get("early") or {}
     check(c, "early_share_above_10", close(e.get("share_above_10_ugL"), r["early"]["share_above_10_ugL"], 0.005), "major", e.get("share_above_10_ugL"), r["early"]["share_above_10_ugL"])
     l = a.get("late") or {}

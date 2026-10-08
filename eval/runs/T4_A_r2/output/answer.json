@@ -1,0 +1,22 @@
+{
+  "pooled_early": {
+    "n": 1337,
+    "wells": 490,
+    "median": 1.99
+  },
+  "pooled_late": {
+    "n": 1098,
+    "wells": 548,
+    "median": 1.6
+  },
+  "cohort_wells": 190,
+  "wells_only_early": 300,
+  "wells_only_late": 358,
+  "cohort_early_median": 2.1799999999999997,
+  "cohort_late_median": 1.8599999999999999,
+  "cohort_decline": 84,
+  "cohort_increase": 101,
+  "cohort_indeterminate": 5,
+  "did_nitrate_decline": "not supported",
+  "notes": "Filter: USGS pcode 00618, Sample-Routine, Groundwater media only (excludes field replicates, leachate, soil-moisture, elutriation etc.). Non-detects (Not Detected, with reporting limit) entered at the limit for medians (medians unchanged if set to 0 or DL/2) and treated as [0, DL] intervals for classification. Last result = latest date/time in period; 73 well-dates had several same-day results, so the choice among those is arbitrary. Pooled medians fall (1.99 to 1.60) but compare different well sets (490 vs 548 wells, only 190 shared). In the cohort, 84 wells declined, 101 increased, 5 indeterminate; paired median change +0.01 mg/L, Wilcoxon p=0.54."
+}

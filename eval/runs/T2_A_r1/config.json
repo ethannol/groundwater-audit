@@ -1,0 +1,42 @@
+{
+  "run_id": "T2_A_r1",
+  "task": "T2",
+  "condition": "A",
+  "rep": 1,
+  "label": null,
+  "task_file": "T2_comparable_units.md",
+  "data_source": "real",
+  "model_requested": "claude-sonnet-5-5",
+  "max_budget_usd": 3.0,
+  "timeout_s": 1800,
+  "tools": "Bash,Read,Write,Edit,Glob,Grep",
+  "command": [
+    "claude",
+    "-p",
+    "<prompt.txt>",
+    "--model",
+    "claude-sonnet-5-5",
+    "--output-format",
+    "json",
+    "--no-session-persistence",
+    "--tools",
+    "Bash,Read,Write,Edit,Glob,Grep",
+    "--max-budget-usd",
+    "3.00",
+    "--dangerously-skip-permissions"
+  ],
+  "started_utc": "2026-10-07T23:42:20+00:00",
+  "ended_utc": "2026-10-07T23:44:35+00:00",
+  "wall_seconds": 135.2,
+  "timed_out": false,
+  "return_code": 0,
+  "cost_usd": 0.1690604,
+  "model_used": [
+    "claude-sonnet-5-5"
+  ],
+  "num_turns": 7,
+  "duration_api_ms": 131019,
+  "is_error": false,
+  "answer_json_present": true,
+  "answer_md_present": true
+}

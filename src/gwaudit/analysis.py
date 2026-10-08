@@ -131,8 +131,9 @@ def paired_change(coh: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
                           zip(pairs["early_lower"], pairs["early_upper"], pairs["late_lower"], pairs["late_upper"])]
     both_det = (pairs["early_lower"] == pairs["early_upper"]) & (pairs["late_lower"] == pairs["late_upper"])
     pairs["change_if_both_detected"] = np.where(both_det, pairs["late_lower"] - pairs["early_lower"], np.nan)
-    pairs["log_ratio_if_both_detected"] = np.where(both_det & (pairs["early_lower"] > 0) & (pairs["late_lower"] > 0),
-                                                   np.log(pairs["late_lower"] / pairs["early_lower"]), np.nan)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        pairs["log_ratio_if_both_detected"] = np.where(both_det & (pairs["early_lower"] > 0) & (pairs["late_lower"] > 0),
+                                                       np.log(pairs["late_lower"] / pairs["early_lower"]), np.nan)
     counts = pairs["direction"].value_counts().to_dict()
     n_dec, n_inc = counts.get("decline", 0), counts.get("increase", 0)
     n_det = n_dec + n_inc

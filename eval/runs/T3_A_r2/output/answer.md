@@ -1,0 +1,9 @@
+# Dissolved arsenic (01000), San Bernardino County wells, early (2000–2011) vs late (2012–2023)
+
+**Data used:** routine groundwater samples only (field replicates, QC and non-groundwater matrices dropped). Early n=1805 (199 non-detects, 11%); late n=1192 (46 non-detects, 4%).
+
+**Non-detect handling.** Non-detects have no numeric value, only a reporting limit, so they were treated as left-censored at that limit, not as zero or as the limit itself. For the median I substituted DL/2 and checked 0 and DL: the median is unchanged (early ≈1.9–2.0 µg/L, late 3.3 µg/L) because it sits well above nearly all limits. That makes the median robust to censoring, but a substitution would not be safe for means or low percentiles. Limits changed a lot: early limits were mostly ~1 µg/L (up to 5), late limits ~0.1 µg/L (a few at 11–20).
+
+**Share above 10 µg/L.** Early 15.6%, late 30.8%. In the early period every non-detect limit is ≤5, so the share is exact. Late, five non-detects have limits of 11–20 µg/L, so whether they exceed 10 is unknown; the share is 30.8–31.2%. It is effectively identifiable in both periods.
+
+**Comparability and interpretation.** The medians (~1.9 vs 3.3 µg/L) are comparable as summaries, since censoring does not drive either. The comparison shows that the pooled results in the later period are higher, and more often exceed 10 µg/L. It does not show that arsenic concentrations rose. The two periods have different sets of wells and samples per year (sample counts fluctuate from 21 to 296 per year, reflecting changing programs), results are pooled with wells weighted by how often they were sampled, and the laboratory reporting limits changed. Establishing real change would need the same wells sampled in both periods (paired or within-well trend analysis) with censored-data methods (e.g. Kaplan–Meier/ROS or a censored test).

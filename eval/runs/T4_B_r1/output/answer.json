@@ -1,0 +1,32 @@
+{
+ "pooled_early": {
+  "n": 1337,
+  "wells": 490,
+  "median": 1.99
+ },
+ "pooled_late": {
+  "n": 1098,
+  "wells": 548,
+  "median": 1.6
+ },
+ "cohort_wells": 190,
+ "wells_only_early": 300,
+ "wells_only_late": 358,
+ "cohort_early_median": 2.18,
+ "cohort_late_median": 1.86,
+ "cohort_decline": 84,
+ "cohort_increase": 101,
+ "cohort_indeterminate": 5,
+ "did_nitrate_decline": "not supported",
+ "notes": "Filter: USGSPCode 00618 (dissolved nitrate, mg/L as N), Sample-Routine, ActivityMediaSubdivision Groundwater; 71851 (asNO3 re-expression), 00631 (nitrate+nitrite), total-fraction codes, QC replicates, leachate/soil-moisture etc excluded. Non-detects handled as intervals [0,DL]; medians use DL as upper bound (<=1 ND shifts only if median is near DL). Cohort last result per period.",
+ "checks": [
+  "sign test p=0.239 on decline vs increase wells",
+  "well-level bootstrap 95% CI of median late-early change (upper-bound values): [-0.014999999999999986, 0.05099999999999999]",
+  "wells with tied last timestamps: 0",
+  "00618 vs 71851 are same measurement in different units; 71851 excluded"
+ ],
+ "caveats": [
+  "Pooled sets of wells differ between periods",
+  "DLs varied 0.02-0.6 mg/L over time; ND in cohort treated as intervals"
+ ]
+}

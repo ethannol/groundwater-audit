@@ -1,0 +1,38 @@
+{
+ "recommendation": "cannot be determined",
+ "cohort_wells": 30,
+ "cohort_decline": 0,
+ "cohort_increase": 0,
+ "cohort_indeterminate": 30,
+ "pooled_median_early": 2.0,
+ "pooled_median_late": 0.91,
+ "data_problems_found": [
+  "2005 non-detects (21 rows) have blank result unit; limit 2 mg/L as N",
+  "Lab B 2018 results (8 rows, wells C00-C07) have no result unit",
+  "Reporting limit fell from 2 (2005) to 0.2 mg/L as N (2018)",
+  "60 wells in 2018 but only 30 in 2005; 30 N-wells have 2018 only",
+  "9 cohort wells have identical 2005 and 2018 values (suspected copied/carried values)",
+  "Duplicate station row for SYN-C03 in wqp_station.csv"
+ ],
+ "rows_affected_by_each_problem": {
+  "2005 non-detects (21 rows) have blank result unit; limit 2 mg/L as N": 21,
+  "Lab B 2018 results (8 rows, wells C00-C07) have no result unit": 8,
+  "Reporting limit fell from 2 (2005) to 0.2 mg/L as N (2018)": 90,
+  "60 wells in 2018 but only 30 in 2005; 30 N-wells have 2018 only": 30,
+  "9 cohort wells have identical 2005 and 2018 values (suspected copied/carried values)": 18,
+  "Duplicate station row for SYN-C03 in wqp_station.csv": 1
+ },
+ "notes": "Early pooled median is not identifiable: 21/30 results are <2 mg/L as N, so the median is <=2.0 (2.0 is an upper bound, not an estimate). Late pooled median 0.91 uses all 60 wells incl. 30 late-only wells; cohort-only late median 1.435. Cohort: 21 wells ND(<2) then 0.6-1.8 detected (direction unidentifiable, interval overlap); 9 wells unchanged (detected, identical values). No well shows a determinable decline or increase. Substitution was not used as main method.",
+ "checks": [
+  "unique ResultIdentifier and (ActivityIdentifier,USGSPCode): 0 duplicates",
+  "single characteristic/fraction/pcode/method: Nitrate, Dissolved, 00618, SYN01; all Sample-Routine groundwater (no QC rows)",
+  "cohort_composition: 30 wells in both periods, 30 only in 2018",
+  "censoring: 2005 21/30 censored at 2; 2018 0/60 censored at 0.2",
+  "no re-expressed pairs (single parameter code)"
+ ],
+ "caveats": [
+  "Lab B unit missing; if reported as NO3 the late median would be ~0.72 rather than 0.91",
+  "2 mg/L limit hides whether early values were below the 2018 results",
+  "one result per well per period; no uncertainty beyond per-well direction counts"
+ ]
+}

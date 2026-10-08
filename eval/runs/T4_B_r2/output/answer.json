@@ -1,0 +1,34 @@
+{
+ "pooled_early": {
+  "n": 1337,
+  "wells": 490,
+  "median": 1.99
+ },
+ "pooled_late": {
+  "n": 1098,
+  "wells": 548,
+  "median": 1.6
+ },
+ "cohort_wells": 190,
+ "wells_only_early": 300,
+ "wells_only_late": 358,
+ "cohort_early_median": 2.18,
+ "cohort_late_median": 1.86,
+ "cohort_decline": 84,
+ "cohort_increase": 101,
+ "cohort_indeterminate": 5,
+ "did_nitrate_decline": "not supported",
+ "notes": "Routine, groundwater-subdivision, dissolved nitrate as N (00618) only; field replicates, 'Not determined' activities, leachate/soil-moisture/elutriation/interstitial/bulk-deposition rows excluded. 00631 (nitrate+nitrite), 00620/00630 (total) and 71850/71851 (as NO3, re-expressions) are different quantities/definitions and excluded. Non-detects (n=140; DL 0.02-0.25 mg/L as N) treated as intervals [0,DL]; medians are unaffected. Last result = latest date (then time) per well-period; 8 cohort wells have several same-day results, and choosing min or max changes counts only to 86/99 or 85/100.",
+ "checks": [
+  "unique key (well, activity, result) 0 duplicates in routine 00618 rows",
+  "all 00618 rows are Dissolved, mg/l as N; ND limits all mg/l as N",
+  "cohort_composition: early 490 wells, late 548, both 190",
+  "censoring: ND share 3-11% by year, DL 0.02-0.06 early, mostly 0.04 late (one 0.25 in 2016); changes in DL cannot move medians of ~2 mg/L",
+  "sign test on 84 vs 101 directions p=0.24; well-level bootstrap CI of cohort median change (late-early) about -0.55 to +0.23 mg/L; pooled well-resampled CI about -0.85 to +0.01 mg/L"
+ ],
+ "caveats": [
+  "Pooled compares different sets of wells (300 early-only, 358 late-only), so it mixes spatial composition with time change",
+  "Last-result-only per period ignores within-period variability and seasonality; sample timing varies",
+  "190 cohort wells are not a random sample of the county"
+ ]
+}

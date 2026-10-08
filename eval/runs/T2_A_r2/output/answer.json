@@ -1,0 +1,23 @@
+{
+ "rows_in_table": 2435,
+ "wells_in_table": 848,
+ "nondetect_rows_in_table": 140,
+ "pcodes_included": [
+  "00618"
+ ],
+ "pcodes_excluded": {
+  "71851": "Same dissolved nitrate measurement as 00618, re-expressed as mg/L NO3; dropped as duplicate (2301 rows, each paired with a 00618 row in the same activity)",
+  "00620": "Total (unfiltered) nitrate as N: different fraction",
+  "71850": "Total nitrate as NO3: re-expression of 00620 and other fraction",
+  "00631": "Dissolved nitrate+nitrite as N: different analyte (CharacteristicName 'Inorganic nitrogen (nitrate and nitrite)')",
+  "00630": "Total nitrate+nitrite as N: different analyte and fraction"
+ },
+ "unit_conversion_factors_used": {
+  "mg/l as N -> mg/L as N": 1.0,
+  "mg/l asNO3 -> mg/L as N": 0.2259
+ },
+ "rows_dropped_as_same_measurement_reexpressed": 2301,
+ "rows_excluded_other_fraction": 586,
+ "nitrate_plus_nitrite_combined": false,
+ "notes": "Filter: ActivityTypeCode=Sample-Routine, medium Water/Groundwater (excludes elutriation, leachate, soil moisture, interstitial, bulk deposition subdivisions; QC replicates excluded). Kept CharacteristicName=Nitrate, Dissolved, pcode 00618 (mg/l as N), one row per activity (no duplicates). No row required conversion since 71851 (mg/L NO3 = 14.007/62.004 = 0.2259 x N) always duplicates a 00618 row; in 2169 paired detected rows the ratio is 4.43 as expected. 140 non-detects have no value (blank) with reporting limit in mg/l as N (0.02-0.25 where given); left as censored, not substituted. Some 00618 values are NWIS-computed from 71851/other, others measured by IC; both are same quantity. Estimated-value flags (208 rows overall) not removed."
+}

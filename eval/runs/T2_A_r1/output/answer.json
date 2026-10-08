@@ -1,0 +1,23 @@
+{
+ "rows_in_table": 2435,
+ "wells_in_table": 848,
+ "nondetect_rows_in_table": 140,
+ "pcodes_included": [
+  "00618"
+ ],
+ "pcodes_excluded": {
+  "71851": "Same dissolved nitrate measurement as 00618, re-expressed as mg/L NO3 (computed by NWIS from 00618); duplicate, dropped",
+  "00620": "Total (unfiltered) nitrate, different fraction and different method (IC); not comparable with dissolved",
+  "71850": "Total nitrate re-expressed as mg/L NO3; different fraction (total) and a re-expression of 00620",
+  "00631": "Dissolved nitrate+nitrite as N: a different analyte (includes nitrite)",
+  "00630": "Total nitrate+nitrite as N: a different analyte and a different fraction"
+ },
+ "unit_conversion_factors_used": {
+  "mg/l as N -> mg/L as N": 1.0,
+  "mg/l asNO3 -> mg/L as N": 0.2259
+ },
+ "rows_dropped_as_same_measurement_reexpressed": 2301,
+ "rows_excluded_other_fraction": 586,
+ "nitrate_plus_nitrite_combined": false,
+ "notes": "Filter: ActivityTypeCode Sample-Routine and ActivityMediaSubdivisionName Groundwater (all rows are medium Water). Kept 00618 (Dissolved, mg/l as N) as the primary record. Each of the 2301 activities with 71851 also has 00618; converting 71851 by 14.0067/62.0049 reproduces 00618 within its rounding (max diff 0.21 mg/L N, at 3 significant figures in the NO3 value). The 134 activities with only 00618 are kept. Nondetects (140, all 00618) have no result value; value is blank, nondetect=True and the detection limit (mg/L as N) is in the table. Not substituted. One row per activity, no duplicates. The 00618 nondetect rows also have a blank unit and fraction; both are inferred from the pcode. Fraction is Dissolved in all 00618 rows. 8 of the 134 00618-only rows are nondetects."
+}

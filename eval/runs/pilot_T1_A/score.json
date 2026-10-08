@@ -13,7 +13,7 @@
     "passed": 12,
     "critical_failures": 0,
     "major_failures": 1,
-    "failed_checks": "arsenic_reporting_limit_range_ugL (got [0.02, 20.0], want [0.09, 20.0])"
+    "failed_checks": "arsenic_nondetect_limit_range_ugL (got [None, None], want [0.09, 20.0])"
   },
   "checks": [
     {
@@ -83,18 +83,21 @@
       "want": 993
     },
     {
-      "check": "arsenic_wells_with_2plus_samples",
-      "pass": true,
-      "severity": "major",
-      "got": 521,
-      "want": 521
-    },
-    {
       "check": "arsenic_nondetect_rows",
       "pass": true,
       "severity": "major",
       "got": 245,
       "want": 245
+    },
+    {
+      "check": "arsenic_wells_with_2plus_samples",
+      "pass": true,
+      "severity": "major",
+      "got": 521,
+      "want": [
+        521,
+        490
+      ]
     },
     {
       "check": "arsenic_first_year",
@@ -111,12 +114,12 @@
       "want": 2023
     },
     {
-      "check": "arsenic_reporting_limit_range_ugL",
+      "check": "arsenic_nondetect_limit_range_ugL",
       "pass": false,
       "severity": "major",
       "got": [
-        0.02,
-        20.0
+        null,
+        null
       ],
       "want": [
         0.09,

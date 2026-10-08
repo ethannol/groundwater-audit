@@ -1,0 +1,18 @@
+{
+ "cohort_wells": 295,
+ "decline": 146,
+ "increase": 105,
+ "indeterminate": 44,
+ "share_declining": 0.582,
+ "share_declining_denominator": "determinate wells",
+ "share_declining_ci95": [
+  0.518,
+  0.643
+ ],
+ "ci_method": "Clopper-Pearson exact binomial interval on 146 declines of 251 determinate wells; treats wells as independent Bernoulli trials and conditions on determinacy",
+ "sign_test_p": 0.0114,
+ "median_ratio_late_over_early_both_detected": 0.962,
+ "independent_unit": "The well (last routine groundwater result per well per period). Repeat samples within a well are collapsed to one, so the unit is the well. Wells are not truly independent: they cluster spatially (170 of 295 are in HUC 18090208), and some belong to shared sampling programs.",
+ "nondetect_sensitivity": "Direction does not change. Declines vs increases (ties excluded): zero substitution 149 vs 108, half-limit 153 vs 107, full-limit 152 vs 108. Declines outnumber increases in all three. The interval-overlap rule gives 146 vs 105. 38 of the 295 pairs involve a non-detect.",
+ "notes": "Routine = ActivityTypeCode Sample-Routine, ActivityMediaSubdivisionName Groundwater, USGSPCode 01000 (dissolved, ug/L). This excludes field replicates, QC samples and elutriation/soil-moisture/interstitial/leachate media. 3 'Detected Not Quantified' results were dropped because they have no value or interval. Non-detects are the interval [0, reporting limit]. Estimated (J-type) values were kept as reported. Periods use calendar year of ActivityStartDate. Declining share by HUC: 18090207 23/28, 18100100 37/55, 18070203 19/31, 18090208 67/136. Median ratio uses 257 wells with both results detected."
+}

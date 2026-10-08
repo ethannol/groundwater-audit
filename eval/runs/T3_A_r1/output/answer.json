@@ -1,0 +1,21 @@
+{
+ "early": {
+  "n": 1805,
+  "n_nondetect": 196,
+  "reporting_limit_min": 0.12,
+  "reporting_limit_max": 5.0,
+  "median_ugL": 1.95,
+  "share_above_10_ugL": 0.1562
+ },
+ "late": {
+  "n": 1192,
+  "n_nondetect": 46,
+  "reporting_limit_min": 0.09,
+  "reporting_limit_max": 20.0,
+  "median_ugL": 3.3,
+  "share_above_10_ugL": 0.3079
+ },
+ "median_method": "Non-detects kept as left-censored (< their own reporting limit), not substituted. Median taken from the ordered sample and bounded by setting censored values to 0 vs. to their reporting limit; early bounds 1.9-2.0 (midpoint 1.95 reported), late bounds 3.3-3.3. Both medians lie above nearly all reporting limits, so the censoring does not change them materially.",
+ "share_above_10_identifiable_in_both_periods": false,
+ "notes": "Filter: USGSPCode 01000, dissolved, ActivityTypeCode Sample-Routine, ActivityMediaSubdivisionName Groundwater (excludes field replicates, QC, soil-moisture/elutriation/leachate/interstitial rows); each result is one observation. 3 early 'Detected Not Quantified' records (no value) are not counted as non-detects but are treated as censored below their limits (<=1.9 ug/L) in the median. Reporting limits are from the Not Detected records. Share >10 uses detected values >10 over all n: early 282/1805 exactly identifiable (max early RL 5 <10); late 367 detected >10 plus 5 non-detects with RL 15-20 (>10) that cannot be classified, so late share lies between 0.3079 and 0.3121. Strictly not identifiable in the late period, though the ambiguity is tiny. Reporting limits changed over time (late max 20 vs early max 5)."
+}

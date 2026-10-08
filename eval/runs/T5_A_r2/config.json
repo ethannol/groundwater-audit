@@ -1,0 +1,42 @@
+{
+  "run_id": "T5_A_r2",
+  "task": "T5",
+  "condition": "A",
+  "rep": 2,
+  "label": null,
+  "task_file": "T5_uncertainty.md",
+  "data_source": "real",
+  "model_requested": "claude-sonnet-5-5",
+  "max_budget_usd": 3.0,
+  "timeout_s": 1800,
+  "tools": "Bash,Read,Write,Edit,Glob,Grep",
+  "command": [
+    "claude",
+    "-p",
+    "<prompt.txt>",
+    "--model",
+    "claude-sonnet-5-5",
+    "--output-format",
+    "json",
+    "--no-session-persistence",
+    "--tools",
+    "Bash,Read,Write,Edit,Glob,Grep",
+    "--max-budget-usd",
+    "3.00",
+    "--dangerously-skip-permissions"
+  ],
+  "started_utc": "2026-10-07T23:58:01+00:00",
+  "ended_utc": "2026-10-07T23:58:51+00:00",
+  "wall_seconds": 50.5,
+  "timed_out": false,
+  "return_code": 0,
+  "cost_usd": 0.142774,
+  "model_used": [
+    "claude-sonnet-5-5"
+  ],
+  "num_turns": 5,
+  "duration_api_ms": 44850,
+  "is_error": false,
+  "answer_json_present": true,
+  "answer_md_present": true
+}
