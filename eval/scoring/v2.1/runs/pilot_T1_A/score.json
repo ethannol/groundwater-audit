@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "scorer_version": "v2.1-schema-review",
+    "run_id": "pilot_T1_A",
+    "task": "T1",
+    "condition": "A",
+    "rep": 0,
+    "cost_usd": 0.14965979999999998,
+    "wall_seconds": 41.5,
+    "num_turns": 5,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 1,
+    "passed": 0,
+    "critical_failures": 1,
+    "major_failures": 0,
+    "failed_checks": "answer_schema_valid (got ['missing field arsenic_nondetect_limit_range_ugL'], want task answer schema)"
+  },
+  "checks": [
+    {
+      "check": "answer_schema_valid",
+      "pass": false,
+      "severity": "critical",
+      "got": [
+        "missing field arsenic_nondetect_limit_range_ugL"
+      ],
+      "want": "task answer schema"
+    }
+  ]
+}
