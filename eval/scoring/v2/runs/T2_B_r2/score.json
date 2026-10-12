@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "scorer_version": "v2-schema-review",
+    "run_id": "T2_B_r2",
+    "task": "T2",
+    "condition": "B",
+    "rep": 2,
+    "cost_usd": 0.1491092,
+    "wall_seconds": 48.9,
+    "num_turns": 6,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 10,
+    "passed": 9,
+    "critical_failures": 0,
+    "major_failures": 1,
+    "failed_checks": "pcodes_included_only_00618 (got ['00618', '71851'], want ['00618'])"
+  },
+  "checks": [
+    {
+      "check": "rows_in_table",
+      "pass": true,
+      "severity": "critical",
+      "got": 2435,
+      "want": 2435
+    },
+    {
+      "check": "wells_in_table",
+      "pass": true,
+      "severity": "major",
+      "got": 848,
+      "want": 848
+    },
+    {
+      "check": "nondetect_rows_in_table",
+      "pass": true,
+      "severity": "major",
+      "got": 140,
+      "want": 140
+    },
+    {
+      "check": "pcodes_included_only_00618",
+      "pass": false,
+      "severity": "major",
+      "got": [
+        "00618",
+        "71851"
+      ],
+      "want": [
+        "00618"
+      ]
+    },
+    {
+      "check": "71851_treated_as_reexpression",
+      "pass": true,
+      "severity": "critical",
+      "got": " Filters: Sample-Routine, ActivityMediaSubdivisionName=Groundwater (excluded leachate, elutriation, ",
+      "want": "71851 identified as a re-expression of 00618 (in pcodes_excluded or notes)"
+    },
+    {
+      "check": "excludes_00631_different_definition",
+      "pass": true,
+      "severity": "major",
+      "got": "Nitrate+nitrite, Dissolved: different chemical definition (includes nitrite)",
+      "want": "00631 excluded (nitrate+nitrite)"
+    },
+    {
+      "check": "rows_dropped_as_same_measurement_reexpressed",
+      "pass": true,
+      "severity": "minor",
+      "got": 2301,
+      "want": [
+        2301,
+        2415
+      ]
+    },
+    {
+      "check": "rows_excluded_other_fraction",
+      "pass": true,
+      "severity": "minor",
+      "got": 586,
+      "want": [
+        472,
+        586
+      ]
+    },
+    {
+      "check": "nitrate_plus_nitrite_not_combined",
+      "pass": true,
+      "severity": "major",
+      "got": false,
+      "want": false
+    },
+    {
+      "check": "conversion_factor_if_used_is_0.226",
+      "pass": true,
+      "severity": "major",
+      "got": {
+        "mg/l as N -> mg/l as N": 1.0,
+        "mg/l asNO3 -> mg/l as N": 0.2259
+      },
+      "want": "0.2259 for NO3->N (or none needed)"
+    }
+  ]
+}

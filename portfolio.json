@@ -19,6 +19,12 @@
     "type": "json",
     "path": "reports/presentation.json"
   },
+  "sources": {
+    "v2.passed": {"source": "glob_json", "glob": "eval/scoring/v2/runs/T*_*_r*/score.json", "path": "summary.passed", "op": "sum"},
+    "v2.checks": {"source": "glob_json", "glob": "eval/scoring/v2/runs/T*_*_r*/score.json", "path": "summary.checks", "op": "sum"},
+    "v2.critical": {"source": "glob_json", "glob": "eval/scoring/v2/runs/T*_*_r*/score.json", "path": "summary.critical_failures", "op": "sum"},
+    "v2.major": {"source": "glob_json", "glob": "eval/scoring/v2/runs/T*_*_r*/score.json", "path": "summary.major_failures", "op": "sum"}
+  },
   "headline": [
     {
       "label": "Nitrate cohort wells sampled in both periods",
@@ -41,7 +47,7 @@
       }
     },
     {
-      "label": "Numerical checks passed",
+      "label": "Original numerical checks passed",
       "value": {
         "source": "glob_json",
         "glob": "eval/runs/T*_*_r*/score.json",
@@ -49,6 +55,11 @@
         "op": "sum"
       },
       "note": "of {{evaluation.checks}}; {{evaluation.critical_failures}} critical errors (original scoring)"
+    },
+    {
+      "label": "Mechanical checks passed, scorer v2",
+      "value": "v2.passed",
+      "note": "of {{v2.checks}}; {{v2.major}} major and {{v2.critical}} critical failures (same recorded answers)"
     },
     {
       "label": "Total model cost",
@@ -65,7 +76,8 @@
   "finding": [
     "The pooled nitrate median fell from {{nitrate_as_n.pooled_vs_cohort.pooled_early.km_median:.2f}} to {{nitrate_as_n.pooled_vs_cohort.pooled_late.km_median:.2f}} mg/L as N and the pooled arsenic median rose from {{arsenic.pooled_vs_cohort.pooled_early.km_median:.1f}} to {{arsenic.pooled_vs_cohort.pooled_late.km_median:.1f}} µg/L between 2000 to 2011 and 2012 to 2023. Neither is a change at wells. The late period sampled different wells, and only a minority of wells appear in both periods.",
     "At the {{nitrate_as_n.paired_change.n_pairs}} nitrate wells sampled in both periods, {{nitrate_as_n.paired_change.decline}} declined and {{nitrate_as_n.paired_change.increase}} increased. At the {{arsenic.paired_change.n_pairs}} arsenic cohort wells, {{arsenic.paired_change.decline}} declined and {{arsenic.paired_change.increase}} increased with {{arsenic.paired_change.indeterminate}} indeterminate because of non-detects; the sign test gives p = {{arsenic.paired_change.sign_test.p_two_sided:.3f}}, but the median within-well ratio of {{arsenic.paired_change.wilcoxon_both_detected.median_ratio_late_over_early:.3f}} is a small measured shift inside replicate precision and coincident with a laboratory and reporting-limit change.",
-    "The evaluation ran {{evaluation.runs}} model sessions on frozen tasks under neutral and structured-workflow prompts, scored mechanically and then read against a rubric. The structured workflow cost {{evaluation.workflow_cost_uplift_pct:.0f}} percent more and did not reduce errors; definitional failures were caught by reading answers against reference definitions, not row counts. Published original grades remain the baseline; schema-hardened v2 re-scoring is separate."
+    "The evaluation ran {{evaluation.runs}} model sessions on frozen tasks under neutral and structured-workflow prompts, scored mechanically and then read against a rubric. The structured workflow cost {{evaluation.workflow_cost_uplift_pct:.0f}} percent more and did not reduce errors; definitional failures were caught by reading answers against reference definitions, not row counts. Published original grades remain the baseline.",
+    "The separate schema-hardened v2 scorer re-evaluated the same recorded answers without new model calls: {{v2.passed}} of {{v2.checks}} mechanical checks passed, versus {{evaluation.passed}} of {{evaluation.checks}} under original scoring. It found {{v2.major}} major failures and {{v2.critical}} critical failures. The explicit issue-inventory rule catches an additional omission; wording and scientific correctness still require rubric review."
   ],
   "traps": [
     {
@@ -116,6 +128,10 @@
     {
       "title": "Scoring versions and mechanical-check limits",
       "path": "eval/scoring/VERSIONS.md"
+    },
+    {
+      "title": "Exploratory v2 re-score of the recorded answers",
+      "path": "eval/scoring/v2/results.md"
     },
     {
       "title": "Five-minute walkthrough",

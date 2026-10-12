@@ -1,0 +1,83 @@
+{
+  "summary": {
+    "scorer_version": "v2-schema-review",
+    "run_id": "T6_A_r1",
+    "task": "T6",
+    "condition": "A",
+    "rep": 1,
+    "cost_usd": 0.1655844,
+    "wall_seconds": 42.2,
+    "num_turns": 7,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 8,
+    "passed": 8,
+    "critical_failures": 0,
+    "major_failures": 0,
+    "failed_checks": ""
+  },
+  "checks": [
+    {
+      "check": "recommendation",
+      "pass": true,
+      "severity": "critical",
+      "got": "cannot be determined",
+      "want": [
+        "decline not supported",
+        "cannot be determined"
+      ]
+    },
+    {
+      "check": "cohort_wells",
+      "pass": true,
+      "severity": "major",
+      "got": 30,
+      "want": [
+        30,
+        22
+      ]
+    },
+    {
+      "check": "cohort_decline_zero",
+      "pass": true,
+      "severity": "critical",
+      "got": 0,
+      "want": 0
+    },
+    {
+      "check": "cohort_increase_zero",
+      "pass": true,
+      "severity": "major",
+      "got": 0,
+      "want": 0
+    },
+    {
+      "check": "issue_found_limit_change",
+      "pass": true,
+      "severity": "major",
+      "got": true,
+      "want": true
+    },
+    {
+      "check": "issue_found_composition",
+      "pass": true,
+      "severity": "major",
+      "got": true,
+      "want": true
+    },
+    {
+      "check": "issue_found_duplicate_key",
+      "pass": true,
+      "severity": "major",
+      "got": true,
+      "want": true
+    },
+    {
+      "check": "issue_found_missing_units",
+      "pass": true,
+      "severity": "major",
+      "got": true,
+      "want": true
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "scorer_version": "v2-schema-review",
+    "run_id": "T4_B_r2",
+    "task": "T4",
+    "condition": "B",
+    "rep": 2,
+    "cost_usd": 0.2790868,
+    "wall_seconds": 193.6,
+    "num_turns": 12,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 15,
+    "passed": 15,
+    "critical_failures": 0,
+    "major_failures": 0,
+    "failed_checks": ""
+  },
+  "checks": [
+    {
+      "check": "pooled_early_n",
+      "pass": true,
+      "severity": "major",
+      "got": 1337,
+      "want": 1337
+    },
+    {
+      "check": "pooled_early_wells",
+      "pass": true,
+      "severity": "major",
+      "got": 490,
+      "want": 490
+    },
+    {
+      "check": "pooled_early_median",
+      "pass": true,
+      "severity": "major",
+      "got": 1.99,
+      "want": 1.99
+    },
+    {
+      "check": "pooled_late_n",
+      "pass": true,
+      "severity": "major",
+      "got": 1098,
+      "want": 1098
+    },
+    {
+      "check": "pooled_late_wells",
+      "pass": true,
+      "severity": "major",
+      "got": 548,
+      "want": 548
+    },
+    {
+      "check": "pooled_late_median",
+      "pass": true,
+      "severity": "major",
+      "got": 1.6,
+      "want": 1.6
+    },
+    {
+      "check": "cohort_wells",
+      "pass": true,
+      "severity": "major",
+      "got": 190,
+      "want": 190
+    },
+    {
+      "check": "wells_only_early",
+      "pass": true,
+      "severity": "major",
+      "got": 300,
+      "want": 300
+    },
+    {
+      "check": "wells_only_late",
+      "pass": true,
+      "severity": "major",
+      "got": 358,
+      "want": 358
+    },
+    {
+      "check": "cohort_early_median",
+      "pass": true,
+      "severity": "major",
+      "got": 2.18,
+      "want": 2.15
+    },
+    {
+      "check": "cohort_late_median",
+      "pass": true,
+      "severity": "major",
+      "got": 1.86,
+      "want": 1.83
+    },
+    {
+      "check": "cohort_decline",
+      "pass": true,
+      "severity": "major",
+      "got": 84,
+      "want": 85
+    },
+    {
+      "check": "cohort_increase",
+      "pass": true,
+      "severity": "major",
+      "got": 101,
+      "want": 100
+    },
+    {
+      "check": "cohort_indeterminate",
+      "pass": true,
+      "severity": "major",
+      "got": 5,
+      "want": 5
+    },
+    {
+      "check": "did_nitrate_decline",
+      "pass": true,
+      "severity": "critical",
+      "got": "not supported",
+      "want": [
+        "no",
+        "not supported"
+      ]
+    }
+  ]
+}
