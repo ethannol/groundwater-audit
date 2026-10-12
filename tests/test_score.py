@@ -81,6 +81,14 @@ def test_issue_keywords_in_notes_do_not_count_as_found():
     assert not any(c["pass"] for c in checks if c["check"].startswith("issue_found_"))
 
 
+def test_explicit_year_only_well_inventory_is_recognized():
+    data = json.loads((ROOT / "eval/runs/T6_B_r1/output/answer.json").read_text())
+    data["notes"] = ""
+    checks = []
+    score.score_T6(data, checks)
+    assert next(c["pass"] for c in checks if c["check"] == "issue_found_composition")
+
+
 def test_rescore_writes_separate_version_and_preserves_original(tmp_path, monkeypatch):
     run = tmp_path / "T1_A_r1"
     (run / "output").mkdir(parents=True)

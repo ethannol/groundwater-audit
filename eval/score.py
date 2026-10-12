@@ -1,7 +1,7 @@
 """Score recorded evaluation runs against the reference answers.
 
     python eval/score.py            # scores every run under eval/runs/ with an answer.json
-    python eval/score.py --table    # writes eval/scoring/v2/results.md
+    python eval/score.py --table    # writes eval/scoring/v2.1/results.md
 
 Version 2 is an exploratory re-score. Original score.json, scores.csv and
 eval/results.md are retained unchanged and continue to support published claims.
@@ -28,8 +28,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EVAL = ROOT / "eval"
-SCORER_VERSION = "v2-schema-review"
-OUTPUT = EVAL / "scoring" / "v2"
+SCORER_VERSION = "v2.1-schema-review"
+OUTPUT = EVAL / "scoring" / "v2.1"
 REF = json.loads((EVAL / "scoring" / "reference.json").read_text())
 
 
@@ -474,6 +474,11 @@ def score_T6(a, c):
     found = {
         k: any(w in text for w in words) for k, words in r["issue_keywords"].items()
     }
+    # "2018 only" and "only in 2018" describe the same well-set change.
+    # Keep the inventory restriction without flagging a valid paraphrase.
+    found["composition"] = found["composition"] or bool(
+        re.search(r"\b(?:19|20)\d{2}[- ]+only\b", text)
+    )
     for k, ok in found.items():
         check(c, f"issue_found_{k}", ok, "major", ok, True)
 
