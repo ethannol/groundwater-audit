@@ -135,6 +135,7 @@
     }
   ],
   "verification": {
+    "artifact": "reports/check-evidence.json",
     "tests": {
       "source": "regex_count",
       "glob": "tests/test_*.py",
