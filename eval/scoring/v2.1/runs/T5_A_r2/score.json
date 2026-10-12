@@ -1,0 +1,97 @@
+{
+  "summary": {
+    "scorer_version": "v2.1-schema-review",
+    "run_id": "T5_A_r2",
+    "task": "T5",
+    "condition": "A",
+    "rep": 2,
+    "cost_usd": 0.142774,
+    "wall_seconds": 50.5,
+    "num_turns": 5,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 10,
+    "passed": 10,
+    "critical_failures": 0,
+    "major_failures": 0,
+    "failed_checks": ""
+  },
+  "checks": [
+    {
+      "check": "cohort_wells",
+      "pass": true,
+      "severity": "major",
+      "got": 295,
+      "want": 295
+    },
+    {
+      "check": "decline",
+      "pass": true,
+      "severity": "major",
+      "got": 146,
+      "want": 145
+    },
+    {
+      "check": "increase",
+      "pass": true,
+      "severity": "major",
+      "got": 105,
+      "want": 106
+    },
+    {
+      "check": "indeterminate",
+      "pass": true,
+      "severity": "major",
+      "got": 44,
+      "want": 44
+    },
+    {
+      "check": "share_declining_consistent_with_denominator",
+      "pass": true,
+      "severity": "major",
+      "got": "0.5817 (determinate wells)",
+      "want": "0.5777 for determinate wells"
+    },
+    {
+      "check": "ci95_matches_denominator",
+      "pass": true,
+      "severity": "major",
+      "got": [
+        0.518,
+        0.643
+      ],
+      "want": [
+        0.514,
+        0.6395
+      ]
+    },
+    {
+      "check": "sign_test_p",
+      "pass": true,
+      "severity": "major",
+      "got": 0.0114,
+      "want": 0.0163
+    },
+    {
+      "check": "median_ratio_both_detected",
+      "pass": true,
+      "severity": "major",
+      "got": 0.9615,
+      "want": 0.967
+    },
+    {
+      "check": "independent_unit_is_well",
+      "pass": true,
+      "severity": "critical",
+      "got": "The well (monitoring location): one last routine result per well per period gives one paired compari",
+      "want": "the well"
+    },
+    {
+      "check": "nondetect_sensitivity_has_methods_and_outcome",
+      "pass": true,
+      "severity": "minor",
+      "got": "Direction does not change. Interval rule: 146 decline/105 increase/44 indetermin",
+      "want": "zero/half/full-limit methods and a stated outcome; requires review"
+    }
+  ]
+}

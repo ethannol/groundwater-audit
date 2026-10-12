@@ -3,20 +3,53 @@
   "title": "Groundwater Audit",
   "kind": "study",
   "status": "complete",
+  "strict_numbers": true,
+  "numeric_constants": {
+    "2000": "Fixed analytical period start year",
+    "2011": "Fixed early-period end year",
+    "2012": "Fixed late-period start year",
+    "2023": "Fixed analytical period end year"
+  },
   "question": "Did arsenic and nitrate decline at repeatedly sampled wells in San Bernardino County, 2000 to 2023, and where does an LLM help or quietly err in answering?",
-  "one_liner": "A checked reference analysis of public USGS groundwater chemistry paired with 24 bounded, scored runs of a language model on six frozen tasks under two prompting conditions.",
-  "aim": "Determine whether dissolved arsenic and nitrate declined at repeatedly sampled wells in San Bernardino County between 2000–2011 and 2012–2023, and test whether a language model, with and without a structured analytical workflow, reproduces a checked reference analysis of the same data.",
+  "one_liner": "A checked reference analysis of public USGS groundwater chemistry paired with bounded, scored model runs on frozen tasks under two prompting conditions.",
+  "aim": "Determine whether dissolved arsenic and nitrate declined at repeatedly sampled wells in San Bernardino County between 2000\u20132011 and 2012\u20132023, and test whether a language model, with and without a structured analytical workflow, reproduces a checked reference analysis of the same data.",
   "hypothesis": "Pooled period comparisons will reflect changes in which wells were sampled rather than change at wells; only a consistent cohort can answer the question. A structured workflow with validators will reduce model errors relative to a neutral prompt.",
-  "conclusion": "No decline in nitrate at cohort wells. Arsenic is slightly lower on average, by an amount within replicate precision and coincident with a laboratory change and a ten-fold drop in reporting limit. The model produced correct numbers under both conditions. The structured workflow raised cost by 30 percent without reducing errors; the residual errors were definitional and were detected only by reading answers against the reference definitions.",
+  "conclusion": "No decline in nitrate at cohort wells. Arsenic is slightly lower on average, by an amount within replicate precision and coincident with a laboratory change and a drop in reporting limit. The model produced correct numbers under both conditions. The structured workflow raised cost without reducing errors; residual errors were definitional and required reading answers against reference definitions.",
   "ledger": {
     "type": "json",
-    "path": "reports/results.json"
+    "path": "reports/presentation.json"
+  },
+  "sources": {
+    "v2.passed": {
+      "source": "glob_json",
+      "glob": "eval/scoring/v2.1/runs/T*_*_r*/score.json",
+      "path": "summary.passed",
+      "op": "sum"
+    },
+    "v2.checks": {
+      "source": "glob_json",
+      "glob": "eval/scoring/v2.1/runs/T*_*_r*/score.json",
+      "path": "summary.checks",
+      "op": "sum"
+    },
+    "v2.critical": {
+      "source": "glob_json",
+      "glob": "eval/scoring/v2.1/runs/T*_*_r*/score.json",
+      "path": "summary.critical_failures",
+      "op": "sum"
+    },
+    "v2.major": {
+      "source": "glob_json",
+      "glob": "eval/scoring/v2.1/runs/T*_*_r*/score.json",
+      "path": "summary.major_failures",
+      "op": "sum"
+    }
   },
   "headline": [
     {
       "label": "Nitrate cohort wells sampled in both periods",
       "value": "nitrate_as_n.paired_change.n_pairs",
-      "note": "85 declined, 100 increased"
+      "note": "{{nitrate_as_n.paired_change.decline}} declined, {{nitrate_as_n.paired_change.increase}} increased"
     },
     {
       "label": "Arsenic cohort: median late/early ratio among detected pairs",
@@ -34,14 +67,19 @@
       }
     },
     {
-      "label": "Numerical checks passed",
+      "label": "Original numerical checks passed",
       "value": {
         "source": "glob_json",
         "glob": "eval/runs/T*_*_r*/score.json",
         "path": "summary.passed",
         "op": "sum"
       },
-      "note": "of 272; 0 critical errors"
+      "note": "of {{evaluation.checks}}; {{evaluation.critical_failures}} critical errors (original scoring)"
+    },
+    {
+      "label": "Mechanical checks passed, corrected schema scorer",
+      "value": "v2.passed",
+      "note": "of {{v2.checks}}; {{v2.major}} major and {{v2.critical}} critical failures (same recorded answers)"
     },
     {
       "label": "Total model cost",
@@ -56,9 +94,10 @@
     }
   ],
   "finding": [
-    "The pooled nitrate median fell from {{nitrate_as_n.pooled_vs_cohort.pooled_early.km_median:.2f}} to {{nitrate_as_n.pooled_vs_cohort.pooled_late.km_median:.2f}} mg/L as N and the pooled arsenic median rose from {{arsenic.pooled_vs_cohort.pooled_early.km_median:.1f}} to {{arsenic.pooled_vs_cohort.pooled_late.km_median:.1f}} µg/L between 2000 to 2011 and 2012 to 2023. Neither is a change at wells. The late period sampled different wells, and only a minority of wells appear in both periods.",
-    "At the {{nitrate_as_n.paired_change.n_pairs}} nitrate wells sampled in both periods, {{nitrate_as_n.paired_change.decline}} declined and {{nitrate_as_n.paired_change.increase}} increased. At the {{arsenic.paired_change.n_pairs}} arsenic cohort wells, {{arsenic.paired_change.decline}} declined and {{arsenic.paired_change.increase}} increased with {{arsenic.paired_change.indeterminate}} indeterminate because of non-detects; the sign test gives p = {{arsenic.paired_change.sign_test.p_two_sided:.3f}}, but the median within-well ratio of {{arsenic.paired_change.wilcoxon_both_detected.median_ratio_late_over_early:.3f}} is a change of about 3 percent, inside the replicate precision of the measurements and coincident with a laboratory change and a ten-fold drop in reporting limit.",
-    "The evaluation ran one model on six frozen tasks under a neutral prompt and a structured-workflow prompt, two repetitions each, scored mechanically against the reference and then read against a rubric. Every run handled the four data traps. The structured workflow cost 30 percent more and did not reduce errors; the failures that did occur were definitional and were caught by reading answers against the reference definitions, not by the row counts."
+    "The pooled nitrate median fell from {{nitrate_as_n.pooled_vs_cohort.pooled_early.km_median:.2f}} to {{nitrate_as_n.pooled_vs_cohort.pooled_late.km_median:.2f}} mg/L as N and the pooled arsenic median rose from {{arsenic.pooled_vs_cohort.pooled_early.km_median:.1f}} to {{arsenic.pooled_vs_cohort.pooled_late.km_median:.1f}} \u00b5g/L between 2000 to 2011 and 2012 to 2023. Neither is a change at wells. The late period sampled different wells, and only a minority of wells appear in both periods.",
+    "At the {{nitrate_as_n.paired_change.n_pairs}} nitrate wells sampled in both periods, {{nitrate_as_n.paired_change.decline}} declined and {{nitrate_as_n.paired_change.increase}} increased. At the {{arsenic.paired_change.n_pairs}} arsenic cohort wells, {{arsenic.paired_change.decline}} declined and {{arsenic.paired_change.increase}} increased with {{arsenic.paired_change.indeterminate}} indeterminate because of non-detects; the sign test gives p = {{arsenic.paired_change.sign_test.p_two_sided:.3f}}, but the median within-well ratio of {{arsenic.paired_change.wilcoxon_both_detected.median_ratio_late_over_early:.3f}} is a small measured shift inside replicate precision and coincident with a laboratory and reporting-limit change.",
+    "The evaluation ran {{evaluation.runs}} model sessions on frozen tasks under neutral and structured-workflow prompts, scored mechanically and then read against a rubric. The structured workflow cost {{evaluation.workflow_cost_uplift_pct:.0f}} percent more and did not reduce errors; definitional failures were caught by reading answers against reference definitions, not row counts. Published original grades remain the baseline.",
+    "The separate corrected schema scorer re-evaluated the same recorded answers without new model calls: {{v2.passed}} of {{v2.checks}} mechanical checks passed, versus {{evaluation.passed}} of {{evaluation.checks}} under original scoring, with {{v2.major}} major and {{v2.critical}} critical failures. Artifact review corrected a false-negative composition keyword match in the first schema version. Wording and scientific correctness still require rubric review."
   ],
   "traps": [
     {
@@ -67,7 +106,7 @@
     },
     {
       "id": "censoring",
-      "how": "Arsenic reporting limits fell from about 2 to 0.1 µg/L across the record; non-detects were treated as intervals and the median estimated by Kaplan-Meier, never substituted."
+      "how": "Arsenic reporting limits dropped sharply across the record; non-detects were treated as intervals and the median estimated by Kaplan-Meier, never substituted."
     },
     {
       "id": "units-definitions",
@@ -103,6 +142,18 @@
   ],
   "documents": [
     {
+      "title": "Failure example: same cohort, different weighting",
+      "path": "docs/definition-failure.md"
+    },
+    {
+      "title": "Scoring versions and mechanical-check limits",
+      "path": "eval/scoring/VERSIONS.md"
+    },
+    {
+      "title": "Corrected schema re-score of the recorded answers",
+      "path": "eval/scoring/v2.1/results.md"
+    },
+    {
       "title": "Five-minute walkthrough",
       "path": "docs/walkthrough.md"
     },
@@ -120,6 +171,7 @@
     }
   ],
   "verification": {
+    "artifact": "reports/check-evidence.json",
     "tests": {
       "source": "regex_count",
       "glob": "tests/test_*.py",
@@ -129,7 +181,7 @@
   },
   "data": [
     "Water Quality Portal, USGS NWIS records, San Bernardino County wells, arsenic and nitrate, 2000 to 2023",
-    "Snapshot committed with query, manifest and SHA-256"
+    "Snapshot committed with query, manifest and SHA digests"
   ],
   "stack": [
     "Kaplan-Meier medians",

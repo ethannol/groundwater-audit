@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "scorer_version": "v2-schema-review",
+    "run_id": "T2_A_r1",
+    "task": "T2",
+    "condition": "A",
+    "rep": 1,
+    "cost_usd": 0.1690604,
+    "wall_seconds": 135.2,
+    "num_turns": 7,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 10,
+    "passed": 10,
+    "critical_failures": 0,
+    "major_failures": 0,
+    "failed_checks": ""
+  },
+  "checks": [
+    {
+      "check": "rows_in_table",
+      "pass": true,
+      "severity": "critical",
+      "got": 2435,
+      "want": 2435
+    },
+    {
+      "check": "wells_in_table",
+      "pass": true,
+      "severity": "major",
+      "got": 848,
+      "want": 848
+    },
+    {
+      "check": "nondetect_rows_in_table",
+      "pass": true,
+      "severity": "major",
+      "got": 140,
+      "want": 140
+    },
+    {
+      "check": "pcodes_included_only_00618",
+      "pass": true,
+      "severity": "major",
+      "got": [
+        "00618"
+      ],
+      "want": [
+        "00618"
+      ]
+    },
+    {
+      "check": "71851_treated_as_reexpression",
+      "pass": true,
+      "severity": "critical",
+      "got": "Same dissolved nitrate measurement as 00618, re-expressed as mg/L NO3 (computed by NWIS from 00618);",
+      "want": "71851 identified as a re-expression of 00618 (in pcodes_excluded or notes)"
+    },
+    {
+      "check": "excludes_00631_different_definition",
+      "pass": true,
+      "severity": "major",
+      "got": "Dissolved nitrate+nitrite as N: a different analyte (includes nitrite)",
+      "want": "00631 excluded (nitrate+nitrite)"
+    },
+    {
+      "check": "rows_dropped_as_same_measurement_reexpressed",
+      "pass": true,
+      "severity": "minor",
+      "got": 2301,
+      "want": [
+        2301,
+        2415
+      ]
+    },
+    {
+      "check": "rows_excluded_other_fraction",
+      "pass": true,
+      "severity": "minor",
+      "got": 586,
+      "want": [
+        472,
+        586
+      ]
+    },
+    {
+      "check": "nitrate_plus_nitrite_not_combined",
+      "pass": true,
+      "severity": "major",
+      "got": false,
+      "want": false
+    },
+    {
+      "check": "conversion_factor_if_used_is_0.226",
+      "pass": true,
+      "severity": "major",
+      "got": {
+        "mg/l as N -> mg/L as N": 1.0,
+        "mg/l asNO3 -> mg/L as N": 0.2259
+      },
+      "want": "0.2259 for NO3->N (or none needed)"
+    }
+  ]
+}

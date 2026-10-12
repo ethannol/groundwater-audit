@@ -75,7 +75,8 @@ Deterministic, no model calls:
 .venv/bin/python -m pytest                        # 33 tests: units, censoring, joins, grouping, uncertainty, fixtures
 .venv/bin/python eval/fixtures/make_fixtures.py   # regenerate the synthetic fixtures (deterministic)
 .venv/bin/python eval/scoring/build_reference.py  # reference answers for the frozen tasks
-.venv/bin/python eval/score.py --table            # re-score recorded runs, write eval/results.md
+.venv/bin/python eval/score.py --table            # separate exploratory v2 re-score; preserves original published scores
+gwaudit-presentation                            # derive presentation claims from original results and scores
 ```
 
 Re-download the snapshot (network; the portal returned byte-identical files
@@ -95,6 +96,13 @@ account; bounded to $3.00 and 30 minutes per run):
 ```
 
 ## Data provenance
+
+Read the [linked weighting failure example](docs/definition-failure.md) to see
+how two extra analyses of the same cohort suggested opposite directions.
+[Scoring versions](eval/scoring/VERSIONS.md) distinguishes the published
+evaluation from schema-hardened exploratory re-scoring. The portfolio's
+secondary numbers come from `reports/presentation.json`, derived from the
+unchanged reference results and original scores.
 
 - Source: Water Quality Portal legacy web services, result profile
   `resultPhysChem`, San Bernardino County (FIPS 06071) wells, characteristics

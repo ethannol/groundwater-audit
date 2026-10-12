@@ -1,0 +1,138 @@
+{
+  "summary": {
+    "scorer_version": "v2.1-schema-review",
+    "run_id": "T1_B_r1",
+    "task": "T1",
+    "condition": "B",
+    "rep": 1,
+    "cost_usd": 0.16285880000000003,
+    "wall_seconds": 56.1,
+    "num_turns": 8,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 13,
+    "passed": 13,
+    "critical_failures": 0,
+    "major_failures": 0,
+    "failed_checks": ""
+  },
+  "checks": [
+    {
+      "check": "rows_total",
+      "pass": true,
+      "severity": "major",
+      "got": 13301,
+      "want": 13301
+    },
+    {
+      "check": "rows_groundwater",
+      "pass": true,
+      "severity": "major",
+      "got": 11748,
+      "want": 11748
+    },
+    {
+      "check": "rows_routine_groundwater",
+      "pass": true,
+      "severity": "major",
+      "got": 11093,
+      "want": 11093
+    },
+    {
+      "check": "rows_qc_groundwater",
+      "pass": true,
+      "severity": "minor",
+      "got": 582,
+      "want": {
+        "value": 582,
+        "also_accept": [
+          578
+        ]
+      }
+    },
+    {
+      "check": "non_groundwater_media",
+      "pass": true,
+      "severity": "major",
+      "got": {
+        "Leachate": 699,
+        "Elutriation": 385,
+        "Soil moisture": 368,
+        "Interstitial": 98,
+        "Bulk deposition": 3
+      },
+      "want": {
+        "Leachate": 699,
+        "Elutriation": 385,
+        "Soil moisture": 368,
+        "Interstitial": 98,
+        "Bulk deposition": 3
+      }
+    },
+    {
+      "check": "arsenic_dissolved_routine_rows",
+      "pass": true,
+      "severity": "major",
+      "got": 2997,
+      "want": 2997
+    },
+    {
+      "check": "arsenic_dissolved_routine_wells",
+      "pass": true,
+      "severity": "major",
+      "got": 993,
+      "want": 993
+    },
+    {
+      "check": "arsenic_nondetect_rows",
+      "pass": true,
+      "severity": "major",
+      "got": 245,
+      "want": 245
+    },
+    {
+      "check": "arsenic_wells_with_2plus_samples",
+      "pass": true,
+      "severity": "major",
+      "got": 521,
+      "want": [
+        521,
+        490
+      ]
+    },
+    {
+      "check": "arsenic_first_year",
+      "pass": true,
+      "severity": "minor",
+      "got": 2000,
+      "want": 2000
+    },
+    {
+      "check": "arsenic_last_year",
+      "pass": true,
+      "severity": "minor",
+      "got": 2023,
+      "want": 2023
+    },
+    {
+      "check": "arsenic_nondetect_limit_range_ugL",
+      "pass": true,
+      "severity": "major",
+      "got": [
+        0.09,
+        20.0
+      ],
+      "want": [
+        0.09,
+        20.0
+      ]
+    },
+    {
+      "check": "flags_missing_limits_or_time",
+      "pass": true,
+      "severity": "minor",
+      "got": "ActivityEndDate ActivityEndTime/Time ActivityEndTime/TimeZoneCode ActivityDepthH",
+      "want": "mentions limit or time fields"
+    }
+  ]
+}

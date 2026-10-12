@@ -1,0 +1,117 @@
+{
+  "summary": {
+    "scorer_version": "v2.1-schema-review",
+    "run_id": "T3_A_r2",
+    "task": "T3",
+    "condition": "A",
+    "rep": 2,
+    "cost_usd": 0.1706162,
+    "wall_seconds": 123.2,
+    "num_turns": 9,
+    "model_used": "claude-sonnet-5-5",
+    "answer_present": true,
+    "checks": 12,
+    "passed": 11,
+    "critical_failures": 0,
+    "major_failures": 0,
+    "failed_checks": "identifiability_flag (got True, want False)"
+  },
+  "checks": [
+    {
+      "check": "early_n",
+      "pass": true,
+      "severity": "major",
+      "got": 1805,
+      "want": 1805
+    },
+    {
+      "check": "early_n_nondetect",
+      "pass": true,
+      "severity": "major",
+      "got": 199,
+      "want": "199 (\u00b13 DNQ rows)"
+    },
+    {
+      "check": "early_reporting_limit_range",
+      "pass": true,
+      "severity": "major",
+      "got": [
+        0.12,
+        5.0
+      ],
+      "want": [
+        0.12,
+        5.0
+      ]
+    },
+    {
+      "check": "early_median",
+      "pass": true,
+      "severity": "major",
+      "got": 1.9,
+      "want": "1.9 (accept 1.80-2.10, or null with stated bounds)"
+    },
+    {
+      "check": "late_n",
+      "pass": true,
+      "severity": "major",
+      "got": 1192,
+      "want": 1192
+    },
+    {
+      "check": "late_n_nondetect",
+      "pass": true,
+      "severity": "major",
+      "got": 46,
+      "want": "46 (\u00b13 DNQ rows)"
+    },
+    {
+      "check": "late_reporting_limit_range",
+      "pass": true,
+      "severity": "major",
+      "got": [
+        0.09,
+        20.0
+      ],
+      "want": [
+        0.09,
+        20.0
+      ]
+    },
+    {
+      "check": "late_median",
+      "pass": true,
+      "severity": "major",
+      "got": 3.3,
+      "want": "3.3 (accept 3.20-3.40, or null with stated bounds)"
+    },
+    {
+      "check": "early_share_above_10",
+      "pass": true,
+      "severity": "major",
+      "got": 0.1562,
+      "want": 0.1562
+    },
+    {
+      "check": "late_share_above_10_within_bounds_or_null",
+      "pass": true,
+      "severity": "major",
+      "got": 0.3079,
+      "want": "null or within [0.3079, 0.3121]"
+    },
+    {
+      "check": "median_method_not_plain_substitution",
+      "pass": true,
+      "severity": "major",
+      "got": "Non-detects (ResultDetectionConditionText 'Not Detected' or 'Detected Not Quantified', no numeric va",
+      "want": "censored estimator, bounds, or substitution with a stated sensitivity"
+    },
+    {
+      "check": "identifiability_flag",
+      "pass": false,
+      "severity": "minor",
+      "got": true,
+      "want": false
+    }
+  ]
+}
