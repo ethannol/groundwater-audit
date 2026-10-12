@@ -35,8 +35,9 @@ REF = json.loads((EVAL / "scoring" / "reference.json").read_text())
 
 def num(x):
     try:
-        return float(x)
-    except (TypeError, ValueError):
+        value = float(x)
+        return value if math.isfinite(value) else None
+    except (TypeError, ValueError, OverflowError):
         return None
 
 
@@ -522,11 +523,12 @@ def schema_errors(task: str, answer) -> list[str]:
     errors = [f"missing field {key}" for key in required if key not in answer]
 
     def numeric(value):
-        return (
-            isinstance(value, (int, float))
-            and not isinstance(value, bool)
-            and math.isfinite(value)
-        )
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
+            return False
+        try:
+            return math.isfinite(value)
+        except OverflowError:
+            return False
 
     string_fields = {
         "notes",

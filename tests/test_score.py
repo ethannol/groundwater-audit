@@ -36,9 +36,10 @@ def test_nested_schema_rejects_wrong_shape(key, value):
     assert score.schema_errors("T3", data)
 
 
-def test_nonfinite_number_is_rejected():
+@pytest.mark.parametrize("value", [float("nan"), float("inf"), 10**1000])
+def test_nonfinite_or_unrepresentable_number_is_rejected(value):
     data = answer("T4")
-    data["cohort_wells"] = float("nan")
+    data["cohort_wells"] = value
     assert score.schema_errors("T4", data)
 
 
