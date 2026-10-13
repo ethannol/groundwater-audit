@@ -25,7 +25,25 @@
       "Frozen analysis tasks with mechanical scoring",
       "Written rubric for interpretation"
     ],
-    "result": "No decline in nitrate. Arsenic is slightly lower, by less than measurement noise, alongside a laboratory change. The AI analyst got the numbers right under both prompting styles; its only errors were in definitions, caught by reading rather than by checking counts."
+    "result": "No decline in nitrate. Arsenic is slightly lower, by less than measurement noise, alongside a laboratory change. The AI analyst got the numbers right under both prompting styles; its only errors were in definitions, caught by reading rather than by checking counts.",
+    "pitfalls": [
+      {
+        "id": "composition",
+        "text": "Of the wells in the arsenic record, {{arsenic.pooled_vs_cohort.wells_only_early}} were sampled only early and {{arsenic.pooled_vs_cohort.wells_only_late}} only late; the pooled medians compare different wells"
+      },
+      {
+        "id": "censoring",
+        "text": "The arsenic reporting limit fell from {{arsenic.limits_by_year.0.max}} to {{arsenic.limits_by_year.-1.median}} µg/L as the laboratory changed; substituting half the limit would manufacture a decline"
+      },
+      {
+        "id": "units-definitions",
+        "text": "Every nitrate sample appeared twice, as N and as NO3; pooling without reconciling doubles the count"
+      },
+      {
+        "id": "framing",
+        "text": "Two model runs volunteered cohort analyses on the same wells that pointed opposite ways because of unstated weighting"
+      }
+    ]
   },
   "ledger": {
     "type": "json",
