@@ -12,9 +12,21 @@
   },
   "question": "Did arsenic and nitrate decline at repeatedly sampled wells in San Bernardino County, 2000 to 2023, and where does an LLM help or quietly err in answering?",
   "one_liner": "A checked reference analysis of public USGS groundwater chemistry paired with bounded, scored model runs on frozen tasks under two prompting conditions.",
-  "aim": "Determine whether dissolved arsenic and nitrate declined at repeatedly sampled wells in San Bernardino County between 2000\u20132011 and 2012\u20132023, and test whether a language model, with and without a structured analytical workflow, reproduces a checked reference analysis of the same data.",
+  "aim": "Determine whether dissolved arsenic and nitrate declined at repeatedly sampled wells in San Bernardino County between 2000–2011 and 2012–2023, and test whether a language model, with and without a structured analytical workflow, reproduces a checked reference analysis of the same data.",
   "hypothesis": "Pooled period comparisons will reflect changes in which wells were sampled rather than change at wells; only a consistent cohort can answer the question. A structured workflow with validators will reduce model errors relative to a neutral prompt.",
   "conclusion": "No decline in nitrate at cohort wells. Arsenic is slightly lower on average, by an amount within replicate precision and coincident with a laboratory change and a drop in reporting limit. The model produced correct numbers under both conditions. The structured workflow raised cost without reducing errors; residual errors were definitional and required reading answers against reference definitions.",
+  "summary": {
+    "question": "Did arsenic and nitrate go down at the same wells over two decades, and can an AI analyst be trusted to answer that correctly?",
+    "techniques": [
+      "Censored-data medians (Kaplan-Meier)",
+      "Consistent-cohort comparison",
+      "Paired sign and Wilcoxon tests",
+      "Well-level bootstrap",
+      "Frozen analysis tasks with mechanical scoring",
+      "Written rubric for interpretation"
+    ],
+    "result": "No decline in nitrate. Arsenic is slightly lower, by less than measurement noise, alongside a laboratory change. The AI analyst got the numbers right under both prompting styles; its only errors were in definitions, caught by reading rather than by checking counts."
+  },
   "ledger": {
     "type": "json",
     "path": "reports/presentation.json"
@@ -94,7 +106,7 @@
     }
   ],
   "finding": [
-    "The pooled nitrate median fell from {{nitrate_as_n.pooled_vs_cohort.pooled_early.km_median:.2f}} to {{nitrate_as_n.pooled_vs_cohort.pooled_late.km_median:.2f}} mg/L as N and the pooled arsenic median rose from {{arsenic.pooled_vs_cohort.pooled_early.km_median:.1f}} to {{arsenic.pooled_vs_cohort.pooled_late.km_median:.1f}} \u00b5g/L between 2000 to 2011 and 2012 to 2023. Neither is a change at wells. The late period sampled different wells, and only a minority of wells appear in both periods.",
+    "The pooled nitrate median fell from {{nitrate_as_n.pooled_vs_cohort.pooled_early.km_median:.2f}} to {{nitrate_as_n.pooled_vs_cohort.pooled_late.km_median:.2f}} mg/L as N and the pooled arsenic median rose from {{arsenic.pooled_vs_cohort.pooled_early.km_median:.1f}} to {{arsenic.pooled_vs_cohort.pooled_late.km_median:.1f}} µg/L between 2000 to 2011 and 2012 to 2023. Neither is a change at wells. The late period sampled different wells, and only a minority of wells appear in both periods.",
     "At the {{nitrate_as_n.paired_change.n_pairs}} nitrate wells sampled in both periods, {{nitrate_as_n.paired_change.decline}} declined and {{nitrate_as_n.paired_change.increase}} increased. At the {{arsenic.paired_change.n_pairs}} arsenic cohort wells, {{arsenic.paired_change.decline}} declined and {{arsenic.paired_change.increase}} increased with {{arsenic.paired_change.indeterminate}} indeterminate because of non-detects; the sign test gives p = {{arsenic.paired_change.sign_test.p_two_sided:.3f}}, but the median within-well ratio of {{arsenic.paired_change.wilcoxon_both_detected.median_ratio_late_over_early:.3f}} is a small measured shift inside replicate precision and coincident with a laboratory and reporting-limit change.",
     "The evaluation ran {{evaluation.runs}} model sessions on frozen tasks under neutral and structured-workflow prompts, scored mechanically and then read against a rubric. The structured workflow cost {{evaluation.workflow_cost_uplift_pct:.0f}} percent more and did not reduce errors; definitional failures were caught by reading answers against reference definitions, not row counts. Published original grades remain the baseline.",
     "The separate corrected schema scorer re-evaluated the same recorded answers without new model calls: {{v2.passed}} of {{v2.checks}} mechanical checks passed, versus {{evaluation.passed}} of {{evaluation.checks}} under original scoring, with {{v2.major}} major and {{v2.critical}} critical failures. Artifact review corrected a false-negative composition keyword match in the first schema version. Wording and scientific correctness still require rubric review."
