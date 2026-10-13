@@ -3,6 +3,7 @@
   "title": "Groundwater Audit",
   "kind": "study",
   "status": "complete",
+  "story": "docs/story.md",
   "strict_numbers": true,
   "numeric_constants": {
     "2000": "Fixed analytical period start year",
