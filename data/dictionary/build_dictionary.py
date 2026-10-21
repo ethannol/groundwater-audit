@@ -15,9 +15,14 @@ lines = [l.strip() for l in guide if l.strip()]
 defs = {}
 for i in range(len(lines) - 1):
     name = lines[i].rstrip("*†").strip()
-    if name and name[0].isupper() and " " not in name and 2 < len(name) < 70:
-        if name not in defs:
-            defs[name] = lines[i + 1]
+    if (
+        name
+        and name[0].isupper()
+        and " " not in name
+        and 2 < len(name) < 70
+        and name not in defs
+    ):
+        defs[name] = lines[i + 1]
 
 rows = []
 for fname, table in [("wqp_result.csv", "result"), ("wqp_station.csv", "station")]:
