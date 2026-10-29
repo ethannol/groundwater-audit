@@ -3,6 +3,13 @@
 *Where does an LLM help produce a defensible groundwater analysis, and where
 can it introduce plausible errors that survive casual review?*
 
+The county-wide shifts in nitrate and arsenic reflect a change in which wells
+were sampled, not a change at wells. At wells sampled in both periods, nitrate
+did not decline, and the arsenic change is smaller than measurement noise and
+coincides with a laboratory change. The LLM analyst produced correct numbers
+under both prompting styles; its errors were definitional, and reading its
+answers against the reference definitions caught them where row counts did not.
+
 A bounded case study. It pairs a checked reference analysis of public
 groundwater chemistry data with a small, reproducible evaluation of
 LLM-assisted analysis under two conditions. Everything here runs locally from
